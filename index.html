@@ -218,6 +218,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: flex;
+            justify-content: center;
         }
 
         .features-banner {
@@ -228,6 +230,8 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(90, 125, 181, 0.2);
+            max-width: 800px;
+            width: 100%;
         }
 
         .features-banner::before {
@@ -347,22 +351,11 @@
 
         .service-card {
             background: white;
-            padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            position: relative;
             overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
+            position: relative;
         }
 
         .service-card:hover {
@@ -370,29 +363,40 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        .service-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
+        .service-image {
+            height: 200px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            border-radius: 12px;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
 
-        .service-card h3 {
+        .service-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        }
+
+        .service-title {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            z-index: 2;
+            color: white;
             font-size: 1.4rem;
-            color: var(--primary-blue);
-            margin: 0;
+            font-weight: 600;
+        }
+
+        .service-content {
+            padding: 2rem;
         }
 
         .service-description {
@@ -708,61 +712,11 @@
             color: var(--text-medium);
             font-size: 0.95rem;
             line-height: 1.5;
-        }-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            padding: 2rem;
-        }
-
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -1rem;
-            width: 2rem;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal));
-            transform: translateY(-50%);
-        }
-
-        .process-step:last-child::after {
-            display: none;
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        .process-step h4 {
-            margin-bottom: 1rem;
-            color: var(--primary-blue);
-        }
-
-        .process-step p {
-            color: var(--text-medium);
-            font-size: 0.95rem;
         }
 
         /* Emergency Service */
         .emergency {
-            background: linear-gradient(135deg, var(--error-red), #c82333);
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -793,17 +747,22 @@
 
         .emergency-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 3rem auto 0;
         }
 
         .emergency-feature {
             background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
+        }
+
+        .emergency-feature h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         /* Contact Section */
@@ -943,6 +902,20 @@
                 align-items: center;
             }
 
+            .features-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .features-text h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
             .input-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -970,10 +943,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
             .emergency-features {
                 grid-template-columns: 1fr;
             }
@@ -989,14 +958,6 @@
             .process-row {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-            }
-
-            .process-arrow {
-                display: none;
-            }
-
-            .process-vertical-arrow {
-                height: 2rem;
             }
         }
     </style>
@@ -1037,698 +998,715 @@
     </section>
 
     <section class="key-features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">[ICON]</div>
-                <h3>Meisterbetrieb</h3>
-                <p>Qualifizierte Fachkräfte mit langjähriger Erfahrung und kontinuierlicher Weiterbildung</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">[ICON]</div>
-                <h3>24h Service</h3>
-                <p>Rund um die Uhr erreichbar für Notfälle - auch an Wochenenden und Feiertagen</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">[ICON]</div>
-                <h3>Festpreise</h3>
-                <p>Transparente Kostenvoranschläge ohne versteckte Kosten - Sie wissen vorher, was es kostet</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">[ICON]</div>
-                <h3>Garantie</h3>
-                <p>Umfassende Gewährleistung auf alle Arbeiten und verwendeten Materialien</p>
-            </div>
-        </div>
-    </section>
+        <div class="features-container">
+            <div class="features-banner">
+                <div class="features-content">
+                    <div class="features-text">
+                       <h2>Ihr Experte für Haustechnik</h2>
+                       <p>Professionelle Lösungen für Heizung, Sanitär, Solar, Klima und Lüftung - alles aus einer Hand von Ihrem lokalen Meisterbetrieb.</p>
+                   </div>
+                   <div class="features-grid">
+                       <div class="feature-badge">
+                           <div class="feature-badge-icon">[ICON]</div>
+                           <h3>Meisterbetrieb</h3>
+                           <p>Qualifizierte Fachkräfte mit langjähriger Erfahrung und kontinuierlicher Weiterbildung</p>
+                       </div>
+                       <div class="feature-badge">
+                           <div class="feature-badge-icon">[ICON]</div>
+                           <h3>24h Service</h3>
+                           <p>Rund um die Uhr erreichbar für Notfälle - auch an Wochenenden und Feiertagen</p>
+                       </div>
+                       <div class="feature-badge">
+                           <div class="feature-badge-icon">[ICON]</div>
+                           <h3>Festpreise</h3>
+                           <p>Transparente Kostenvoranschläge ohne versteckte Kosten - Sie wissen vorher, was es kostet</p>
+                       </div>
+                       <div class="feature-badge">
+                           <div class="feature-badge-icon">[ICON]</div>
+                           <h3>Garantie</h3>
+                           <p>Umfassende Gewährleistung auf alle Arbeiten und verwendeten Materialien</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Unsere Leistungen</h2>
-            <p class="section-subtitle">Von der Planung bis zur Wartung - wir sind Ihr kompetenter Partner für alle Bereiche der Haustechnik</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Heizungstechnik</h3>
-                    </div>
-                    <p class="service-description">Moderne, energieeffiziente Heizungssysteme für optimalen Wohnkomfort und niedrige Betriebskosten.</p>
-                    <ul class="service-features">
-                        <li>Gasheizungen (Brennwert & Hybrid)</li>
-                        <li>Wärmepumpen (Luft, Wasser, Erdwärme)</li>
-                        <li>Pellet- und Biomasseanlagen</li>
-                        <li>Fußbodenheizung & Heizkörper</li>
-                        <li>Heizungswartung & Reparatur</li>
-                        <li>Hydraulischer Abgleich</li>
-                        <li>Smart Home Integration</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Sanitärtechnik</h3>
-                    </div>
-                    <p class="service-description">Professionelle Sanitärinstallationen und Badsanierungen nach neuesten Standards und individuellen Wünschen.</p>
-                    <ul class="service-features">
-                        <li>Komplette Badsanierung</li>
-                        <li>Wasserinstallation (Kalt & Warm)</li>
-                        <li>Abwassertechnik & Entwässerung</li>
-                        <li>Sanitärobjekte & Armaturen</li>
-                        <li>Rohrreinigung & Rohrsanierung</li>
-                        <li>Trinkwasseranalyse</li>
-                        <li>Barrierefreie Bäder</li>
-                    </ul>
-                </div>
+   <section class="services" id="services">
+       <div class="container">
+           <h2 class="section-title">Unsere Leistungen</h2>
+           <p class="section-subtitle">Von der Planung bis zur Wartung - wir sind Ihr kompetenter Partner für alle Bereiche der Haustechnik</p>
+           
+           <div class="services-grid">
+               <div class="service-card">
+                   <div class="service-image">
+                       🔥
+                       <h3 class="service-title">Heizungstechnik</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Moderne, energieeffiziente Heizungssysteme für optimalen Wohnkomfort und niedrige Betriebskosten.</p>
+                       <ul class="service-features">
+                           <li>Gasheizungen (Brennwert & Hybrid)</li>
+                           <li>Wärmepumpen (Luft, Wasser, Erdwärme)</li>
+                           <li>Pellet- und Biomasseanlagen</li>
+                           <li>Fußbodenheizung & Heizkörper</li>
+                           <li>Heizungswartung & Reparatur</li>
+                           <li>Hydraulischer Abgleich</li>
+                           <li>Smart Home Integration</li>
+                       </ul>
+                   </div>
+               </div>
+               
+               <div class="service-card">
+                   <div class="service-image">
+                       🚿
+                       <h3 class="service-title">Sanitärtechnik</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Professionelle Sanitärinstallationen und Badsanierungen nach neuesten Standards und individuellen Wünschen.</p>
+                       <ul class="service-features">
+                           <li>Komplette Badsanierung</li>
+                           <li>Wasserinstallation (Kalt & Warm)</li>
+                           <li>Abwassertechnik & Entwässerung</li>
+                           <li>Sanitärobjekte & Armaturen</li>
+                           <li>Rohrreinigung & Rohrsanierung</li>
+                           <li>Trinkwasseranalyse</li>
+                           <li>Barrierefreie Bäder</li>
+                       </ul>
+                   </div>
+               </div>
 
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Solartechnik</h3>
-                    </div>
-                    <p class="service-description">Nutzen Sie die kostenlose Sonnenenergie für Warmwasser und Heizungsunterstützung.</p>
-                    <ul class="service-features">
-                        <li>Solarthermie für Warmwasser</li>
-                        <li>Kombianlagen für Heizung & Warmwasser</li>
-                        <li>Photovoltaik-Anlagen</li>
-                        <li>Stromspeicher & Batteriesysteme</li>
-                        <li>Energiemanagement-Systeme</li>
-                        <li>Wartung & Überwachung</li>
-                        <li>Förderberatung & Antragstellung</li>
-                    </ul>
-                </div>
+               <div class="service-card">
+                   <div class="service-image">
+                       ☀️
+                       <h3 class="service-title">Solartechnik</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Nutzen Sie die kostenlose Sonnenenergie für Warmwasser und Heizungsunterstützung.</p>
+                       <ul class="service-features">
+                           <li>Solarthermie für Warmwasser</li>
+                           <li>Kombianlagen für Heizung & Warmwasser</li>
+                           <li>Photovoltaik-Anlagen</li>
+                           <li>Stromspeicher & Batteriesysteme</li>
+                           <li>Energiemanagement-Systeme</li>
+                           <li>Wartung & Überwachung</li>
+                           <li>Förderberatung & Antragstellung</li>
+                       </ul>
+                   </div>
+               </div>
 
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Klimatechnik</h3>
-                    </div>
-                    <p class="service-description">Angenehmes Raumklima das ganze Jahr über mit modernen, energieeffizienten Klimasystemen.</p>
-                    <ul class="service-features">
-                        <li>Split-Klimaanlagen (Single & Multi)</li>
-                        <li>VRV/VRF-Systeme</li>
-                        <li>Kaltwassersätze & Chiller</li>
-                        <li>Klimaserviceeinheiten</li>
-                        <li>Kältemittel-Service</li>
-                        <li>Wartung nach F-Gase-Verordnung</li>
-                        <li>Energieeffizienz-Optimierung</li>
-                    </ul>
-                </div>
+               <div class="service-card">
+                   <div class="service-image">
+                       ❄️
+                       <h3 class="service-title">Klimatechnik</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Angenehmes Raumklima das ganze Jahr über mit modernen, energieeffizienten Klimasystemen.</p>
+                       <ul class="service-features">
+                           <li>Split-Klimaanlagen (Single & Multi)</li>
+                           <li>VRV/VRF-Systeme</li>
+                           <li>Kaltwassersätze & Chiller</li>
+                           <li>Klimaserviceeinheiten</li>
+                           <li>Kältemittel-Service</li>
+                           <li>Wartung nach F-Gase-Verordnung</li>
+                           <li>Energieeffizienz-Optimierung</li>
+                       </ul>
+                   </div>
+               </div>
 
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Lüftungstechnik</h3>
-                    </div>
-                    <p class="service-description">Gesunde Raumluft und Energieeinsparung durch kontrollierte Wohnraumlüftung.</p>
-                    <ul class="service-features">
-                        <li>Zentrale Lüftungsanlagen</li>
-                        <li>Dezentrale Lüftungsgeräte</li>
-                        <li>Wärmerückgewinnung</li>
-                        <li>Luftfilter & Luftreinigung</li>
-                        <li>Entfeuchtung & Befeuchtung</li>
-                        <li>Luftkanalsysteme</li>
-                        <li>Brandschutzklappen</li>
-                    </ul>
-                </div>
+               <div class="service-card">
+                   <div class="service-image">
+                       💨
+                       <h3 class="service-title">Lüftungstechnik</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Gesunde Raumluft und Energieeinsparung durch kontrollierte Wohnraumlüftung.</p>
+                       <ul class="service-features">
+                           <li>Zentrale Lüftungsanlagen</li>
+                           <li>Dezentrale Lüftungsgeräte</li>
+                           <li>Wärmerückgewinnung</li>
+                           <li>Luftfilter & Luftreinigung</li>
+                           <li>Entfeuchtung & Befeuchtung</li>
+                           <li>Luftkanalsysteme</li>
+                           <li>Brandschutzklappen</li>
+                       </ul>
+                   </div>
+               </div>
 
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">[ICON]</div>
-                        <h3>Service & Wartung</h3>
-                    </div>
-                    <p class="service-description">Regelmäßige Wartung und schnelle Reparaturen für langlebige und effiziente Anlagen.</p>
-                    <ul class="service-features">
-                        <li>Jährliche Heizungswartung</li>
-                        <li>Störungsbeseitigung & Reparatur</li>
-                        <li>Anlageninspektion & TÜV</li>
-                        <li>Effizienz-Checks</li>
-                        <li>Ersatzteilservice</li>
-                        <li>Fernwartung & Monitoring</li>
-                        <li>Wartungsverträge</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+               <div class="service-card">
+                   <div class="service-image">
+                       🔧
+                       <h3 class="service-title">Service & Wartung</h3>
+                   </div>
+                   <div class="service-content">
+                       <p class="service-description">Regelmäßige Wartung und schnelle Reparaturen für langlebige und effiziente Anlagen.</p>
+                       <ul class="service-features">
+                           <li>Jährliche Heizungswartung</li>
+                           <li>Störungsbeseitigung & Reparatur</li>
+                           <li>Anlageninspektion & TÜV</li>
+                           <li>Effizienz-Checks</li>
+                           <li>Ersatzteilservice</li>
+                           <li>Fernwartung & Monitoring</li>
+                           <li>Wartungsverträge</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section class="why-choose" id="why-choose">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content">
-                    <h2>Warum Leo Therm?</h2>
-                    <p>
-                        Als neu gegründeter Meisterbetrieb verbinden wir frischen Enthusiasmus mit fundiertem 
-                        Fachwissen. Unser Team bringt langjährige Branchenerfahrung mit und setzt konsequent 
-                        auf modernste Technologien und nachhaltige Lösungen.
-                    </p>
-                    <p>
-                        Wir nehmen uns Zeit für Sie und Ihre individuellen Bedürfnisse. Durch unsere schlanken 
-                        Strukturen können wir flexibel auf Ihre Wünsche eingehen und bieten dabei stets 
-                        ein ausgezeichnetes Preis-Leistungs-Verhältnis.
-                    </p>
-                </div>
-                <div class="why-visual">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Meisterqualität</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Notdienst</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">0€</div>
-                            <div class="stat-label">Anfahrtskosten*</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5J</div>
-                            <div class="stat-label">Garantie</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <ul class="advantages">
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Meisterqualifikation & moderne Technik</h4>
-                        <p>Neueste Technologien kombiniert mit handwerklicher Meisterexpertise für optimale Ergebnisse</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Persönliche Betreuung</h4>
-                        <p>Direkter Kontakt zum Meister - individuelle Lösungen ohne Umwege über große Konzernstrukturen</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Faire Preise & Transparenz</h4>
-                        <p>Ehrliche Beratung, transparente Kostenvoranschläge und ein ausgezeichnetes Preis-Leistungs-Verhältnis</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Flexibilität & schnelle Reaktion</h4>
-                        <p>Kurze Entscheidungswege ermöglichen schnelle Terminvereinbarung und flexible Lösungen</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Umfassende Garantie</h4>
-                        <p>5 Jahre Garantie auf alle Arbeiten und langfristige Betreuung für Ihre Anlagen</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="advantage-icon">[ICON]</div>
-                    <div class="advantage-content">
-                        <h4>Nachhaltige Energielösungen</h4>
-                        <p>Spezialisierung auf energieeffiziente und umweltfreundliche Heiztechnologien der Zukunft</p>
-                    </div>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </section>
+   <section class="why-choose" id="why-choose">
+       <div class="container">
+           <div class="why-grid">
+               <div class="why-content">
+                   <h2>Warum Leo Therm?</h2>
+                   <p>
+                       Als neu gegründeter Meisterbetrieb verbinden wir frischen Enthusiasmus mit fundiertem 
+                       Fachwissen. Unser Team bringt langjährige Branchenerfahrung mit und setzt konsequent 
+                       auf modernste Technologien und nachhaltige Lösungen.
+                   </p>
+                   <p>
+                       Wir nehmen uns Zeit für Sie und Ihre individuellen Bedürfnisse. Durch unsere schlanken 
+                       Strukturen können wir flexibel auf Ihre Wünsche eingehen und bieten dabei stets 
+                       ein ausgezeichnetes Preis-Leistungs-Verhältnis.
+                   </p>
+               </div>
+               <div class="why-visual">
+                   <div class="stats-grid">
+                       <div class="stat-item">
+                           <div class="stat-number">100%</div>
+                           <div class="stat-label">Meisterqualität</div>
+                       </div>
+                       <div class="stat-item">
+                           <div class="stat-number">24/7</div>
+                           <div class="stat-label">Notdienst</div>
+                       </div>
+                       <div class="stat-item">
+                           <div class="stat-number">0€</div>
+                           <div class="stat-label">Anfahrtskosten*</div>
+                       </div>
+                       <div class="stat-item">
+                           <div class="stat-number">5J</div>
+                           <div class="stat-label">Garantie</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <ul class="advantages">
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Meisterqualifikation & moderne Technik</h4>
+                       <p>Neueste Technologien kombiniert mit handwerklicher Meisterexpertise für optimale Ergebnisse</p>
+                   </div>
+               </li>
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Persönliche Betreuung</h4>
+                       <p>Direkter Kontakt zum Meister - individuelle Lösungen ohne Umwege über große Konzernstrukturen</p>
+                   </div>
+               </li>
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Faire Preise & Transparenz</h4>
+                       <p>Ehrliche Beratung, transparente Kostenvoranschläge und ein ausgezeichnetes Preis-Leistungs-Verhältnis</p>
+                   </div>
+               </li>
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Flexibilität & schnelle Reaktion</h4>
+                       <p>Kurze Entscheidungswege ermöglichen schnelle Terminvereinbarung und flexible Lösungen</p>
+                   </div>
+               </li>
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Umfassende Garantie</h4>
+                       <p>5 Jahre Garantie auf alle Arbeiten und langfristige Betreuung für Ihre Anlagen</p>
+                   </div>
+               </li>
+               <li>
+                   <div class="advantage-icon">[ICON]</div>
+                   <div class="advantage-content">
+                       <h4>Nachhaltige Energielösungen</h4>
+                       <p>Spezialisierung auf energieeffiziente und umweltfreundliche Heiztechnologien der Zukunft</p>
+                   </div>
+               </li>
+           </ul>
+       </div>
+   </section>
 
-    <section class="calculator" id="calculator">
-        <div class="container">
-            <div class="calculator-container">
-                <h2>Heizkosten-Rechner</h2>
-                <p class="calculator-subtitle">
-                    Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
-                </p>
-                
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label for="living-space">Wohnfläche (m²)</label>
-                        <input type="number" id="living-space" placeholder="z.B. 120" min="1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="heating-type">Aktuelle Heizungsart</label>
-                        <select id="heating-type">
-                            <option value="">Bitte wählen...</option>
-                            <option value="gas">Gasheizung (alt)</option>
-                            <option value="gas-condensing">Gasbrennwert</option>
-                            <option value="oil">Ölheizung</option>
-                            <option value="heat-pump">Wärmepumpe</option>
-                            <option value="pellets">Pelletheizung</option>
-                            <option value="electric">Elektroheizung</option>
-                            <option value="district">Fernwärme</option>
-                        </select>
-                    </div>
-                </div>
+   <section class="calculator" id="calculator">
+       <div class="container">
+           <div class="calculator-container">
+               <h2>Heizkosten-Rechner</h2>
+               <p class="calculator-subtitle">
+                   Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
+               </p>
+               
+               <div class="input-grid">
+                   <div class="input-group">
+                       <label for="living-space">Wohnfläche (m²)</label>
+                       <input type="number" id="living-space" placeholder="z.B. 120" min="1">
+                   </div>
+                   
+                   <div class="input-group">
+                       <label for="heating-type">Aktuelle Heizungsart</label>
+                       <select id="heating-type">
+                           <option value="">Bitte wählen...</option>
+                           <option value="gas">Gasheizung (alt)</option>
+                           <option value="gas-condensing">Gasbrennwert</option>
+                           <option value="oil">Ölheizung</option>
+                           <option value="heat-pump">Wärmepumpe</option>
+                           <option value="pellets">Pelletheizung</option>
+                           <option value="electric">Elektroheizung</option>
+                           <option value="district">Fernwärme</option>
+                       </select>
+                   </div>
+               </div>
 
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label for="insulation">Dämmstandard</label>
-                        <select id="insulation">
-                            <option value="">Bitte wählen...</option>
-                            <option value="poor">Schlecht (Altbau ungedämmt)</option>
-                            <option value="average">Durchschnittlich</option>
-                            <option value="good">Gut (Neubau/saniert)</option>
-                            <option value="excellent">Sehr gut (Passivhaus)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="age">Baujahr der Heizung</label>
-                        <select id="age">
-                            <option value="">Bitte wählen...</option>
-                            <option value="new">Unter 5 Jahre</option>
-                            <option value="medium">5-15 Jahre</option>
-                            <option value="old">15-25 Jahre</option>
-                            <option value="very-old">Über 25 Jahre</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="result" id="result"></div>
-            </div>
-        </div>
-    </section>
+               <div class="input-grid">
+                   <div class="input-group">
+                       <label for="insulation">Dämmstandard</label>
+                       <select id="insulation">
+                           <option value="">Bitte wählen...</option>
+                           <option value="poor">Schlecht (Altbau ungedämmt)</option>
+                           <option value="average">Durchschnittlich</option>
+                           <option value="good">Gut (Neubau/saniert)</option>
+                           <option value="excellent">Sehr gut (Passivhaus)</option>
+                       </select>
+                   </div>
+                   
+                   <div class="input-group">
+                       <label for="age">Baujahr der Heizung</label>
+                       <select id="age">
+                           <option value="">Bitte wählen...</option>
+                           <option value="new">Unter 5 Jahre</option>
+                           <option value="medium">5-15 Jahre</option>
+                           <option value="old">15-25 Jahre</option>
+                           <option value="very-old">Über 25 Jahre</option>
+                       </select>
+                   </div>
+               </div>
+               
+               <div class="result" id="result"></div>
+           </div>
+       </div>
+   </section>
 
-    <section class="process" id="process">
-        <div class="container">
-            <h2 class="section-title">Unser Projektablauf</h2>
-            <p class="section-subtitle">So läuft Ihr Projekt bei uns ab - transparent, professionell und termingerecht</p>
-            
-            <div class="process-container">
-                <div class="process-row">
-                    <div class="process-step">
-                        <div class="process-number">1</div>
-                        <h4>Erstberatung</h4>
-                        <p>Kostenlose Beratung vor Ort zur Analyse Ihrer Bedürfnisse und Bestandsaufnahme</p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">2</div>
-                        <h4>Planung & Angebot</h4>
-                        <p>Detaillierte Planung und transparenter Kostenvoranschlag mit allen Leistungen</p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">3</div>
-                        <h4>Terminplanung</h4>
-                        <p>Gemeinsame Abstimmung der Termine und Koordination aller Gewerke</p>
-                    </div>
-                </div>
-                
-                <div class="process-row">
-                    <div class="process-step">
-                        <div class="process-number">4</div>
-                        <h4>Installation</h4>
-                        <p>Fachgerechte Installation durch qualifizierte Monteure mit hochwertigen Materialien</p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">5</div>
-                        <h4>Inbetriebnahme</h4>
-                        <p>Professionelle Inbetriebnahme, Einweisung und Dokumentation</p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">6</div>
-                        <h4>Service</h4>
-                        <p>Regelmäßige Wartung und langfristiger Service für optimale Funktion</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section class="process" id="process">
+       <div class="container">
+           <h2 class="section-title">Unser Projektablauf</h2>
+           <p class="section-subtitle">So läuft Ihr Projekt bei uns ab - transparent, professionell und termingerecht</p>
+           
+           <div class="process-container">
+               <div class="process-row">
+                   <div class="process-step">
+                       <div class="process-number">1</div>
+                       <h4>Erstberatung</h4>
+                       <p>Kostenlose Beratung vor Ort zur Analyse Ihrer Bedürfnisse und Bestandsaufnahme</p>
+                   </div>
+                   
+                   <div class="process-step">
+                       <div class="process-number">2</div>
+                       <h4>Planung & Angebot</h4>
+                       <p>Detaillierte Planung und transparenter Kostenvoranschlag mit allen Leistungen</p>
+                   </div>
+                   
+                   <div class="process-step">
+                       <div class="process-number">3</div>
+                       <h4>Terminplanung</h4>
+                       <p>Gemeinsame Abstimmung der Termine und Koordination aller Gewerke</p>
+                   </div>
+               </div>
+               
+               <div class="process-row">
+                   <div class="process-step">
+                       <div class="process-number">4</div>
+                       <h4>Installation</h4>
+                       <p>Fachgerechte Installation durch qualifizierte Monteure mit hochwertigen Materialien</p>
+                   </div>
+                   
+                   <div class="process-step">
+                       <div class="process-number">5</div>
+                       <h4>Inbetriebnahme</h4>
+                       <p>Professionelle Inbetriebnahme, Einweisung und Dokumentation</p>
+                   </div>
+                   
+                   <div class="process-step">
+                       <div class="process-number">6</div>
+                       <h4>Service</h4>
+                       <p>Regelmäßige Wartung und langfristiger Service für optimale Funktion</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section class="emergency">
-        <div class="container">
-            <h2>24-Stunden-Notdienst</h2>
-            <p>Heizungsausfall? Wasserschaden? Wir sind rund um die Uhr für Sie da!</p>
-            <div class="emergency-phone">
-                <a href="tel:+491701234567">+49 170 123 456 7</a>
-            </div>
-            <div class="emergency-features">
-                <div class="emergency-feature">
-                    <h4>Schnelle Hilfe</h4>
-                    <p>Durchschnittliche Anfahrtszeit unter 60 Minuten</p>
-                </div>
-                <div class="emergency-feature">
-                    <h4>Alle Gewerke</h4>
-                    <p>Heizung, Sanitär, Klima - kompletter Notfallservice</p>
-                </div>
-                <div class="emergency-feature">
-                    <h4>Faire Preise</h4>
-                    <p>Transparente Notdiensttarife ohne Überraschungen</p>
-                </div>
-                <div class="emergency-feature">
-                    <h4>Ersatzteillager</h4>
-                    <p>Häufig benötigte Ersatzteile direkt verfügbar</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section class="emergency">
+       <div class="container">
+           <h2>24-Stunden-Notdienst</h2>
+           <p>Heizungsausfall? Wasserschaden? Wir sind rund um die Uhr für Sie da!</p>
+           <div class="emergency-phone">
+               <a href="tel:+491701234567">+49 170 123 456 7</a>
+           </div>
+           <div class="emergency-features">
+               <div class="emergency-feature">
+                   <h4>⚡ Schnelle Hilfe</h4>
+                   <p>Durchschnittliche Anfahrtszeit unter 60 Minuten in der Region Ludwigshafen</p>
+               </div>
+               <div class="emergency-feature">
+                   <h4>🔧 Kompletter Service</h4>
+                   <p>Heizung, Sanitär, Klima - alle Gewerke aus einer Hand im Notfall</p>
+               </div>
+               <div class="emergency-feature">
+                   <h4>💰 Transparente Preise</h4>
+                   <p>Faire Notdiensttarife ohne versteckte Kosten oder böse Überraschungen</p>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Kontakt & Beratung</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Leo Therm Klimatechnik</h3>
-                    <p style="margin-bottom: 2rem;">Ihr zuverlässiger Partner für alle Bereiche der Haustechnik</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item-icon">[ICON]</div>
-                        <div class="contact-details">
-                            <h4>Geschäftsadresse</h4>
-                            <p>Musterstraße 123<br>67063 Ludwigshafen am Rhein</p>
-                            <p>Gewerbegebiet Süd, Halle 5</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item-icon">[ICON]</div>
-                        <div class="contact-details">
-                            <h4>Kontakt</h4>
-                            <p>Tel: <a href="tel:+4962112345678">+49 621 123 456 78</a></p>
-                            <p>Notdienst: <a href="tel:+491701234567">+49 170 123 456 7</a></p>
-                            <p>Mail: <a href="mailto:info@leo-therm.de">info@leo-therm.de</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item-icon">[ICON]</div>
-                        <div class="contact-details">
-                            <h4>Öffnungszeiten</h4>
-                            <p>Montag - Freitag: 7:00 - 17:00 Uhr</p>
-                            <p>Samstag: 8:00 - 12:00 Uhr</p>
-                            <p>Notdienst: 24/7 verfügbar</p>
-                        </div>
-                    </div>
+   <section class="contact" id="contact">
+       <div class="container">
+           <h2 class="section-title" style="color: white;">Kontakt & Beratung</h2>
+           <div class="contact-grid">
+               <div class="contact-info">
+                   <h3>Leo Therm Klimatechnik</h3>
+                   <p style="margin-bottom: 2rem;">Ihr zuverlässiger Partner für alle Bereiche der Haustechnik</p>
+                   
+                   <div class="contact-item">
+                       <div class="contact-item-icon">[ICON]</div>
+                       <div class="contact-details">
+                           <h4>Geschäftsadresse</h4>
+                           <p>Musterstraße 123<br>67063 Ludwigshafen am Rhein</p>
+                           <p>Gewerbegebiet Süd, Halle 5</p>
+                       </div>
+                   </div>
+                   
+                   <div class="contact-item">
+                       <div class="contact-item-icon">[ICON]</div>
+                       <div class="contact-details">
+                           <h4>Kontakt</h4>
+                           <p>Tel: <a href="tel:+4962112345678">+49 621 123 456 78</a></p>
+                           <p>Notdienst: <a href="tel:+491701234567">+49 170 123 456 7</a></p>
+                           <p>Mail: <a href="mailto:info@leo-therm.de">info@leo-therm.de</a></p>
+                       </div>
+                   </div>
+                   
+                   <div class="contact-item">
+                       <div class="contact-item-icon">[ICON]</div>
+                       <div class="contact-details">
+                           <h4>Öffnungszeiten</h4>
+                           <p>Montag - Freitag: 7:00 - 17:00 Uhr</p>
+                           <p>Samstag: 8:00 - 12:00 Uhr</p>
+                           <p>Notdienst: 24/7 verfügbar</p>
+                       </div>
+                   </div>
 
-                    <div class="service-area">
-                        <h3>Unser Einzugsgebiet</h3>
-                        <p style="margin-bottom: 1rem;">Wir sind für Sie tätig in:</p>
-                        <div class="service-cities">
-                            <div>Ludwigshafen am Rhein</div>
-                            <div>Mannheim</div>
-                            <div>Speyer</div>
-                            <div>Worms</div>
-                            <div>Frankenthal</div>
-                            <div>Neustadt/Weinstraße</div>
-                            <div>Bad Dürkheim</div>
-                            <div>Germersheim</div>
-                            <div>Landau in der Pfalz</div>
-                            <div>Schifferstadt</div>
-                            <div>Mutterstadt</div>
-                            <div>und Umgebung</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-section">
-                    <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal)); padding: 3rem; border-radius: 15px; text-align: center;">
-                        <h3 style="margin-bottom: 2rem; color: white;">Kostenlose Beratung vereinbaren</h3>
-                        <p style="margin-bottom: 2rem; color: white; opacity: 0.9;">
-                            Lassen Sie sich unverbindlich beraten! Wir erstellen Ihnen gerne einen 
-                            kostenlosen Kostenvoranschlag für Ihr Projekt.
-                        </p>
-                        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
-                            <h4 style="color: white; margin-bottom: 1rem;">Was Sie erwartet:</h4>
-                            <ul style="list-style: none; color: white; text-align: left;">
-                                <li style="margin: 0.5rem 0;">✓ Kostenlose Vor-Ort-Beratung</li>
-                                <li style="margin: 0.5rem 0;">✓ Detaillierte Bedarfsanalyse</li>
-                                <li style="margin: 0.5rem 0;">✓ Transparenter Kostenvoranschlag</li>
-                                <li style="margin: 0.5rem 0;">✓ Förderberatung inklusive</li>
-                                <li style="margin: 0.5rem 0;">✓ Individuelle Lösungskonzepte</li>
-                            </ul>
-                        </div>
-                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                            <a href="tel:+4962112345678" style="background: #ffd700; color: #333; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Jetzt anrufen</a>
-                            <a href="mailto:info@leo-therm.de" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid white;">E-Mail senden</a>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
-                        <h4 style="color: white; margin-bottom: 1rem; text-align: center;">Zertifizierungen & Mitgliedschaften</h4>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; color: white;">
-                            <div>✓ Handwerkskammer Pfalz</div>
-                            <div>✓ ZVSHK Mitglied</div>
-                            <div>✓ VDI Mitglied</div>
-                            <div>✓ DVGW zertifiziert</div>
-                            <div>✓ F-Gase Sachkunde</div>
-                            <div>✓ Fachbetrieb WHG</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                   <div class="service-area">
+                       <h3>Unser Einzugsgebiet</h3>
+                       <p style="margin-bottom: 1rem;">Wir sind für Sie tätig in:</p>
+                       <div class="service-cities">
+                           <div>Ludwigshafen am Rhein</div>
+                           <div>Mannheim</div>
+                           <div>Speyer</div>
+                           <div>Worms</div>
+                           <div>Frankenthal</div>
+                           <div>Neustadt/Weinstraße</div>
+                           <div>Bad Dürkheim</div>
+                           <div>Germersheim</div>
+                           <div>Landau in der Pfalz</div>
+                           <div>Schifferstadt</div>
+                           <div>Mutterstadt</div>
+                           <div>und Umgebung</div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="contact-form-section">
+                   <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal)); padding: 3rem; border-radius: 15px; text-align: center;">
+                       <h3 style="margin-bottom: 2rem; color: white;">Kostenlose Beratung vereinbaren</h3>
+                       <p style="margin-bottom: 2rem; color: white; opacity: 0.9;">
+                           Lassen Sie sich unverbindlich beraten! Wir erstellen Ihnen gerne einen 
+                           kostenlosen Kostenvoranschlag für Ihr Projekt.
+                       </p>
+                       <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                           <h4 style="color: white; margin-bottom: 1rem;">Was Sie erwartet:</h4>
+                           <ul style="list-style: none; color: white; text-align: left;">
+                               <li style="margin: 0.5rem 0;">✓ Kostenlose Vor-Ort-Beratung</li>
+                               <li style="margin: 0.5rem 0;">✓ Detaillierte Bedarfsanalyse</li>
+                               <li style="margin: 0.5rem 0;">✓ Transparenter Kostenvoranschlag</li>
+                               <li style="margin: 0.5rem 0;">✓ Förderberatung inklusive</li>
+                               <li style="margin: 0.5rem 0;">✓ Individuelle Lösungskonzepte</li>
+                           </ul>
+                       </div>
+                       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                           <a href="tel:+4962112345678" style="background: #ffd700; color: #333; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Jetzt anrufen</a>
+                           <a href="mailto:info@leo-therm.de" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid white;">E-Mail senden</a>
+                       </div>
+                   </div>
+                   
+                   <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+                       <h4 style="color: white; margin-bottom: 1rem; text-align: center;">Zertifizierungen & Mitgliedschaften</h4>
+                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; color: white;">
+                           <div>✓ Handwerkskammer Pfalz</div>
+                           <div>✓ ZVSHK Mitglied</div>
+                           <div>✓ VDI Mitglied</div>
+                           <div>✓ DVGW zertifiziert</div>
+                           <div>✓ F-Gase Sachkunde</div>
+                           <div>✓ Fachbetrieb WHG</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Leo Therm Klimatechnik. Alle Rechte vorbehalten. | 
-            <a href="#datenschutz">Datenschutz</a> | 
-            <a href="#impressum">Impressum</a> | 
-            <a href="#agb">AGB</a></p>
-        </div>
-    </footer>
+   <footer class="footer">
+       <div class="container">
+           <p>&copy; 2025 Leo Therm Klimatechnik. Alle Rechte vorbehalten. | 
+           <a href="#datenschutz">Datenschutz</a> | 
+           <a href="#impressum">Impressum</a> | 
+           <a href="#agb">AGB</a></p>
+       </div>
+   </footer>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            // Update scroll indicator
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollIndicator.style.width = scrollPercent + '%';
-        });
+   <script>
+       // Header scroll effect
+       window.addEventListener('scroll', () => {
+           const header = document.getElementById('header');
+           const scrollIndicator = document.querySelector('.scroll-indicator');
+           
+           if (window.scrollY > 100) {
+               header.classList.add('scrolled');
+           } else {
+               header.classList.remove('scrolled');
+           }
+           
+           // Update scroll indicator
+           const scrollTop = window.pageYOffset;
+           const docHeight = document.body.scrollHeight - window.innerHeight;
+           const scrollPercent = (scrollTop / docHeight) * 100;
+           scrollIndicator.style.width = scrollPercent + '%';
+       });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+       // Smooth scrolling for navigation links
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               const target = document.querySelector(this.getAttribute('href'));
+               if (target) {
+                   target.scrollIntoView({
+                       behavior: 'smooth',
+                       block: 'start'
+                   });
+               }
+           });
+       });
 
-        // Enhanced heating cost calculator
-        function calculateHeatingCosts() {
-            const livingSpace = parseFloat(document.getElementById('living-space').value);
-            const heatingType = document.getElementById('heating-type').value;
-            const insulation = document.getElementById('insulation').value;
-            const age = document.getElementById('age').value;
-            const resultDiv = document.getElementById('result');
-            
-            if (!livingSpace || !heatingType || !insulation || !age) {
-                resultDiv.classList.remove('show');
-                return;
-            }
-            
-            // Base consumption per m² (kWh/year) based on insulation
-            const baseConsumption = {
-                poor: 160,
-                average: 120,
-                good: 80,
-                excellent: 40
-            };
-            
-            // Age efficiency factors
-            const ageFactors = {
-                new: 1.0,
-                medium: 1.1,
-                old: 1.25,
-                'very-old': 1.4
-            };
-            
-            // Energy prices (€ per kWh) - 2025 estimates
-            const energyPrices = {
-                gas: 0.12,
-                'gas-condensing': 0.11,
-                oil: 0.10,
-                'heat-pump': 0.28,
-                pellets: 0.08,
-                electric: 0.35,
-                district: 0.09
-            };
-            
-            // Modern heating efficiency comparison
-            const modernEfficiency = {
-                gas: 0.11,
-                'gas-condensing': 0.10,
-                oil: 0.09,
-                'heat-pump': 0.25,
-                pellets: 0.07,
-                electric: 0.30,
-                district: 0.08
-            };
-            
-            const consumption = livingSpace * baseConsumption[insulation] * ageFactors[age];
-            const currentCosts = consumption * energyPrices[heatingType];
-            const modernCosts = livingSpace * baseConsumption[insulation] * modernEfficiency[heatingType];
-            const annualSavings = currentCosts - modernCosts;
-            
-            // Heating type names in German
-            const heatingNames = {
-                gas: 'Gasheizung (alt)',
-                'gas-condensing': 'Gas-Brennwertkessel',
-                oil: 'Ölheizung',
-                'heat-pump': 'Wärmepumpe',
-                pellets: 'Pelletheizung',
-                electric: 'Elektroheizung',
-                district: 'Fernwärme'
-            };
-            
-            resultDiv.innerHTML = `
-                <h3>Ihre jährlichen Heizkosten</h3>
-                <div class="result-value">
-                    ${Math.round(currentCosts).toLocaleString('de-DE')} €
-                </div>
-                <div class="result-details">
-                    <strong>Ihre Anlage:</strong> ${heatingNames[heatingType]}<br>
-                    <strong>Wohnfläche:</strong> ${livingSpace} m²<br>
-                    <strong>Verbrauch:</strong> ca. ${Math.round(consumption).toLocaleString('de-DE')} kWh/Jahr
-                </div>
-                ${annualSavings > 100 ? `
-                <div class="savings-info">
-                    <h4>💡 Einsparpotenzial erkannt!</h4>
-                    <p>Mit einer modernen Heizungsanlage könnten Sie bis zu <strong>${Math.round(annualSavings)} € pro Jahr</strong> sparen!</p>
-                    <p>Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">
-                        <strong>Lassen Sie sich kostenlos beraten!</strong> Wir zeigen Ihnen, welche moderne Heizungstechnik für Ihr Zuhause optimal ist.
-                    </p>
-                </div>
-                ` : ''}
-                <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.8;">
-                    * Richtwerte basierend auf aktuellen Energiepreisen. Für eine genaue Berechnung und individuelle Beratung kontaktieren Sie uns!
-                </p>
-            `;
-            
-            resultDiv.classList.add('show');
-        }
-        
-        // Add event listeners to calculator inputs
-        document.getElementById('living-space').addEventListener('input', calculateHeatingCosts);
-        document.getElementById('heating-type').addEventListener('change', calculateHeatingCosts);
-        document.getElementById('insulation').addEventListener('change', calculateHeatingCosts);
-        document.getElementById('age').addEventListener('change', calculateHeatingCosts);
+       // Enhanced heating cost calculator
+       function calculateHeatingCosts() {
+           const livingSpace = parseFloat(document.getElementById('living-space').value);
+           const heatingType = document.getElementById('heating-type').value;
+           const insulation = document.getElementById('insulation').value;
+           const age = document.getElementById('age').value;
+           const resultDiv = document.getElementById('result');
+           
+           if (!livingSpace || !heatingType || !insulation || !age) {
+               resultDiv.classList.remove('show');
+               return;
+           }
+           
+           // Base consumption per m² (kWh/year) based on insulation
+           const baseConsumption = {
+               poor: 160,
+               average: 120,
+               good: 80,
+               excellent: 40
+           };
+           
+           // Age efficiency factors
+           const ageFactors = {
+               new: 1.0,
+               medium: 1.1,
+               old: 1.25,
+               'very-old': 1.4
+           };
+           
+           // Energy prices (€ per kWh) - 2025 estimates
+           const energyPrices = {
+               gas: 0.12,
+               'gas-condensing': 0.11,
+               oil: 0.10,
+               'heat-pump': 0.28,
+               pellets: 0.08,
+               electric: 0.35,
+               district: 0.09
+           };
+           
+           // Modern heating efficiency comparison
+           const modernEfficiency = {
+               gas: 0.11,
+               'gas-condensing': 0.10,
+               oil: 0.09,
+               'heat-pump': 0.25,
+               pellets: 0.07,
+               electric: 0.30,
+               district: 0.08
+           };
+           
+           const consumption = livingSpace * baseConsumption[insulation] * ageFactors[age];
+           const currentCosts = consumption * energyPrices[heatingType];
+           const modernCosts = livingSpace * baseConsumption[insulation] * modernEfficiency[heatingType];
+           const annualSavings = currentCosts - modernCosts;
+           
+           // Heating type names in German
+           const heatingNames = {
+               gas: 'Gasheizung (alt)',
+               'gas-condensing': 'Gas-Brennwertkessel',
+               oil: 'Ölheizung',
+               'heat-pump': 'Wärmepumpe',
+               pellets: 'Pelletheizung',
+               electric: 'Elektroheizung',
+               district: 'Fernwärme'
+           };
+           
+           resultDiv.innerHTML = `
+               <h3>Ihre jährlichen Heizkosten</h3>
+               <div class="result-value">
+                   ${Math.round(currentCosts).toLocaleString('de-DE')} €
+               </div>
+               <div class="result-details">
+                   <strong>Ihre Anlage:</strong> ${heatingNames[heatingType]}<br>
+                   <strong>Wohnfläche:</strong> ${livingSpace} m²<br>
+                   <strong>Verbrauch:</strong> ca. ${Math.round(consumption).toLocaleString('de-DE')} kWh/Jahr
+               </div>
+               ${annualSavings > 100 ? `
+               <div class="savings-info">
+                   <h4>💡 Einsparpotenzial erkannt!</h4>
+<p>Mit einer modernen Heizungsanlage könnten Sie bis zu <strong>${Math.round(annualSavings)} € pro Jahr</strong> sparen!</p>
+                   <p>Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
+                   <p style="margin-top: 1rem; font-size: 0.9rem;">
+                       <strong>Lassen Sie sich kostenlos beraten!</strong> Wir zeigen Ihnen, welche moderne Heizungstechnik für Ihr Zuhause optimal ist.
+                   </p>
+               </div>
+               ` : ''}
+               <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.8;">
+                   * Richtwerte basierend auf aktuellen Energiepreisen. Für eine genaue Berechnung und individuelle Beratung kontaktieren Sie uns!
+               </p>
+           `;
+           
+           resultDiv.classList.add('show');
+       }
+       
+       // Add event listeners to calculator inputs
+       document.getElementById('living-space').addEventListener('input', calculateHeatingCosts);
+       document.getElementById('heating-type').addEventListener('change', calculateHeatingCosts);
+       document.getElementById('insulation').addEventListener('change', calculateHeatingCosts);
+       document.getElementById('age').addEventListener('change', calculateHeatingCosts);
 
-        // Animate cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+       // Animate cards on scroll
+       const observerOptions = {
+           threshold: 0.1,
+           rootMargin: '0px 0px -50px 0px'
+       };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+       const observer = new IntersectionObserver((entries) => {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   entry.target.style.opacity = '1';
+                   entry.target.style.transform = 'translateY(0)';
+               }
+           });
+       }, observerOptions);
 
-        // Observe service cards and other animated elements
-        document.querySelectorAll('.service-card, .feature-card, .process-step').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
+       // Observe service cards and other animated elements
+       document.querySelectorAll('.service-card, .feature-badge, .process-step').forEach((card, index) => {
+           card.style.opacity = '0';
+           card.style.transform = 'translateY(30px)';
+           card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+           observer.observe(card);
+       });
 
-        // Counter animation for stats
-        function animateCounter(element, start, end, duration) {
-            let current = start;
-            const increment = end > start ? 1 : -1;
-            const stepTime = Math.abs(Math.floor(duration / (end - start)));
-            
-            const timer = setInterval(() => {
-                current += increment;
-                element.textContent = current + (element.dataset.suffix || '');
-                
-                if (current === end) {
-                    clearInterval(timer);
-                }
-            }, stepTime);
-        }
+       // Counter animation for stats
+       function animateCounter(element, start, end, duration) {
+           let current = start;
+           const increment = end > start ? 1 : -1;
+           const stepTime = Math.abs(Math.floor(duration / (end - start)));
+           
+           const timer = setInterval(() => {
+               current += increment;
+               element.textContent = current + (element.dataset.suffix || '');
+               
+               if (current === end) {
+                   clearInterval(timer);
+               }
+           }, stepTime);
+       }
 
-        // Animate stats when they come into view
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const numbers = entry.target.querySelectorAll('.stat-number');
-                    numbers.forEach(num => {
-                        const text = num.textContent;
-                        const value = parseInt(text.replace(/\D/g, ''));
-                        if (value && !num.dataset.animated) {
-                            num.dataset.animated = 'true';
-                            num.dataset.suffix = text.replace(/\d/g, '');
-                            animateCounter(num, 0, value, 2000);
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
+       // Animate stats when they come into view
+       const statsObserver = new IntersectionObserver((entries) => {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   const numbers = entry.target.querySelectorAll('.stat-number');
+                   numbers.forEach(num => {
+                       const text = num.textContent;
+                       const value = parseInt(text.replace(/\D/g, ''));
+                       if (value && !num.dataset.animated) {
+                           num.dataset.animated = 'true';
+                           num.dataset.suffix = text.replace(/\d/g, '');
+                           animateCounter(num, 0, value, 2000);
+                       }
+                   });
+               }
+           });
+       }, { threshold: 0.5 });
 
-        document.querySelectorAll('.stats-grid').forEach(grid => {
-            statsObserver.observe(grid);
-        });
+       document.querySelectorAll('.stats-grid').forEach(grid => {
+           statsObserver.observe(grid);
+       });
 
-        // Mobile menu toggle (for future mobile menu implementation)
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('mobile-active');
-        }
+       // Mobile menu toggle (for future mobile menu implementation)
+       function toggleMobileMenu() {
+           const navMenu = document.querySelector('.nav-menu');
+           navMenu.classList.toggle('mobile-active');
+       }
 
-        // Add click-to-call tracking
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                // Here you could add analytics tracking
-                console.log('Phone call initiated:', this.href);
-            });
-        });
+       // Add click-to-call tracking
+       document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+           link.addEventListener('click', function() {
+               // Here you could add analytics tracking
+               console.log('Phone call initiated:', this.href);
+           });
+       });
 
-        // Add smooth reveal animation for hero content
-        window.addEventListener('load', () => {
-            document.querySelector('.hero-content').style.opacity = '1';
-        });
+       // Add smooth reveal animation for hero content
+       window.addEventListener('load', () => {
+           document.querySelector('.hero-content').style.opacity = '1';
+       });
 
-        // Performance optimization: Lazy load images when implemented
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
+       // Performance optimization: Lazy load images when implemented
+       if ('IntersectionObserver' in window) {
+           const imageObserver = new IntersectionObserver((entries, observer) => {
+               entries.forEach(entry => {
+                   if (entry.isIntersecting) {
+                       const img = entry.target;
+                       img.src = img.dataset.src;
+                       img.classList.remove('lazy');
+                       imageObserver.unobserve(img);
+                   }
+               });
+           });
 
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    </script>
+           document.querySelectorAll('img[data-src]').forEach(img => {
+               imageObserver.observe(img);
+           });
+       }
+   </script>
 </body>
 </html>
