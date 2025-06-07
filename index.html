@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Therm Klimatechnik - Ihr Meisterbetrieb für Heizung, Sanitär, Solar, Klima & Lüftung</title>
+    <meta name="description" content="Leo Therm Klimatechnik - Meisterbetrieb für Heizung, Sanitär, Solar, Klima und Lüftungstechnik in Ludwigshafen. 24h Notdienst, Beratung, Installation und Wartung.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #5a7db5;
+            --primary-teal: #4a9b8e;
+            --primary-green: #2d8659;
+            --light-gray: #f8f9fa;
+            --dark-gray: #2c3e50;
+            --accent-purple: #8e6ba8;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --border-color: #e0e0e0;
+            --success-green: #28a745;
+            --warning-orange: #ff8c00;
+            --error-red: #dc3545;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-gray);
+        }
+
+        .contact-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(90, 125, 181, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(90, 125, 181, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: var(--dark-gray);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-button-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* Key Features */
+        .key-features {
+            background: var(--white);
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-banner {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(90, 125, 181, 0.2);
+        }
+
+        .features-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .features-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .features-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .features-text p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .feature-badge-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-badge h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-badge p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .service-description {
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: bold;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+
+        .why-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+        }
+
+        .why-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-medium);
+        }
+
+        .why-visual {
+            background: linear-gradient(135deg, var(--light-gray), white);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .stat-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .advantages li {
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--light-gray);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .advantages li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .advantage-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .advantage-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-medium);
+        }
+
+        /* Energy Calculator */
+        .calculator {
+            background: var(--light-gray);
+            padding: 100px 0;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .calculator h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+        }
+
+        .calculator-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-medium);
+            font-size: 1.1rem;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+        }
+
+        .result {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .result-details {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        .savings-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .process-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .process-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--light-gray);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal));
+            transform: translateY(-50%);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .process-step p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        /* Emergency Service */
+        .emergency {
+            background: linear-gradient(135deg, var(--error-red), #c82333);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .emergency h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .emergency p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .emergency-phone {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem 0;
+            color: #ffd700;
+        }
+
+        .emergency-phone a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .emergency-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .emergency-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--dark-gray);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary-teal);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .contact-details p {
+            margin: 0.3rem 0;
+            opacity: 0.9;
+        }
+
+        .contact-details a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .service-area {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .service-area h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-cities {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: var(--primary-teal);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .input-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-cities {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency-features {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency-phone {
+                font-size: 2rem;
+            }
+
+            .advantages {
+                grid-template-columns: 1fr;
+            }
+
+            .process-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .process-arrow {
+                display: none;
+            }
+
+            .process-vertical-arrow {
+                height: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">[LOGO]</div>
+                <span>Leo Therm</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#why-choose">Über uns</a></li>
+                    <li><a href="#calculator">Rechner</a></li>
+                    <li><a href="#process">Ablauf</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+4962112345678" class="contact-button">Jetzt anrufen</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Leo Therm Klimatechnik</h1>
+            <p class="tagline">Alles für die Wärme und Komfort in deinem Zuhause</p>
+            <p class="subtitle">Ihr Meisterbetrieb für Heizung, Sanitär, Solar, Klima und Lüftungstechnik in Ludwigshafen und Umgebung</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Kostenlose Beratung</a>
+                <a href="tel:+491701234567" class="cta-button cta-button-secondary">24h Notdienst</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="key-features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">[ICON]</div>
+                <h3>Meisterbetrieb</h3>
+                <p>Qualifizierte Fachkräfte mit langjähriger Erfahrung und kontinuierlicher Weiterbildung</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">[ICON]</div>
+                <h3>24h Service</h3>
+                <p>Rund um die Uhr erreichbar für Notfälle - auch an Wochenenden und Feiertagen</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">[ICON]</div>
+                <h3>Festpreise</h3>
+                <p>Transparente Kostenvoranschläge ohne versteckte Kosten - Sie wissen vorher, was es kostet</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">[ICON]</div>
+                <h3>Garantie</h3>
+                <p>Umfassende Gewährleistung auf alle Arbeiten und verwendeten Materialien</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <p class="section-subtitle">Von der Planung bis zur Wartung - wir sind Ihr kompetenter Partner für alle Bereiche der Haustechnik</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Heizungstechnik</h3>
+                    </div>
+                    <p class="service-description">Moderne, energieeffiziente Heizungssysteme für optimalen Wohnkomfort und niedrige Betriebskosten.</p>
+                    <ul class="service-features">
+                        <li>Gasheizungen (Brennwert & Hybrid)</li>
+                        <li>Wärmepumpen (Luft, Wasser, Erdwärme)</li>
+                        <li>Pellet- und Biomasseanlagen</li>
+                        <li>Fußbodenheizung & Heizkörper</li>
+                        <li>Heizungswartung & Reparatur</li>
+                        <li>Hydraulischer Abgleich</li>
+                        <li>Smart Home Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Sanitärtechnik</h3>
+                    </div>
+                    <p class="service-description">Professionelle Sanitärinstallationen und Badsanierungen nach neuesten Standards und individuellen Wünschen.</p>
+                    <ul class="service-features">
+                        <li>Komplette Badsanierung</li>
+                        <li>Wasserinstallation (Kalt & Warm)</li>
+                        <li>Abwassertechnik & Entwässerung</li>
+                        <li>Sanitärobjekte & Armaturen</li>
+                        <li>Rohrreinigung & Rohrsanierung</li>
+                        <li>Trinkwasseranalyse</li>
+                        <li>Barrierefreie Bäder</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Solartechnik</h3>
+                    </div>
+                    <p class="service-description">Nutzen Sie die kostenlose Sonnenenergie für Warmwasser und Heizungsunterstützung.</p>
+                    <ul class="service-features">
+                        <li>Solarthermie für Warmwasser</li>
+                        <li>Kombianlagen für Heizung & Warmwasser</li>
+                        <li>Photovoltaik-Anlagen</li>
+                        <li>Stromspeicher & Batteriesysteme</li>
+                        <li>Energiemanagement-Systeme</li>
+                        <li>Wartung & Überwachung</li>
+                        <li>Förderberatung & Antragstellung</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Klimatechnik</h3>
+                    </div>
+                    <p class="service-description">Angenehmes Raumklima das ganze Jahr über mit modernen, energieeffizienten Klimasystemen.</p>
+                    <ul class="service-features">
+                        <li>Split-Klimaanlagen (Single & Multi)</li>
+                        <li>VRV/VRF-Systeme</li>
+                        <li>Kaltwassersätze & Chiller</li>
+                        <li>Klimaserviceeinheiten</li>
+                        <li>Kältemittel-Service</li>
+                        <li>Wartung nach F-Gase-Verordnung</li>
+                        <li>Energieeffizienz-Optimierung</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Lüftungstechnik</h3>
+                    </div>
+                    <p class="service-description">Gesunde Raumluft und Energieeinsparung durch kontrollierte Wohnraumlüftung.</p>
+                    <ul class="service-features">
+                        <li>Zentrale Lüftungsanlagen</li>
+                        <li>Dezentrale Lüftungsgeräte</li>
+                        <li>Wärmerückgewinnung</li>
+                        <li>Luftfilter & Luftreinigung</li>
+                        <li>Entfeuchtung & Befeuchtung</li>
+                        <li>Luftkanalsysteme</li>
+                        <li>Brandschutzklappen</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">[ICON]</div>
+                        <h3>Service & Wartung</h3>
+                    </div>
+                    <p class="service-description">Regelmäßige Wartung und schnelle Reparaturen für langlebige und effiziente Anlagen.</p>
+                    <ul class="service-features">
+                        <li>Jährliche Heizungswartung</li>
+                        <li>Störungsbeseitigung & Reparatur</li>
+                        <li>Anlageninspektion & TÜV</li>
+                        <li>Effizienz-Checks</li>
+                        <li>Ersatzteilservice</li>
+                        <li>Fernwartung & Monitoring</li>
+                        <li>Wartungsverträge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <h2>Warum Leo Therm?</h2>
+                    <p>
+                        Als neu gegründeter Meisterbetrieb verbinden wir frischen Enthusiasmus mit fundiertem 
+                        Fachwissen. Unser Team bringt langjährige Branchenerfahrung mit und setzt konsequent 
+                        auf modernste Technologien und nachhaltige Lösungen.
+                    </p>
+                    <p>
+                        Wir nehmen uns Zeit für Sie und Ihre individuellen Bedürfnisse. Durch unsere schlanken 
+                        Strukturen können wir flexibel auf Ihre Wünsche eingehen und bieten dabei stets 
+                        ein ausgezeichnetes Preis-Leistungs-Verhältnis.
+                    </p>
+                </div>
+                <div class="why-visual">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Meisterqualität</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Notdienst</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">0€</div>
+                            <div class="stat-label">Anfahrtskosten*</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5J</div>
+                            <div class="stat-label">Garantie</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="advantages">
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Meisterqualifikation & moderne Technik</h4>
+                        <p>Neueste Technologien kombiniert mit handwerklicher Meisterexpertise für optimale Ergebnisse</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Persönliche Betreuung</h4>
+                        <p>Direkter Kontakt zum Meister - individuelle Lösungen ohne Umwege über große Konzernstrukturen</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Faire Preise & Transparenz</h4>
+                        <p>Ehrliche Beratung, transparente Kostenvoranschläge und ein ausgezeichnetes Preis-Leistungs-Verhältnis</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Flexibilität & schnelle Reaktion</h4>
+                        <p>Kurze Entscheidungswege ermöglichen schnelle Terminvereinbarung und flexible Lösungen</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Umfassende Garantie</h4>
+                        <p>5 Jahre Garantie auf alle Arbeiten und langfristige Betreuung für Ihre Anlagen</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage-icon">[ICON]</div>
+                    <div class="advantage-content">
+                        <h4>Nachhaltige Energielösungen</h4>
+                        <p>Spezialisierung auf energieeffiziente und umweltfreundliche Heiztechnologien der Zukunft</p>
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="calculator-container">
+                <h2>Heizkosten-Rechner</h2>
+                <p class="calculator-subtitle">
+                    Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
+                </p>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="living-space">Wohnfläche (m²)</label>
+                        <input type="number" id="living-space" placeholder="z.B. 120" min="1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="heating-type">Aktuelle Heizungsart</label>
+                        <select id="heating-type">
+                            <option value="">Bitte wählen...</option>
+                            <option value="gas">Gasheizung (alt)</option>
+                            <option value="gas-condensing">Gasbrennwert</option>
+                            <option value="oil">Ölheizung</option>
+                            <option value="heat-pump">Wärmepumpe</option>
+                            <option value="pellets">Pelletheizung</option>
+                            <option value="electric">Elektroheizung</option>
+                            <option value="district">Fernwärme</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="insulation">Dämmstandard</label>
+                        <select id="insulation">
+                            <option value="">Bitte wählen...</option>
+                            <option value="poor">Schlecht (Altbau ungedämmt)</option>
+                            <option value="average">Durchschnittlich</option>
+                            <option value="good">Gut (Neubau/saniert)</option>
+                            <option value="excellent">Sehr gut (Passivhaus)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="age">Baujahr der Heizung</label>
+                        <select id="age">
+                            <option value="">Bitte wählen...</option>
+                            <option value="new">Unter 5 Jahre</option>
+                            <option value="medium">5-15 Jahre</option>
+                            <option value="old">15-25 Jahre</option>
+                            <option value="very-old">Über 25 Jahre</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">Unser Projektablauf</h2>
+            <p class="section-subtitle">So läuft Ihr Projekt bei uns ab - transparent, professionell und termingerecht</p>
+            
+            <div class="process-container">
+                <div class="process-row">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h4>Erstberatung</h4>
+                        <p>Kostenlose Beratung vor Ort zur Analyse Ihrer Bedürfnisse und Bestandsaufnahme</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h4>Planung & Angebot</h4>
+                        <p>Detaillierte Planung und transparenter Kostenvoranschlag mit allen Leistungen</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h4>Terminplanung</h4>
+                        <p>Gemeinsame Abstimmung der Termine und Koordination aller Gewerke</p>
+                    </div>
+                </div>
+                
+                <div class="process-row">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h4>Installation</h4>
+                        <p>Fachgerechte Installation durch qualifizierte Monteure mit hochwertigen Materialien</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <h4>Inbetriebnahme</h4>
+                        <p>Professionelle Inbetriebnahme, Einweisung und Dokumentation</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <h4>Service</h4>
+                        <p>Regelmäßige Wartung und langfristiger Service für optimale Funktion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="emergency">
+        <div class="container">
+            <h2>24-Stunden-Notdienst</h2>
+            <p>Heizungsausfall? Wasserschaden? Wir sind rund um die Uhr für Sie da!</p>
+            <div class="emergency-phone">
+                <a href="tel:+491701234567">+49 170 123 456 7</a>
+            </div>
+            <div class="emergency-features">
+                <div class="emergency-feature">
+                    <h4>Schnelle Hilfe</h4>
+                    <p>Durchschnittliche Anfahrtszeit unter 60 Minuten</p>
+                </div>
+                <div class="emergency-feature">
+                    <h4>Alle Gewerke</h4>
+                    <p>Heizung, Sanitär, Klima - kompletter Notfallservice</p>
+                </div>
+                <div class="emergency-feature">
+                    <h4>Faire Preise</h4>
+                    <p>Transparente Notdiensttarife ohne Überraschungen</p>
+                </div>
+                <div class="emergency-feature">
+                    <h4>Ersatzteillager</h4>
+                    <p>Häufig benötigte Ersatzteile direkt verfügbar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Kontakt & Beratung</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Leo Therm Klimatechnik</h3>
+                    <p style="margin-bottom: 2rem;">Ihr zuverlässiger Partner für alle Bereiche der Haustechnik</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">[ICON]</div>
+                        <div class="contact-details">
+                            <h4>Geschäftsadresse</h4>
+                            <p>Musterstraße 123<br>67063 Ludwigshafen am Rhein</p>
+                            <p>Gewerbegebiet Süd, Halle 5</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">[ICON]</div>
+                        <div class="contact-details">
+                            <h4>Kontakt</h4>
+                            <p>Tel: <a href="tel:+4962112345678">+49 621 123 456 78</a></p>
+                            <p>Notdienst: <a href="tel:+491701234567">+49 170 123 456 7</a></p>
+                            <p>Mail: <a href="mailto:info@leo-therm.de">info@leo-therm.de</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">[ICON]</div>
+                        <div class="contact-details">
+                            <h4>Öffnungszeiten</h4>
+                            <p>Montag - Freitag: 7:00 - 17:00 Uhr</p>
+                            <p>Samstag: 8:00 - 12:00 Uhr</p>
+                            <p>Notdienst: 24/7 verfügbar</p>
+                        </div>
+                    </div>
+
+                    <div class="service-area">
+                        <h3>Unser Einzugsgebiet</h3>
+                        <p style="margin-bottom: 1rem;">Wir sind für Sie tätig in:</p>
+                        <div class="service-cities">
+                            <div>Ludwigshafen am Rhein</div>
+                            <div>Mannheim</div>
+                            <div>Speyer</div>
+                            <div>Worms</div>
+                            <div>Frankenthal</div>
+                            <div>Neustadt/Weinstraße</div>
+                            <div>Bad Dürkheim</div>
+                            <div>Germersheim</div>
+                            <div>Landau in der Pfalz</div>
+                            <div>Schifferstadt</div>
+                            <div>Mutterstadt</div>
+                            <div>und Umgebung</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal)); padding: 3rem; border-radius: 15px; text-align: center;">
+                        <h3 style="margin-bottom: 2rem; color: white;">Kostenlose Beratung vereinbaren</h3>
+                        <p style="margin-bottom: 2rem; color: white; opacity: 0.9;">
+                            Lassen Sie sich unverbindlich beraten! Wir erstellen Ihnen gerne einen 
+                            kostenlosen Kostenvoranschlag für Ihr Projekt.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                            <h4 style="color: white; margin-bottom: 1rem;">Was Sie erwartet:</h4>
+                            <ul style="list-style: none; color: white; text-align: left;">
+                                <li style="margin: 0.5rem 0;">✓ Kostenlose Vor-Ort-Beratung</li>
+                                <li style="margin: 0.5rem 0;">✓ Detaillierte Bedarfsanalyse</li>
+                                <li style="margin: 0.5rem 0;">✓ Transparenter Kostenvoranschlag</li>
+                                <li style="margin: 0.5rem 0;">✓ Förderberatung inklusive</li>
+                                <li style="margin: 0.5rem 0;">✓ Individuelle Lösungskonzepte</li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="tel:+4962112345678" style="background: #ffd700; color: #333; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Jetzt anrufen</a>
+                            <a href="mailto:info@leo-therm.de" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid white;">E-Mail senden</a>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+                        <h4 style="color: white; margin-bottom: 1rem; text-align: center;">Zertifizierungen & Mitgliedschaften</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; color: white;">
+                            <div>✓ Handwerkskammer Pfalz</div>
+                            <div>✓ ZVSHK Mitglied</div>
+                            <div>✓ VDI Mitglied</div>
+                            <div>✓ DVGW zertifiziert</div>
+                            <div>✓ F-Gase Sachkunde</div>
+                            <div>✓ Fachbetrieb WHG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Leo Therm Klimatechnik. Alle Rechte vorbehalten. | 
+            <a href="#datenschutz">Datenschutz</a> | 
+            <a href="#impressum">Impressum</a> | 
+            <a href="#agb">AGB</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update scroll indicator
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollIndicator.style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced heating cost calculator
+        function calculateHeatingCosts() {
+            const livingSpace = parseFloat(document.getElementById('living-space').value);
+            const heatingType = document.getElementById('heating-type').value;
+            const insulation = document.getElementById('insulation').value;
+            const age = document.getElementById('age').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (!livingSpace || !heatingType || !insulation || !age) {
+                resultDiv.classList.remove('show');
+                return;
+            }
+            
+            // Base consumption per m² (kWh/year) based on insulation
+            const baseConsumption = {
+                poor: 160,
+                average: 120,
+                good: 80,
+                excellent: 40
+            };
+            
+            // Age efficiency factors
+            const ageFactors = {
+                new: 1.0,
+                medium: 1.1,
+                old: 1.25,
+                'very-old': 1.4
+            };
+            
+            // Energy prices (€ per kWh) - 2025 estimates
+            const energyPrices = {
+                gas: 0.12,
+                'gas-condensing': 0.11,
+                oil: 0.10,
+                'heat-pump': 0.28,
+                pellets: 0.08,
+                electric: 0.35,
+                district: 0.09
+            };
+            
+            // Modern heating efficiency comparison
+            const modernEfficiency = {
+                gas: 0.11,
+                'gas-condensing': 0.10,
+                oil: 0.09,
+                'heat-pump': 0.25,
+                pellets: 0.07,
+                electric: 0.30,
+                district: 0.08
+            };
+            
+            const consumption = livingSpace * baseConsumption[insulation] * ageFactors[age];
+            const currentCosts = consumption * energyPrices[heatingType];
+            const modernCosts = livingSpace * baseConsumption[insulation] * modernEfficiency[heatingType];
+            const annualSavings = currentCosts - modernCosts;
+            
+            // Heating type names in German
+            const heatingNames = {
+                gas: 'Gasheizung (alt)',
+                'gas-condensing': 'Gas-Brennwertkessel',
+                oil: 'Ölheizung',
+                'heat-pump': 'Wärmepumpe',
+                pellets: 'Pelletheizung',
+                electric: 'Elektroheizung',
+                district: 'Fernwärme'
+            };
+            
+            resultDiv.innerHTML = `
+                <h3>Ihre jährlichen Heizkosten</h3>
+                <div class="result-value">
+                    ${Math.round(currentCosts).toLocaleString('de-DE')} €
+                </div>
+                <div class="result-details">
+                    <strong>Ihre Anlage:</strong> ${heatingNames[heatingType]}<br>
+                    <strong>Wohnfläche:</strong> ${livingSpace} m²<br>
+                    <strong>Verbrauch:</strong> ca. ${Math.round(consumption).toLocaleString('de-DE')} kWh/Jahr
+                </div>
+                ${annualSavings > 100 ? `
+                <div class="savings-info">
+                    <h4>💡 Einsparpotenzial erkannt!</h4>
+                    <p>Mit einer modernen Heizungsanlage könnten Sie bis zu <strong>${Math.round(annualSavings)} € pro Jahr</strong> sparen!</p>
+                    <p>Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>Lassen Sie sich kostenlos beraten!</strong> Wir zeigen Ihnen, welche moderne Heizungstechnik für Ihr Zuhause optimal ist.
+                    </p>
+                </div>
+                ` : ''}
+                <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.8;">
+                    * Richtwerte basierend auf aktuellen Energiepreisen. Für eine genaue Berechnung und individuelle Beratung kontaktieren Sie uns!
+                </p>
+            `;
+            
+            resultDiv.classList.add('show');
+        }
+        
+        // Add event listeners to calculator inputs
+        document.getElementById('living-space').addEventListener('input', calculateHeatingCosts);
+        document.getElementById('heating-type').addEventListener('change', calculateHeatingCosts);
+        document.getElementById('insulation').addEventListener('change', calculateHeatingCosts);
+        document.getElementById('age').addEventListener('change', calculateHeatingCosts);
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and other animated elements
+        document.querySelectorAll('.service-card, .feature-card, .process-step').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, start, end, duration) {
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / (end - start)));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                element.textContent = current + (element.dataset.suffix || '');
+                
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent;
+                        const value = parseInt(text.replace(/\D/g, ''));
+                        if (value && !num.dataset.animated) {
+                            num.dataset.animated = 'true';
+                            num.dataset.suffix = text.replace(/\d/g, '');
+                            animateCounter(num, 0, value, 2000);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-grid').forEach(grid => {
+            statsObserver.observe(grid);
+        });
+
+        // Mobile menu toggle (for future mobile menu implementation)
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('mobile-active');
+        }
+
+        // Add click-to-call tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Here you could add analytics tracking
+                console.log('Phone call initiated:', this.href);
+            });
+        });
+
+        // Add smooth reveal animation for hero content
+        window.addEventListener('load', () => {
+            document.querySelector('.hero-content').style.opacity = '1';
+        });
+
+        // Performance optimization: Lazy load images when implemented
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
