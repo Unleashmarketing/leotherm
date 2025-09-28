@@ -168,7 +168,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 200px 0 170px;
+            padding: 200px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -242,176 +242,87 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Text Section */
-        .text-section {
-            background: var(--white);
-            padding: 100px 0;
-            position: relative;
-            z-index: 10;
+        .cta-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
         }
 
-        .text-container {
+        /* New Expert Section */
+        .expert-section {
+            background: var(--white);
+            padding: 100px 0;
+            margin-top: 0;
+        }
+
+        .expert-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6rem;
-            align-items: flex-start;
+            align-items: center;
         }
 
-        .text-left h2 {
-            font-size: 3rem;
-            font-weight: 600;
+        .expert-text h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
             color: var(--text-dark);
             line-height: 1.2;
-            margin-bottom: 0;
+            font-weight: 300;
         }
 
-        .animated-word {
+        .expert-text .animated-word {
             display: inline-block;
             position: relative;
+            color: var(--primary-blue);
+            font-weight: 600;
         }
 
-        .word-option {
+        .expert-text .word-list {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .word-option.active {
-            opacity: 1;
-            position: relative;
-        }
-
-        .text-left p {
-            font-size: 1.1rem;
-            color: var(--text-medium);
-            line-height: 1.6;
-            margin-top: 2rem;
-        }
-
-        .text-right {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .text-right p {
-            font-size: 1rem;
-            color: var(--text-medium);
-            line-height: 1.6;
-            margin: 0;
-        }
-        .key-features {
-            background: var(--white);
-            padding: 60px 0;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .features-banner {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal), var(--primary-green));
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(90, 125, 181, 0.2);
-            max-width: 900px;
             width: 100%;
         }
 
-        .features-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-            opacity: 0.3;
+        .expert-text .word-list span {
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: wordRotate 8s infinite;
         }
 
-        .features-content {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+        .expert-text .word-list span:nth-child(1) { animation-delay: 0s; }
+        .expert-text .word-list span:nth-child(2) { animation-delay: 1.6s; }
+        .expert-text .word-list span:nth-child(3) { animation-delay: 3.2s; }
+        .expert-text .word-list span:nth-child(4) { animation-delay: 4.8s; }
+        .expert-text .word-list span:nth-child(5) { animation-delay: 6.4s; }
+
+        @keyframes wordRotate {
+            0%, 16% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            20%, 100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
         }
 
-        .features-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            width: 300px;
-        }
-
-        .features-text p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .feature-badge {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-badge:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-5px);
-        }
-
-        .feature-badge-icon {
-            width: 50px;
-            height: 50px;
-            background: white;
-            color: var(--primary-blue);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .feature-badge h3 {
+        .expert-content {
+            color: var(--text-medium);
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            line-height: 1.8;
         }
 
-        .feature-badge p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin: 0;
-            line-height: 1.4;
+        .expert-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .expert-content .highlight {
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         /* Services Section */
@@ -1032,18 +943,14 @@
                 align-items: center;
             }
 
-            .features-content {
+            .expert-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
 
-            .features-text h2 {
-                font-size: 2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
+            .expert-text h2 {
+                font-size: 2.5rem;
             }
 
             .input-grid {
@@ -1122,36 +1029,26 @@
         </div>
     </section>
 
-    <section class="key-features">
-        <div class="features-container">
-            <div class="features-banner">
-                <div class="features-content">
-                    <div class="features-text">
-                       <h2>Ihr Experte für Haustechnik</h2>
-                       <p>Professionelle Lösungen für Heizung, Sanitär, Solar, Klima und Lüftung - alles aus einer Hand von Ihrem lokalen Meisterbetrieb.</p>
-                   </div>
-                   <div class="features-grid">
-                       <div class="feature-badge">
-                           <h3>Meisterbetrieb</h3>
-                           <p>Qualifizierte Fachkräfte mit langjähriger Erfahrung und kontinuierlicher Weiterbildung</p>
-                       </div>
-                       <div class="feature-badge">
-                           <h3>24h Service</h3>
-                           <p>Rund um die Uhr erreichbar für Notfälle - auch an Wochenenden und Feiertagen</p>
-                       </div>
-                       <div class="feature-badge">
-                           <h3>Festpreise</h3>
-                           <p>Transparente Angebote ohne versteckte Kosten - Sie wissen vorher, was es kostet</p>
-                       </div>
-                       <div class="feature-badge">
-                           <h3>Garantie</h3>
-                           <p>Umfassende Gewährleistung auf alle Arbeiten und verwendeten Materialien</p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
+    <section class="expert-section">
+        <div class="expert-container">
+            <div class="expert-text">
+                <h2>Wir sind Experten für <span class="animated-word">
+                    <span class="word-list">
+                        <span>Heizung</span>
+                        <span>Sanitär</span>
+                        <span>Solar</span>
+                        <span>Klimatechnik</span>
+                        <span>Wärmepumpen</span>
+                    </span>
+                </span>.</h2>
+            </div>
+            <div class="expert-content">
+                <p>In der heutigen Marketingwelt gibt es kein <span class="highlight">"zu viel Social Proof"</span>. Fühle dich frei, alle deine Abzeichen, Erfolge und Bewertungen anzuzeigen. Dadurch stichst du hervor und wirkst vertrauenswürdiger als deine Konkurrenz.</p>
+                
+                <p>Onepage ist als Produktivitätstool konzipiert. Erkunde bei der Arbeit mit der Software alle ihre Funktionen, wie z. B. die Schnellsuchleiste, Vorlagen und Ordner, Projektübertragungen, die Möglichkeit, Quiz-Trichter zu erstellen und mehr. Wenn du jemals auf einen Fehler stoßen solltest oder eine Verbesserung vorschlagen möchtest, zögere nicht, unser Support-Team unter support@onepage.io oder per Live-Chat zu kontaktieren.</p>
+            </div>
+        </div>
+    </section>
 
    <section class="services" id="services">
        <div class="container">
@@ -1798,30 +1695,7 @@
        // Add smooth reveal animation for hero content
        window.addEventListener('load', () => {
            document.querySelector('.hero-content').style.opacity = '1';
-           
-           // Start word animation
-           startWordAnimation();
        });
-
-       // Word animation function
-       function startWordAnimation() {
-           const wordOptions = document.querySelectorAll('.word-option');
-           let currentIndex = 0;
-           
-           function cycleWords() {
-               // Remove active class from current word
-               wordOptions[currentIndex].classList.remove('active');
-               
-               // Move to next word (loop back to start if at end)
-               currentIndex = (currentIndex + 1) % wordOptions.length;
-               
-               // Add active class to new word
-               wordOptions[currentIndex].classList.add('active');
-           }
-           
-           // Change word every 2.5 seconds
-           setInterval(cycleWords, 2500);
-       }
 
        // Performance optimization: Lazy load images when implemented
        if ('IntersectionObserver' in window) {
