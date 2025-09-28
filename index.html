@@ -242,12 +242,69 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .cta-button-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+        /* Text Section */
+        .text-section {
+            background: var(--white);
+            padding: 100px 0;
+            position: relative;
+            z-index: 10;
         }
 
-        /* Key Features */
+        .text-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: flex-start;
+        }
+
+        .text-left h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+
+        .animated-word {
+            display: inline-block;
+            position: relative;
+        }
+
+        .word-option {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .word-option.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .text-left p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-top: 2rem;
+        }
+
+        .text-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .text-right p {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin: 0;
+        }
         .key-features {
             background: var(--white);
             padding: 60px 0;
@@ -1056,7 +1113,7 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Wir sind bestrebt, dir dabei zu helfen,<br>die besten <u>Ergebnisse</u> zu erzielen</h1>
+            <h1>Wir sind bestrebt, die besten <u>Ergebnisse</u> zu erzielen</h1>
             <p class="tagline">Diese Vorlage ist eine gute Wahl für lokale oder allgemeine Unternehmen, die eine moderne Website mit speziellen Zielseiten für ihre Dienstleistungen oder Produkte erstellen möchten.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="cta-button">Zur kostenlosen Beratung</a>
@@ -1741,7 +1798,30 @@
        // Add smooth reveal animation for hero content
        window.addEventListener('load', () => {
            document.querySelector('.hero-content').style.opacity = '1';
+           
+           // Start word animation
+           startWordAnimation();
        });
+
+       // Word animation function
+       function startWordAnimation() {
+           const wordOptions = document.querySelectorAll('.word-option');
+           let currentIndex = 0;
+           
+           function cycleWords() {
+               // Remove active class from current word
+               wordOptions[currentIndex].classList.remove('active');
+               
+               // Move to next word (loop back to start if at end)
+               currentIndex = (currentIndex + 1) % wordOptions.length;
+               
+               // Add active class to new word
+               wordOptions[currentIndex].classList.add('active');
+           }
+           
+           // Change word every 2.5 seconds
+           setInterval(cycleWords, 2500);
+       }
 
        // Performance optimization: Lazy load images when implemented
        if ('IntersectionObserver' in window) {
