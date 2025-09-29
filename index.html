@@ -438,10 +438,10 @@
 
         .service-features li {
             color: var(--text-medium);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+            padding-left: 1rem;
             position: relative;
         }
 
@@ -449,9 +449,9 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 0.6rem;
-            width: 4px;
-            height: 4px;
+            top: 0.5rem;
+            width: 3px;
+            height: 3px;
             background: var(--primary-blue);
             border-radius: 50%;
         }
@@ -574,24 +574,29 @@
 
         /* Energy Calculator */
         .calculator {
-            background: var(--light-gray);
+            background: var(--white);
             padding: 100px 0;
         }
 
         .calculator-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .calculator-card {
             background: white;
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         .calculator h2 {
             text-align: center;
             margin-bottom: 1rem;
-            color: var(--primary-blue);
+            color: var(--text-dark);
             font-size: 2.2rem;
+            font-weight: 600;
         }
 
         .calculator-subtitle {
@@ -599,6 +604,9 @@
             margin-bottom: 3rem;
             color: var(--text-medium);
             font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .input-grid {
@@ -615,127 +623,174 @@
         .input-group label {
             display: block;
             margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-dark);
+            font-size: 0.95rem;
         }
 
         .input-group input, .input-group select {
             width: 100%;
-            padding: 15px;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
+            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             font-size: 1rem;
+            background: var(--white);
             transition: all 0.3s ease;
+            color: var(--text-dark);
         }
 
         .input-group input:focus, .input-group select:focus {
             outline: none;
-            border-color: var(--primary-teal);
-            box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(90, 125, 181, 0.1);
         }
 
         .result {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            color: white;
-            border-radius: 15px;
+            background: var(--light-gray);
+            border-radius: 16px;
             text-align: center;
             margin-top: 2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease;
+            border: 1px solid var(--border-color);
         }
 
         .result.show {
             opacity: 1;
             transform: translateY(0);
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .result h3 {
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .result-value {
             font-size: 2.5rem;
             font-weight: bold;
             margin: 1rem 0;
+            color: var(--primary-blue);
         }
 
         .result-details {
             font-size: 0.95rem;
-            opacity: 0.9;
+            color: var(--text-medium);
             margin-top: 1rem;
+            line-height: 1.5;
         }
 
         .savings-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            backdrop-filter: blur(10px);
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .savings-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .savings-info p {
+            color: var(--text-medium);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
         }
 
         /* Process Section */
         .process {
             padding: 100px 0;
-            background: var(--white);
+            background: var(--light-gray);
         }
 
         .process-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             max-width: 1200px;
-            margin: 3rem auto 0;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .process-row {
+        .process-steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-            width: 100%;
-            max-width: 900px;
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .process-step {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: var(--light-gray);
-            border-radius: 15px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
 
         .process-step:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
+        .process-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .process-step:nth-child(1) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80');
+        }
+
+        .process-step:nth-child(2) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80');
+        }
+
+        .process-step:nth-child(3) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2376&q=80');
+        }
+
+        .process-step:nth-child(4) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .process-step:nth-child(5) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
+        }
+
+        .process-step:nth-child(6) .process-image {
+            background-image: url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80');
+        }
+
+        .process-content {
+            padding: 1.8rem 1.5rem;
+        }
+
+        .process-step-number {
+            color: var(--text-medium);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .process-step h4 {
-            margin-bottom: 1rem;
-            color: var(--primary-blue);
             font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
         }
 
         .process-step p {
             color: var(--text-medium);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
@@ -975,9 +1030,16 @@
                 grid-template-columns: 1fr;
             }
 
-            .process-row {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .process-steps {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -1040,10 +1102,9 @@
            
            <div class="services-grid">
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Heizungstechnik</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Heizungstechnik</h3>
                        <p class="service-description">Moderne, energieeffiziente Heizungssysteme für optimalen Wohnkomfort und niedrige Betriebskosten.</p>
                        <ul class="service-features">
                            <li>Gasheizungen (Brennwert & Hybrid)</li>
@@ -1058,10 +1119,9 @@
                </div>
                
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Sanitärtechnik</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Sanitärtechnik</h3>
                        <p class="service-description">Professionelle Sanitärinstallationen und Badsanierungen nach neuesten Standards und individuellen Wünschen.</p>
                        <ul class="service-features">
                            <li>Komplette Badsanierung</li>
@@ -1076,10 +1136,9 @@
                </div>
 
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Solartechnik</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Solartechnik</h3>
                        <p class="service-description">Nutzen Sie die kostenlose Sonnenenergie für Warmwasser und Heizungsunterstützung.</p>
                        <ul class="service-features">
                            <li>Solarthermie für Warmwasser</li>
@@ -1094,10 +1153,9 @@
                </div>
 
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Klimatechnik</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Klimatechnik</h3>
                        <p class="service-description">Angenehmes Raumklima das ganze Jahr über mit modernen, energieeffizienten Klimasystemen.</p>
                        <ul class="service-features">
                            <li>Split-Klimaanlagen (Single & Multi)</li>
@@ -1112,10 +1170,9 @@
                </div>
 
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Lüftungstechnik</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Lüftungstechnik</h3>
                        <p class="service-description">Gesunde Raumluft und Energieeinsparung durch kontrollierte Wohnraumlüftung.</p>
                        <ul class="service-features">
                            <li>Zentrale Lüftungsanlagen</li>
@@ -1130,10 +1187,9 @@
                </div>
 
                <div class="service-card">
-                   <div class="service-image">
-                       <h3 class="service-title">Service & Wartung</h3>
-                   </div>
+                   <div class="service-image"></div>
                    <div class="service-content">
+                       <h3 class="service-title">Service & Wartung</h3>
                        <p class="service-description">Regelmäßige Wartung und schnelle Reparaturen für langlebige und effiziente Anlagen.</p>
                        <ul class="service-features">
                            <li>Jährliche Heizungswartung</li>
@@ -1236,8 +1292,8 @@
    </section>
 
    <section class="calculator" id="calculator">
-       <div class="container">
-           <div class="calculator-container">
+       <div class="calculator-container">
+           <div class="calculator-card">
                <h2>Heizkosten-Rechner</h2>
                <p class="calculator-subtitle">
                    Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
@@ -1294,46 +1350,60 @@
    </section>
 
    <section class="process" id="process">
-       <div class="container">
+       <div class="process-container">
            <h2 class="section-title">Unser Projektablauf</h2>
            <p class="section-subtitle">So läuft Ihr Projekt bei uns ab - transparent, professionell und termingerecht</p>
            
-           <div class="process-container">
-               <div class="process-row">
-                   <div class="process-step">
-                       <div class="process-number">1</div>
+           <div class="process-steps">
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 1</div>
                        <h4>Erstberatung</h4>
                        <p>Kostenlose Beratung vor Ort zur Analyse Ihrer Bedürfnisse und Bestandsaufnahme</p>
                    </div>
-                   
-                   <div class="process-step">
-                       <div class="process-number">2</div>
+               </div>
+               
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 2</div>
                        <h4>Planung & Angebot</h4>
                        <p>Detaillierte Planung und transparenter Kostenvoranschlag mit allen Leistungen</p>
                    </div>
-                   
-                   <div class="process-step">
-                       <div class="process-number">3</div>
+               </div>
+               
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 3</div>
                        <h4>Terminplanung</h4>
                        <p>Gemeinsame Abstimmung der Termine und Koordination aller Gewerke</p>
                    </div>
                </div>
                
-               <div class="process-row">
-                   <div class="process-step">
-                       <div class="process-number">4</div>
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 4</div>
                        <h4>Installation</h4>
                        <p>Fachgerechte Installation durch qualifizierte Monteure mit hochwertigen Materialien</p>
                    </div>
-                   
-                   <div class="process-step">
-                       <div class="process-number">5</div>
+               </div>
+               
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 5</div>
                        <h4>Inbetriebnahme</h4>
                        <p>Professionelle Inbetriebnahme, Einweisung und Dokumentation</p>
                    </div>
-                   
-                   <div class="process-step">
-                       <div class="process-number">6</div>
+               </div>
+               
+               <div class="process-step">
+                   <div class="process-image"></div>
+                   <div class="process-content">
+                       <div class="process-step-number">Schritt 6</div>
                        <h4>Service</h4>
                        <p>Regelmäßige Wartung und langfristiger Service für optimale Funktion</p>
                    </div>
