@@ -1436,6 +1436,89 @@
        </div>
    </section>
 
+   <section class="faq" id="faq">
+       <div class="faq-container">
+           <h2 class="section-title">Häufig gestellte Fragen</h2>
+           <p class="faq-intro">
+               Es ist wichtig, deine Stärken hervorzuheben. Bieten wir potenziellen Kunden einen klaren Überblick darüber, was dich von der Konkurrenz unterscheidet.
+           </p>
+           
+           <div class="faq-list">
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Wie schnell können Sie einen Termin anbieten?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Für Notfälle sind wir 24/7 erreichbar und in der Regel innerhalb von 60 Minuten vor Ort. Für reguläre Termine bieten wir Ihnen meist schon innerhalb der nächsten 3-5 Werktage einen Termin an. Rufen Sie uns einfach an und wir finden gemeinsam einen passenden Zeitpunkt.
+                       </div>
+                   </div>
+               </div>
+
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Was kostet eine Heizungswartung?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Eine Standard-Heizungswartung für Ein- und Zweifamilienhäuser liegt bei ca. 150-250 €, abhängig von der Art und Größe der Anlage. Wir erstellen Ihnen gerne ein individuelles Angebot. Bei Abschluss eines Wartungsvertrags erhalten Sie attraktive Rabatte.
+                       </div>
+                   </div>
+               </div>
+
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Bieten Sie auch Förderberatung an?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Ja, wir beraten Sie umfassend zu allen verfügbaren Förderprogrammen (BAFA, KfW, etc.) und unterstützen Sie bei der Antragstellung. Gerade bei Wärmepumpen, Solarthermie und modernen Heizsystemen können Sie von attraktiven Zuschüssen bis zu 40% profitieren.
+                       </div>
+                   </div>
+               </div>
+
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Wie lange dauert der Austausch einer Heizung?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Der Austausch einer Gasheizung dauert in der Regel 2-3 Tage. Bei komplexeren Systemen wie Wärmepumpen kann die Installation 3-5 Tage in Anspruch nehmen. Wir planen alle Arbeitsschritte so, dass Sie möglichst wenig beeinträchtigt werden und Ihr Zuhause schnell wieder voll beheizt ist.
+                       </div>
+                   </div>
+               </div>
+
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Welche Garantie gibt es auf Ihre Arbeiten?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Wir gewähren 5 Jahre Garantie auf alle unsere Arbeiten und installierte Komponenten. Zusätzlich erhalten Sie die Herstellergarantie auf die verbauten Geräte. Als Meisterbetrieb stehen wir für höchste Qualität und Langlebigkeit.
+                       </div>
+                   </div>
+               </div>
+
+               <div class="faq-item">
+                   <button class="faq-question">
+                       <span>Arbeiten Sie auch mit Versicherungen zusammen?</span>
+                       <span class="faq-icon">⌄</span>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Ja, wir arbeiten regelmäßig mit Versicherungen zusammen, insbesondere bei Wasserschäden und Notfällen. Wir erstellen die notwendige Dokumentation und Kostenaufstellungen und kommunizieren direkt mit Ihrer Versicherung, um den Prozess für Sie so einfach wie möglich zu gestalten.
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
    <section class="contact" id="contact">
        <div class="container">
            <h2 class="section-title" style="color: white;">Kontakt & Beratung</h2>
@@ -1748,6 +1831,24 @@
        // Add smooth reveal animation for hero content
        window.addEventListener('load', () => {
            document.querySelector('.hero-content').style.opacity = '1';
+       });
+
+       // FAQ Accordion functionality
+       document.querySelectorAll('.faq-question').forEach(button => {
+           button.addEventListener('click', () => {
+               const faqItem = button.parentElement;
+               const isActive = faqItem.classList.contains('active');
+               
+               // Close all FAQ items
+               document.querySelectorAll('.faq-item').forEach(item => {
+                   item.classList.remove('active');
+               });
+               
+               // Open clicked item if it wasn't active
+               if (!isActive) {
+                   faqItem.classList.add('active');
+               }
+           });
        });
 
        // Performance optimization: Lazy load images when implemented
