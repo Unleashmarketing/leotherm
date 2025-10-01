@@ -889,120 +889,6 @@
             font-size: 0.95rem;
         }
 
-        /* FAQ Section */
-            padding: 100px 0;
-            background: var(--dark-gray);
-            color: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--primary-teal);
-        }
-
-        .contact-item {
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .contact-item-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            color: white;
-        }
-
-        .contact-details h4 {
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .contact-details p {
-            margin: 0.3rem 0;
-            opacity: 0.9;
-        }
-
-        .contact-details a {
-            color: var(--primary-teal);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        .info-boxes {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .info-box h4 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .service-cities {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-        }
-
-        .service-cities div {
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0.3rem 0;
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-        }
-
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0.3rem 0;
-        }
-
-        .cert-item::before {
-            content: '✓';
-            color: var(--primary-teal);
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
         /* Footer */
         .footer {
             background: #2c2c2c;
@@ -1197,11 +1083,6 @@
                 text-align: center;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -1212,14 +1093,6 @@
 
             .service-cities {
                 grid-template-columns: 1fr;
-            }
-
-            .emergency-features {
-                grid-template-columns: 1fr;
-            }
-
-            .emergency-phone {
-                font-size: 2rem;
             }
 
             .advantages {
@@ -1666,30 +1539,6 @@
        </div>
    </section>
 
-   <section class="emergency">
-       <div class="container">
-           <h2>24-Stunden-Notdienst</h2>
-           <p>Heizungsausfall? Wasserschaden? Wir sind rund um die Uhr für Sie da!</p>
-           <div class="emergency-phone">
-               <a href="tel:+491701234567">+49 170 123 456 7</a>
-           </div>
-           <div class="emergency-features">
-               <div class="emergency-feature">
-                   <h4>Schnelle Hilfe</h4>
-                   <p>Durchschnittliche Anfahrtszeit unter 60 Minuten in der Region Ludwigshafen</p>
-               </div>
-               <div class="emergency-feature">
-                   <h4>Kompletter Service</h4>
-                   <p>Heizung, Sanitär, Klima, Wartung - alle Gewerke aus einer Hand im Notfall</p>
-               </div>
-               <div class="emergency-feature">
-                   <h4>Transparente Preise</h4>
-                   <p>Faire Notdiensttarife ohne versteckte Kosten oder böse Überraschungen</p>
-               </div>
-           </div>
-       </div>
-   </section>
-
    <footer class="footer">
        <div class="footer-content">
            <div class="footer-column">
@@ -1720,7 +1569,7 @@
                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                    </svg>
                    <div class="footer-contact-info">
-                       <strong><a href="tel:+4962112345678">+49 621 123 456 78</a></strong>
+                       <strong><a href="tel:+4962112345678">+49 621 123 45678</a></strong>
                    </div>
                </div>
                
@@ -1934,7 +1783,7 @@
            });
        }, { threshold: 0.5 });
 
-       document.querySelectorAll('.stats-grid').forEach(grid => {
+       document.querySelectorAll('.why-stats').forEach(grid => {
            statsObserver.observe(grid);
        });
 
