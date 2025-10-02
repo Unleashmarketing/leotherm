@@ -260,7 +260,7 @@
 
         .cta-button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--brand-gradient);
             color: white;
             padding: 15px 30px;
             border-radius: 8px;
@@ -268,13 +268,13 @@
             font-weight: 500;
             font-size: 1rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: none;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
         }
 
         .cta-button-secondary {
@@ -321,7 +321,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 600;
-            min-width: 300px;
+            min-width: 350px;
             height: 1.2em;
             vertical-align: top;
         }
@@ -340,24 +340,32 @@
             left: 0;
             width: 100%;
             opacity: 0;
-            transform: translateY(20px);
-            animation: wordRotate 10s infinite;
+            transform: translateY(30px);
+            animation: wordRotate 15s infinite;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .expert-text .word-list span:nth-child(1) { animation-delay: 0s; }
-        .expert-text .word-list span:nth-child(2) { animation-delay: 2s; }
-        .expert-text .word-list span:nth-child(3) { animation-delay: 4s; }
-        .expert-text .word-list span:nth-child(4) { animation-delay: 6s; }
-        .expert-text .word-list span:nth-child(5) { animation-delay: 8s; }
+        .expert-text .word-list span:nth-child(2) { animation-delay: 3s; }
+        .expert-text .word-list span:nth-child(3) { animation-delay: 6s; }
+        .expert-text .word-list span:nth-child(4) { animation-delay: 9s; }
+        .expert-text .word-list span:nth-child(5) { animation-delay: 12s; }
 
         @keyframes wordRotate {
-            0%, 18% {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            2%, 18% {
                 opacity: 1;
                 transform: translateY(0);
             }
             20%, 100% {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-30px);
             }
         }
 
@@ -393,6 +401,20 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--dark-gray);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--brand-gradient);
+            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -582,7 +604,10 @@
         .stat-box .stat-number {
             font-size: 4rem;
             font-weight: 700;
-            color: var(--text-dark);
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
             line-height: 1;
         }
@@ -809,6 +834,10 @@
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .process-step h4 {
