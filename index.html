@@ -615,6 +615,339 @@
             padding: 100px 0;
         }
 
+        /* Price Calculator */
+        .price-calculator {
+            background: var(--light-gray);
+            padding: 100px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--brand-gradient);
+            width: 20%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .price-calc-steps {
+            min-height: 400px;
+            position: relative;
+        }
+
+        .calc-step {
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .calc-step.active {
+            display: block;
+        }
+
+        .calc-step h3 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .option-card, .checkbox-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .option-card input, .checkbox-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .option-content, .checkbox-content {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover .option-content,
+        .checkbox-card:hover .checkbox-content {
+            border-color: var(--gradient-teal);
+            box-shadow: 0 4px 12px rgba(75, 168, 159, 0.2);
+        }
+
+        .option-card input:checked ~ .option-content,
+        .checkbox-card input:checked ~ .checkbox-content {
+            border-color: var(--gradient-teal);
+            background: rgba(75, 168, 159, 0.05);
+            box-shadow: 0 4px 12px rgba(75, 168, 159, 0.2);
+        }
+
+        .option-title, .checkbox-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .option-desc {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .input-group-calc {
+            margin-bottom: 2rem;
+        }
+
+        .input-group-calc label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .input-group-calc input {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--white);
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+
+        .input-group-calc input:focus {
+            outline: none;
+            border-color: var(--gradient-teal);
+            box-shadow: 0 0 0 3px rgba(75, 168, 159, 0.1);
+        }
+
+        .calc-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .calc-btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .calc-btn-back {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .calc-btn-back:hover {
+            background: var(--light-gray);
+        }
+
+        .calc-btn-next {
+            background: var(--brand-gradient);
+            color: white;
+            margin-left: auto;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
+        }
+
+        .calc-btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
+        }
+
+        .calc-btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .calc-btn-reset {
+            background: var(--brand-gradient);
+            color: white;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
+        }
+
+        .calc-btn-reset:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
+        }
+
+        .price-calc-results {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .price-calc-results h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .results-intro {
+            text-align: center;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .package-featured {
+            border: 2px solid var(--gradient-teal);
+            box-shadow: 0 8px 30px rgba(75, 168, 159, 0.2);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--brand-gradient);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .package-header h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.75rem 0;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gradient-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .package-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--brand-gradient);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
+        }
+
+        .package-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
+        }
+
+        .results-note {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gradient-teal);
+            margin: 2rem 0;
+        }
+
+        .results-note p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
         .calculator-container {
             max-width: 900px;
             margin: 0 auto;
@@ -1397,6 +1730,255 @@
        </div>
    </section>
 
+   <section class="price-calculator" id="price-calculator">
+       <div class="calculator-container">
+           <div class="calculator-card">
+               <h2>Projekt-Kalkulator</h2>
+               <p class="calculator-subtitle">
+                   Erhalten Sie in wenigen Schritten eine erste Kosteneinschätzung für Ihr Sanitär-Projekt
+               </p>
+               
+               <div class="progress-bar">
+                   <div class="progress-fill" id="progress-fill"></div>
+               </div>
+               <div class="progress-text" id="progress-text">Schritt 1 von 5</div>
+               
+               <div class="price-calc-steps">
+                   <!-- Step 1: Project Type -->
+                   <div class="calc-step active" data-step="1">
+                       <h3>Was möchten Sie realisieren?</h3>
+                       <div class="option-grid">
+                           <label class="option-card">
+                               <input type="radio" name="project-type" value="bathroom">
+                               <div class="option-content">
+                                   <div class="option-title">Badsanierung</div>
+                                   <div class="option-desc">Komplette Badrenovierung</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="project-type" value="guest-wc">
+                               <div class="option-content">
+                                   <div class="option-title">Gäste-WC</div>
+                                   <div class="option-desc">Neues oder saniertes WC</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="project-type" value="installation">
+                               <div class="option-content">
+                                   <div class="option-title">Sanitärinstallation</div>
+                                   <div class="option-desc">Neue Leitungen/Anschlüsse</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="project-type" value="repair">
+                               <div class="option-content">
+                                   <div class="option-title">Reparatur</div>
+                                   <div class="option-desc">Einzelne Arbeiten</div>
+                               </div>
+                           </label>
+                       </div>
+                   </div>
+                   
+                   <!-- Step 2: Room Size -->
+                   <div class="calc-step" data-step="2">
+                       <h3>Wie groß ist der Raum?</h3>
+                       <div class="input-group-calc">
+                           <label for="room-size">Raumgröße in m²</label>
+                           <input type="number" id="room-size" placeholder="z.B. 8" min="1" max="100">
+                       </div>
+                       <div class="option-grid">
+                           <label class="option-card">
+                               <input type="radio" name="room-size-preset" value="small" data-size="5">
+                               <div class="option-content">
+                                   <div class="option-title">Klein</div>
+                                   <div class="option-desc">bis 5 m²</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="room-size-preset" value="medium" data-size="8">
+                               <div class="option-content">
+                                   <div class="option-title">Mittel</div>
+                                   <div class="option-desc">5-10 m²</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="room-size-preset" value="large" data-size="15">
+                               <div class="option-content">
+                                   <div class="option-title">Groß</div>
+                                   <div class="option-desc">über 10 m²</div>
+                               </div>
+                           </label>
+                       </div>
+                   </div>
+                   
+                   <!-- Step 3: Features -->
+                   <div class="calc-step" data-step="3">
+                       <h3>Welche Elemente sollen installiert werden?</h3>
+                       <div class="checkbox-grid">
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="shower" data-cost="2500">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">Dusche</div>
+                               </div>
+                           </label>
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="bathtub" data-cost="3500">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">Badewanne</div>
+                               </div>
+                           </label>
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="toilet" data-cost="800">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">WC</div>
+                               </div>
+                           </label>
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="sink" data-cost="600">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">Waschbecken</div>
+                               </div>
+                           </label>
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="tiles" data-cost="1500">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">Fliesen</div>
+                               </div>
+                           </label>
+                           <label class="checkbox-card">
+                               <input type="checkbox" name="features" value="heating" data-cost="1200">
+                               <div class="checkbox-content">
+                                   <div class="checkbox-title">Fußbodenheizung</div>
+                               </div>
+                           </label>
+                       </div>
+                   </div>
+                   
+                   <!-- Step 4: Quality Level -->
+                   <div class="calc-step" data-step="4">
+                       <h3>Welche Qualitätsstufe wünschen Sie?</h3>
+                       <div class="option-grid">
+                           <label class="option-card">
+                               <input type="radio" name="quality" value="standard" data-factor="1.0">
+                               <div class="option-content">
+                                   <div class="option-title">Standard</div>
+                                   <div class="option-desc">Solide Qualität</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="quality" value="premium" data-factor="1.4">
+                               <div class="option-content">
+                                   <div class="option-title">Premium</div>
+                                   <div class="option-desc">Hochwertige Materialien</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="quality" value="luxury" data-factor="1.8">
+                               <div class="option-content">
+                                   <div class="option-title">Luxus</div>
+                                   <div class="option-desc">Exklusive Ausstattung</div>
+                               </div>
+                           </label>
+                       </div>
+                   </div>
+                   
+                   <!-- Step 5: Timeline -->
+                   <div class="calc-step" data-step="5">
+                       <h3>Wann soll das Projekt starten?</h3>
+                       <div class="option-grid">
+                           <label class="option-card">
+                               <input type="radio" name="timeline" value="urgent" data-factor="1.15">
+                               <div class="option-content">
+                                   <div class="option-title">Dringend</div>
+                                   <div class="option-desc">Innerhalb 2 Wochen</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="timeline" value="soon" data-factor="1.0">
+                               <div class="option-content">
+                                   <div class="option-title">Bald</div>
+                                   <div class="option-desc">1-2 Monate</div>
+                               </div>
+                           </label>
+                           <label class="option-card">
+                               <input type="radio" name="timeline" value="flexible" data-factor="0.95">
+                               <div class="option-content">
+                                   <div class="option-title">Flexibel</div>
+                                   <div class="option-desc">Über 2 Monate</div>
+                               </div>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="calc-navigation">
+                   <button class="calc-btn calc-btn-back" id="calc-back" style="display: none;">Zurück</button>
+                   <button class="calc-btn calc-btn-next" id="calc-next">Weiter</button>
+               </div>
+               
+               <!-- Results -->
+               <div class="price-calc-results" id="price-results" style="display: none;">
+                   <h3>Ihre Kosteneinschätzung</h3>
+                   <p class="results-intro">Basierend auf Ihren Angaben bieten wir Ihnen drei Pakete an:</p>
+                   
+                   <div class="packages-grid">
+                       <div class="package-card">
+                           <div class="package-header">
+                               <h4>Basis</h4>
+                               <div class="package-price" id="price-basic">5.000 €</div>
+                           </div>
+                           <ul class="package-features">
+                               <li>Standardmaterialien</li>
+                               <li>Grundausstattung</li>
+                               <li>2 Jahre Garantie</li>
+                               <li>Fachgerechte Installation</li>
+                           </ul>
+                           <a href="#contact" class="package-btn">Anfragen</a>
+                       </div>
+                       
+                       <div class="package-card package-featured">
+                           <div class="package-badge">Empfohlen</div>
+                           <div class="package-header">
+                               <h4>Komfort</h4>
+                               <div class="package-price" id="price-comfort">8.000 €</div>
+                           </div>
+                           <ul class="package-features">
+                               <li>Hochwertige Materialien</li>
+                               <li>Erweiterte Ausstattung</li>
+                               <li>5 Jahre Garantie</li>
+                               <li>Beratung & Planung inkl.</li>
+                               <li>Entsorgung Alt-Material</li>
+                           </ul>
+                           <a href="#contact" class="package-btn">Anfragen</a>
+                       </div>
+                       
+                       <div class="package-card">
+                           <div class="package-header">
+                               <h4>Premium</h4>
+                               <div class="package-price" id="price-premium">12.000 €</div>
+                           </div>
+                           <ul class="package-features">
+                               <li>Premium-Materialien</li>
+                               <li>Luxus-Ausstattung</li>
+                               <li>10 Jahre Garantie</li>
+                               <li>3D-Planung & Design</li>
+                               <li>Rundum-Service</li>
+                               <li>Express-Durchführung</li>
+                           </ul>
+                           <a href="#contact" class="package-btn">Anfragen</a>
+                       </div>
+                   </div>
+                   
+                   <div class="results-note">
+                       <p><strong>Hinweis:</strong> Dies ist eine unverbindliche Schätzung. Für ein genaues Angebot vereinbaren Sie bitte einen kostenlosen Beratungstermin.</p>
+                   </div>
+                   
+                   <button class="calc-btn calc-btn-reset" id="calc-reset">Neue Berechnung starten</button>
+               </div>
+           </div>
+       </div>
+   </section>
+
    <section class="calculator" id="calculator">
        <div class="calculator-container">
            <div class="calculator-card">
@@ -1879,6 +2461,176 @@
 
        // FAQ Accordion
        document.querySelectorAll('.faq-question').forEach(question => {
+           question.addEventListener('click', function() {
+               const faqItem = this.parentElement;
+               const isActive = faqItem.classList.contains('active');
+               
+               // Close all FAQ items
+               document.querySelectorAll('.faq-item').forEach(item => {
+                   item.classList.remove('active');
+               });
+               
+               // Open clicked item if it wasn't active
+               if (!isActive) {
+                   faqItem.classList.add('active');
+               }
+           });
+       });
+
+       // Price Calculator
+       let currentStep = 1;
+       const totalSteps = 5;
+       const calcData = {};
+
+       function updateProgress() {
+           const progress = (currentStep / totalSteps) * 100;
+           document.getElementById('progress-fill').style.width = progress + '%';
+           document.getElementById('progress-text').textContent = `Schritt ${currentStep} von ${totalSteps}`;
+       }
+
+       function showStep(step) {
+           document.querySelectorAll('.calc-step').forEach(s => s.classList.remove('active'));
+           document.querySelector(`.calc-step[data-step="${step}"]`).classList.add('active');
+           
+           document.getElementById('calc-back').style.display = step === 1 ? 'none' : 'block';
+           document.getElementById('calc-next').textContent = step === totalSteps ? 'Berechnen' : 'Weiter';
+           
+           updateProgress();
+       }
+
+       function canProceed(step) {
+           switch(step) {
+               case 1:
+                   return document.querySelector('input[name="project-type"]:checked') !== null;
+               case 2:
+                   return document.getElementById('room-size').value || 
+                          document.querySelector('input[name="room-size-preset"]:checked') !== null;
+               case 3:
+                   return document.querySelectorAll('input[name="features"]:checked').length > 0;
+               case 4:
+                   return document.querySelector('input[name="quality"]:checked') !== null;
+               case 5:
+                   return document.querySelector('input[name="timeline"]:checked') !== null;
+               default:
+                   return false;
+           }
+       }
+
+       function calculatePrice() {
+           let basePrice = 5000;
+           
+           // Get room size
+           const roomSizeInput = document.getElementById('room-size').value;
+           const roomSizePreset = document.querySelector('input[name="room-size-preset"]:checked');
+           const roomSize = roomSizeInput || (roomSizePreset ? roomSizePreset.dataset.size : 8);
+           
+           // Add feature costs
+           let featureCost = 0;
+           document.querySelectorAll('input[name="features"]:checked').forEach(cb => {
+               featureCost += parseInt(cb.dataset.cost);
+           });
+           
+           // Get quality factor
+           const quality = document.querySelector('input[name="quality"]:checked');
+           const qualityFactor = quality ? parseFloat(quality.dataset.factor) : 1.0;
+           
+           // Get timeline factor
+           const timeline = document.querySelector('input[name="timeline"]:checked');
+           const timelineFactor = timeline ? parseFloat(timeline.dataset.factor) : 1.0;
+           
+           // Calculate total
+           const total = (basePrice + featureCost + (roomSize * 200)) * qualityFactor * timelineFactor;
+           
+           return {
+               basic: Math.round(total * 0.8),
+               comfort: Math.round(total),
+               premium: Math.round(total * 1.5)
+           };
+       }
+
+       function showResults() {
+           const prices = calculatePrice();
+           
+           document.getElementById('price-basic').textContent = prices.basic.toLocaleString('de-DE') + ' €';
+           document.getElementById('price-comfort').textContent = prices.comfort.toLocaleString('de-DE') + ' €';
+           document.getElementById('price-premium').textContent = prices.premium.toLocaleString('de-DE') + ' €';
+           
+           document.querySelector('.price-calc-steps').style.display = 'none';
+           document.querySelector('.calc-navigation').style.display = 'none';
+           document.querySelector('.progress-bar').style.display = 'none';
+           document.querySelector('.progress-text').style.display = 'none';
+           document.getElementById('price-results').style.display = 'block';
+       }
+
+       // Next button
+       document.getElementById('calc-next').addEventListener('click', function() {
+           if (currentStep < totalSteps) {
+               if (canProceed(currentStep)) {
+                   currentStep++;
+                   showStep(currentStep);
+               }
+           } else if (currentStep === totalSteps && canProceed(currentStep)) {
+               showResults();
+           }
+       });
+
+       // Back button
+       document.getElementById('calc-back').addEventListener('click', function() {
+           if (currentStep > 1) {
+               currentStep--;
+               showStep(currentStep);
+           }
+       });
+
+       // Reset button
+       document.getElementById('calc-reset').addEventListener('click', function() {
+           currentStep = 1;
+           document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+           document.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
+           document.getElementById('room-size').value = '';
+           
+           document.querySelector('.price-calc-steps').style.display = 'block';
+           document.querySelector('.calc-navigation').style.display = 'flex';
+           document.querySelector('.progress-bar').style.display = 'block';
+           document.querySelector('.progress-text').style.display = 'block';
+           document.getElementById('price-results').style.display = 'none';
+           
+           showStep(1);
+       });
+
+       // Room size preset to input sync
+       document.querySelectorAll('input[name="room-size-preset"]').forEach(radio => {
+           radio.addEventListener('change', function() {
+               if (this.checked) {
+                   document.getElementById('room-size').value = this.dataset.size;
+               }
+           });
+       });
+
+       // Room size input clears preset
+       document.getElementById('room-size').addEventListener('input', function() {
+           if (this.value) {
+               document.querySelectorAll('input[name="room-size-preset"]').forEach(r => r.checked = false);
+           }
+       });
+
+       // Performance optimization: Lazy load images when implemented
+       if ('IntersectionObserver' in window) {
+           const imageObserver = new IntersectionObserver((entries, observer) => {
+               entries.forEach(entry => {
+                   if (entry.isIntersecting) {
+                       const img = entry.target;
+                       img.src = img.dataset.src;
+                       img.classList.remove('lazy');
+                       imageObserver.unobserve(img);
+                   }
+               });
+           });
+
+           document.querySelectorAll('img[data-src]').forEach(img => {
+               imageObserver.observe(img);
+           });
+       }question').forEach(question => {
            question.addEventListener('click', function() {
                const faqItem = this.parentElement;
                const isActive = faqItem.classList.contains('active');
