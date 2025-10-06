@@ -2615,19 +2615,4 @@
        }
    </script>
 </body>
-</html>entry.isIntersecting) {
-                       const img = entry.target;
-                       img.src = img.dataset.src;
-                       img.classList.remove('lazy');
-                       imageObserver.unobserve(img);
-                   }
-               });
-           });
-
-           document.querySelectorAll('img[data-src]').forEach(img => {
-               imageObserver.observe(img);
-           });
-       }
-   </script>
-</body>
 </html>
