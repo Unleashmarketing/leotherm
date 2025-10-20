@@ -1715,268 +1715,218 @@
    </section>
 
    <section class="calculator" id="calculator">
-       <div class="calculator-container">
-           <div class="calculator-card">
-               <h2>Sanitär Preis-Kalkulator</h2>
-               <p class="calculator-subtitle">
-                   Erhalten Sie in wenigen Schritten eine erste Preiseinschätzung für Ihr Sanitärprojekt
-               </p>
-               
-               <div class="progress-bar">
-                   <div class="progress-step active" data-step="1">1</div>
-                   <div class="progress-line"></div>
-                   <div class="progress-step" data-step="2">2</div>
-                   <div class="progress-line"></div>
-                   <div class="progress-step" data-step="3">3</div>
-                   <div class="progress-line"></div>
-                   <div class="progress-step" data-step="4">4</div>
-                   <div class="progress-line"></div>
-                   <div class="progress-step" data-step="5">5</div>
-               </div>
+    <div class="calculator-container">
+        <div class="calculator-card">
+            <h2>Sanitär Preis-Kalkulator</h2>
+            <p class="calculator-subtitle">
+                Erhalten Sie in wenigen Schritten eine erste Preiseinschätzung für Ihr Sanitärprojekt
+            </p>
+            
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">4</div>
+            </div>
 
-               <div class="step-indicator">
-                   <span class="current-step">Schritt 1</span> von 5
-               </div>
+            <div class="step-indicator">
+                <span class="current-step">Schritt 1</span> von 4
+            </div>
 
-               <div class="calculator-steps">
-                   <!-- Step 1: Art der Arbeiten -->
-                   <div class="calc-step active" data-step="1">
-                       <h3>Welche Arbeiten sind geplant?</h3>
-                       <div class="option-grid">
-                           <label class="option-card">
-                               <input type="checkbox" name="work-type" value="bad-sanierung">
-                               <div class="option-content">
-                                   <div class="option-title">Badsanierung</div>
-                                   <div class="option-desc">Komplettsanierung eines Badezimmers</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="work-type" value="gaste-wc">
-                               <div class="option-content">
-                                   <div class="option-title">Gäste-WC</div>
-                                   <div class="option-desc">Installation oder Sanierung</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="work-type" value="rohrleitungen">
-                               <div class="option-content">
-                                   <div class="option-title">Rohrleitungen</div>
-                                   <div class="option-desc">Neuinstallation oder Sanierung</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="work-type" value="heizung">
-                               <div class="option-content">
-                                   <div class="option-title">Heizungsanbindung</div>
-                                   <div class="option-desc">Heizkörper oder Fußbodenheizung</div>
-                               </div>
-                           </label>
-                       </div>
-                   </div>
+            <div class="calculator-steps">
+                <!-- Step 1: Projekt-Art -->
+                <div class="calc-step active" data-step="1">
+                    <h3>Was ist geplant?</h3>
+                    <div class="option-grid-single">
+                        <label class="option-card-large">
+                            <input type="radio" name="project-type" value="complete">
+                            <div class="option-content">
+                                <div class="option-title">Komplettes Bad</div>
+                                <div class="option-desc">Vollständige Badsanierung mit allen Gewerken</div>
+                            </div>
+                        </label>
+                        <label class="option-card-large">
+                            <input type="radio" name="project-type" value="partial">
+                            <div class="option-content">
+                                <div class="option-title">Teilsanierung / Objektsanierung</div>
+                                <div class="option-desc">Einzelne Bereiche oder Objekte erneuern</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-                   <!-- Step 2: Fläche -->
-                   <div class="calc-step" data-step="2">
-                       <h3>Wie groß ist die Gesamtfläche?</h3>
-                       <div class="input-group">
-                           <label for="area-size">Quadratmeter (m²)</label>
-                           <input type="number" id="area-size" placeholder="z.B. 8" min="1">
-                       </div>
-                       <div class="option-grid">
-                           <label class="option-card">
-                               <input type="radio" name="area-range" value="small">
-                               <div class="option-content">
-                                   <div class="option-title">Klein (bis 5 m²)</div>
-                                   <div class="option-desc">Gäste-WC</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="radio" name="area-range" value="medium">
-                               <div class="option-content">
-                                   <div class="option-title">Mittel (5-12 m²)</div>
-                                   <div class="option-desc">Standard-Bad</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="radio" name="area-range" value="large">
-                               <div class="option-content">
-                                   <div class="option-title">Groß (über 12 m²)</div>
-                                   <div class="option-desc">Großes Bad / Wellness</div>
-                               </div>
-                           </label>
-                       </div>
-                   </div>
+                <!-- Step 2: Fläche -->
+                <div class="calc-step" data-step="2">
+                    <h3>Wie groß ist die Gesamtfläche?</h3>
+                    <div class="input-group">
+                        <label for="area-size">Quadratmeter (m²)</label>
+                        <input type="number" id="area-size" placeholder="z.B. 8" min="1">
+                    </div>
+                    <div class="option-grid">
+                        <label class="option-card">
+                            <input type="radio" name="area-range" value="small">
+                            <div class="option-content">
+                                <div class="option-title">Klein (bis 5 m²)</div>
+                                <div class="option-desc">Gäste-WC</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="area-range" value="medium">
+                            <div class="option-content">
+                                <div class="option-title">Mittel (5-12 m²)</div>
+                                <div class="option-desc">Standard-Bad</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="area-range" value="large">
+                            <div class="option-content">
+                                <div class="option-title">Groß (über 12 m²)</div>
+                                <div class="option-desc">Großes Bad / Wellness</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-                   <!-- Step 3: Ausstattung -->
-                   <div class="calc-step" data-step="3">
-                       <h3>Welche Ausstattung wünschen Sie?</h3>
-                       <div class="option-grid">
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="dusche">
-                               <div class="option-content">
-                                   <div class="option-title">Dusche</div>
-                                   <div class="option-desc">Ebenerdige oder mit Wanne</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="badewanne">
-                               <div class="option-content">
-                                   <div class="option-title">Badewanne</div>
-                                   <div class="option-desc">Freistehend oder eingebaut</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="wc">
-                               <div class="option-content">
-                                   <div class="option-title">WC</div>
-                                   <div class="option-desc">Wandhängend oder Standmodell</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="waschtisch">
-                               <div class="option-content">
-                                   <div class="option-title">Waschtisch</div>
-                                   <div class="option-desc">Einfach oder Doppel</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="heizkoerper">
-                               <div class="option-content">
-                                   <div class="option-title">Heizkörper</div>
-                                   <div class="option-desc">Handtuchtrockner</div>
-                               </div>
-                           </label>
-                           <label class="option-card">
-                               <input type="checkbox" name="equipment" value="fliesen">
-                               <div class="option-content">
-                                   <div class="option-title">Fliesen</div>
-                                   <div class="option-desc">Wand und/oder Boden</div>
-                               </div>
-                           </label>
-                       </div>
-                   </div>
+                <!-- Step 3: Ausstattung -->
+                <div class="calc-step" data-step="3">
+                    <h3>Welche Ausstattung wünschen Sie?</h3>
+                    <div class="option-grid">
+                        <label class="option-card">
+                            <input type="checkbox" name="equipment" value="dusche">
+                            <div class="option-content">
+                                <div class="option-title">Dusche</div>
+                                <div class="option-desc">Ebenerdige oder mit Wanne</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="equipment" value="badewanne">
+                            <div class="option-content">
+                                <div class="option-title">Badewanne</div>
+                                <div class="option-desc">Freistehend oder eingebaut</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="equipment" value="wc">
+                            <div class="option-content">
+                                <div class="option-title">WC</div>
+                                <div class="option-desc">Wandhängend oder Standmodell</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="equipment" value="waschtisch">
+                            <div class="option-content">
+                                <div class="option-title">Waschtisch</div>
+                                <div class="option-desc">Einfach oder Doppel</div>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="equipment" value="heizkoerper">
+                            <div class="option-content">
+                                <div class="option-title">Heizkörper</div>
+                                <div class="option-desc">Handtuchtrockner</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-                   <!-- Step 4: Qualität -->
-                   <div class="calc-step" data-step="4">
-                       <h3>Welche Qualitätsstufe bevorzugen Sie?</h3>
-                       <div class="option-grid-single">
-                           <label class="option-card-large">
-                               <input type="radio" name="quality" value="standard">
-                               <div class="option-content">
-                                   <div class="option-title">Standard</div>
-                                   <div class="option-desc">Solide Markenprodukte, gutes Preis-Leistungs-Verhältnis</div>
-                               </div>
-                           </label>
-                           <label class="option-card-large">
-                               <input type="radio" name="quality" value="premium">
-                               <div class="option-content">
-                                   <div class="option-title">Premium</div>
-                                   <div class="option-desc">Hochwertige Markenartikel, moderne Designs</div>
-                               </div>
-                           </label>
-                           <label class="option-card-large">
-                               <input type="radio" name="quality" value="luxury">
-                               <div class="option-content">
-                                   <div class="option-title">Luxus</div>
-                                   <div class="option-desc">Exklusive Designer-Produkte, Premium-Materialien</div>
-                               </div>
-                           </label>
-                       </div>
-                   </div>
+                <!-- Step 4: Aufwand -->
+                <div class="calc-step" data-step="4">
+                    <h3>Wie schätzen Sie den Aufwand ein?</h3>
+                    <div class="option-grid-single">
+                        <label class="option-card-large">
+                            <input type="radio" name="effort" value="low">
+                            <div class="option-content">
+                                <div class="option-title">Gering</div>
+                                <div class="option-desc">Leitungen vorhanden, keine großen Umbauten</div>
+                            </div>
+                        </label>
+                        <label class="option-card-large">
+                            <input type="radio" name="effort" value="medium">
+                            <div class="option-content">
+                                <div class="option-title">Mittel</div>
+                                <div class="option-desc">Teilweise neue Leitungen, moderate Anpassungen</div>
+                            </div>
+                        </label>
+                        <label class="option-card-large">
+                            <input type="radio" name="effort" value="high">
+                            <div class="option-content">
+                                <div class="option-title">Hoch</div>
+                                <div class="option-desc">Komplettsanierung, neue Leitungen, Grundrissänderung</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-                   <!-- Step 5: Aufwand -->
-                   <div class="calc-step" data-step="5">
-                       <h3>Wie schätzen Sie den Aufwand ein?</h3>
-                       <div class="option-grid-single">
-                           <label class="option-card-large">
-                               <input type="radio" name="effort" value="low">
-                               <div class="option-content">
-                                   <div class="option-title">Gering</div>
-                                   <div class="option-desc">Leitungen vorhanden, keine großen Umbauten</div>
-                               </div>
-                           </label>
-                           <label class="option-card-large">
-                               <input type="radio" name="effort" value="medium">
-                               <div class="option-content">
-                                   <div class="option-title">Mittel</div>
-                                   <div class="option-desc">Teilweise neue Leitungen, moderate Anpassungen</div>
-                               </div>
-                           </label>
-                           <label class="option-card-large">
-                               <input type="radio" name="effort" value="high">
-                               <div class="option-content">
-                                   <div class="option-title">Hoch</div>
-                                   <div class="option-desc">Komplettsanierung, neue Leitungen, Grundrissänderung</div>
-                               </div>
-                           </label>
-                       </div>
-                   </div>
-               </div>
+            <div class="calculator-navigation">
+                <button class="calc-btn calc-btn-back" onclick="prevCalcStep()" style="display: none;">Zurück</button>
+                <button class="calc-btn calc-btn-next" onclick="nextCalcStep()">Weiter</button>
+            </div>
 
-               <div class="calculator-navigation">
-                   <button class="calc-btn calc-btn-back" onclick="prevCalcStep()" style="display: none;">Zurück</button>
-                   <button class="calc-btn calc-btn-next" onclick="nextCalcStep()">Weiter</button>
-               </div>
+            <div class="price-result" id="price-result" style="display: none;">
+                <h3>Ihre Preispakete</h3>
+                <p class="result-intro">Basierend auf Ihren Angaben haben wir drei Optionen für Sie zusammengestellt:</p>
+                
+                <div class="price-packages">
+                    <div class="price-package">
+                        <div class="package-header">
+                            <h4>Basis</h4>
+                            <div class="package-price" id="price-basic">8.500 €</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>Standard-Qualität</li>
+                            <li>Solide Markenprodukte</li>
+                            <li>Fachgerechte Installation</li>
+                            <li>Gutes Preis-Leistungs-Verhältnis</li>
+                            <li>2 Jahre Garantie</li>
+                        </ul>
+                    </div>
 
-               <div class="price-result" id="price-result" style="display: none;">
-                   <h3>Ihre Preispakete</h3>
-                   <p class="result-intro">Basierend auf Ihren Angaben haben wir drei Optionen für Sie zusammengestellt:</p>
-                   
-                   <div class="price-packages">
-                       <div class="price-package">
-                           <div class="package-header">
-                               <h4>Basis</h4>
-                               <div class="package-price" id="price-basic">8.500 €</div>
-                           </div>
-                           <ul class="package-features">
-                               <li>Standard-Materialien</li>
-                               <li>Grundlegende Sanitärobjekte</li>
-                               <li>Fachgerechte Installation</li>
-                               <li>1 Jahr Gewährleistung</li>
-                           </ul>
-                       </div>
+                    <div class="price-package featured">
+                        <div class="package-badge">Beliebteste Wahl</div>
+                        <div class="package-header">
+                            <h4>Komfort</h4>
+                            <div class="package-price" id="price-comfort">12.800 €</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>Premium-Qualität</li>
+                            <li>Hochwertige Markenartikel</li>
+                            <li>Moderne Designs</li>
+                            <li>Inklusive Malerarbeiten</li>
+                            <li>3 Jahre Garantie</li>
+                        </ul>
+                    </div>
 
-                       <div class="price-package featured">
-                           <div class="package-badge">Beliebteste Wahl</div>
-                           <div class="package-header">
-                               <h4>Komfort</h4>
-                               <div class="package-price" id="price-comfort">12.800 €</div>
-                           </div>
-                           <ul class="package-features">
-                               <li>Premium-Materialien</li>
-                               <li>Hochwertige Markenartikel</li>
-                               <li>Moderne Designs</li>
-                               <li>Inklusive Fliesen & Malerarbeiten</li>
-                               <li>2 Jahre Gewährleistung</li>
-                           </ul>
-                       </div>
+                    <div class="price-package">
+                        <div class="package-header">
+                            <h4>Premium</h4>
+                            <div class="package-price" id="price-premium">18.500 €</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>Luxus-Qualität</li>
+                            <li>Designer-Sanitärobjekte</li>
+                            <li>Exklusive Ausstattung</li>
+                            <li>Komplettservice inkl. Elektrik</li>
+                            <li>Smart Home Integration</li>
+                            <li>5 Jahre Garantie</li>
+                        </ul>
+                    </div>
+                </div>
 
-                       <div class="price-package">
-                           <div class="package-header">
-                               <h4>Premium</h4>
-                               <div class="package-price" id="price-premium">18.500 €</div>
-                           </div>
-                           <ul class="package-features">
-                               <li>Luxus-Materialien</li>
-                               <li>Designer-Sanitärobjekte</li>
-                               <li>Exklusive Ausstattung</li>
-                               <li>Komplettservice inkl. Elektrik</li>
-                               <li>Smart Home Integration</li>
-                               <li>5 Jahre Gewährleistung</li>
-                           </ul>
-                       </div>
-                   </div>
-
-                   <div class="result-cta">
-                       <p style="margin-bottom: 1.5rem; color: var(--text-medium);">
-                           * Alle Preise sind Richtwerte und können je nach individuellen Gegebenheiten variieren.
-                       </p>
-                       <a href="#contact" class="cta-button">Jetzt unverbindliches Angebot anfordern</a>
-                       <button class="calc-btn calc-btn-back" onclick="resetCalculator()" style="margin-top: 1rem;">Neue Berechnung starten</button>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
+                <div class="result-cta">
+                    <p style="margin-bottom: 1.5rem; color: var(--text-medium);">
+                        * Alle Preise sind Richtwerte und können je nach individuellen Gegebenheiten variieren.
+                    </p>
+                    <a href="#contact" class="cta-button">Jetzt unverbindliches Angebot anfordern</a>
+                    <button class="calc-btn calc-btn-back" onclick="resetCalculator()" style="margin-top: 1rem;">Neue Berechnung starten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
    <section class="calculator" id="heating-calculator">
        <div class="calculator-container">
@@ -2244,372 +2194,159 @@
    </footer>
 
    <script>
-       // Header scroll effect
-       window.addEventListener('scroll', () => {
-           const header = document.getElementById('header');
-           const scrollIndicator = document.querySelector('.scroll-indicator');
-           
-           if (window.scrollY > 100) {
-               header.classList.add('scrolled');
-           } else {
-               header.classList.remove('scrolled');
-           }
-           
-           // Update scroll indicator
-           const scrollTop = window.pageYOffset;
-           const docHeight = document.body.scrollHeight - window.innerHeight;
-           const scrollPercent = (scrollTop / docHeight) * 100;
-           scrollIndicator.style.width = scrollPercent + '%';
-       });
+// Price Calculator Functions
+let currentStep = 1;
+const totalSteps = 4; // Von 5 auf 4 Schritte reduziert
 
-       // Smooth scrolling for navigation links
-       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-           anchor.addEventListener('click', function (e) {
-               e.preventDefault();
-               const target = document.querySelector(this.getAttribute('href'));
-               if (target) {
-                   target.scrollIntoView({
-                       behavior: 'smooth',
-                       block: 'start'
-                   });
-               }
-           });
-       });
+function nextCalcStep() {
+    if (currentStep < totalSteps) {
+        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
+        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+        
+        // Fortschrittslinien markieren
+        const progressLines = document.querySelectorAll('.progress-line');
+        if (progressLines[currentStep - 1]) {
+            progressLines[currentStep - 1].classList.add('completed');
+        }
+        
+        currentStep++;
+        
+        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
+        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+        
+        updateStepIndicator();
+        updateNavigationButtons();
+    } else {
+        calculatePrice();
+    }
+}
 
-       // Enhanced heating cost calculator
-       function calculateHeatingCosts() {
-           const livingSpace = parseFloat(document.getElementById('living-space').value);
-           const heatingType = document.getElementById('heating-type').value;
-           const insulation = document.getElementById('insulation').value;
-           const age = document.getElementById('age').value;
-           const resultDiv = document.getElementById('result');
-           
-           if (!livingSpace || !heatingType || !insulation || !age) {
-               resultDiv.classList.remove('show');
-               return;
-           }
-           
-           // Base consumption per m² (kWh/year) based on insulation
-           const baseConsumption = {
-               poor: 160,
-               average: 120,
-               good: 80,
-               excellent: 40
-           };
-           
-           // Age efficiency factors
-           const ageFactors = {
-               new: 1.0,
-               medium: 1.1,
-               old: 1.25,
-               'very-old': 1.4
-           };
-           
-           // Energy prices (€ per kWh) - 2025 estimates
-           const energyPrices = {
-               gas: 0.12,
-               'gas-condensing': 0.11,
-               oil: 0.10,
-               'heat-pump': 0.28,
-               pellets: 0.08,
-               electric: 0.35,
-               district: 0.09
-           };
-           
-           // Modern heating efficiency comparison
-           const modernEfficiency = {
-               gas: 0.11,
-               'gas-condensing': 0.10,
-               oil: 0.09,
-               'heat-pump': 0.25,
-               pellets: 0.07,
-               electric: 0.30,
-               district: 0.08
-           };
-           
-           const consumption = livingSpace * baseConsumption[insulation] * ageFactors[age];
-           const currentCosts = consumption * energyPrices[heatingType];
-           const modernCosts = livingSpace * baseConsumption[insulation] * modernEfficiency[heatingType];
-           const annualSavings = currentCosts - modernCosts;
-           
-           // Heating type names in German
-           const heatingNames = {
-               gas: 'Gasheizung (alt)',
-               'gas-condensing': 'Gas-Brennwertkessel',
-               oil: 'Ölheizung',
-               'heat-pump': 'Wärmepumpe',
-               pellets: 'Pelletheizung',
-               electric: 'Elektroheizung',
-               district: 'Fernwärme'
-           };
-           
-           resultDiv.innerHTML = `
-               <h3>Ihre jährlichen Heizkosten</h3>
-               <div class="result-value">
-                   ${Math.round(currentCosts).toLocaleString('de-DE')} €
-               </div>
-               <div class="result-details">
-                   <strong>Ihre Anlage:</strong> ${heatingNames[heatingType]}<br>
-                   <strong>Wohnfläche:</strong> ${livingSpace} m²<br>
-                   <strong>Verbrauch:</strong> ca. ${Math.round(consumption).toLocaleString('de-DE')} kWh/Jahr
-               </div>
-               ${annualSavings > 100 ? `
-               <div class="savings-info">
-                   <h4>💡 Einsparpotenzial erkannt!</h4>
-                   <p>Mit einer modernen Heizungsanlage könnten Sie bis zu <strong>${Math.round(annualSavings)} € pro Jahr</strong> sparen!</p>
-                   <p>Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
-                   <p style="margin-top: 1rem; font-size: 0.9rem;">
-                       <strong>Lassen Sie sich kostenlos beraten!</strong> Wir zeigen Ihnen, welche moderne Heizungstechnik für Ihr Zuhause optimal ist.
-                   </p>
-               </div>
-               ` : ''}
-               <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.8;">
-                   * Richtwerte basierend auf aktuellen Energiepreisen. Für eine genaue Berechnung und individuelle Beratung kontaktieren Sie uns!
-               </p>
-           `;
-           
-           resultDiv.classList.add('show');
-       }
-       
-       // Add event listeners to calculator inputs
-       document.getElementById('living-space').addEventListener('input', calculateHeatingCosts);
-       document.getElementById('heating-type').addEventListener('change', calculateHeatingCosts);
-       document.getElementById('insulation').addEventListener('change', calculateHeatingCosts);
-       document.getElementById('age').addEventListener('change', calculateHeatingCosts);
+function prevCalcStep() {
+    if (currentStep > 1) {
+        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
+        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+        
+        currentStep--;
+        
+        // Fortschrittslinie zurücksetzen
+        const progressLines = document.querySelectorAll('.progress-line');
+        if (progressLines[currentStep - 1]) {
+            progressLines[currentStep - 1].classList.remove('completed');
+        }
+        
+        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
+        document.querySelector(`.progress-step[data-step="${currentStep+1}"]`).classList.remove('completed');
+        
+        updateStepIndicator();
+        updateNavigationButtons();
+    }
+}
 
-       // Animate cards on scroll
-       const observerOptions = {
-           threshold: 0.1,
-           rootMargin: '0px 0px -50px 0px'
-       };
+function updateStepIndicator() {
+    document.querySelector('.current-step').textContent = `Schritt ${currentStep}`;
+}
 
-       const observer = new IntersectionObserver((entries) => {
-           entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                   entry.target.style.opacity = '1';
-                   entry.target.style.transform = 'translateY(0)';
-               }
-           });
-       }, observerOptions);
+function updateNavigationButtons() {
+    const backBtn = document.querySelector('.calc-btn-back');
+    const nextBtn = document.querySelector('.calc-btn-next');
+    
+    if (currentStep === 1) {
+        backBtn.style.display = 'none';
+    } else {
+        backBtn.style.display = 'block';
+    }
+    
+    if (currentStep === totalSteps) {
+        nextBtn.textContent = 'Preis berechnen';
+    } else {
+        nextBtn.textContent = 'Weiter';
+    }
+}
 
-       // Observe service cards and other animated elements
-       document.querySelectorAll('.service-card, .feature-badge, .process-step').forEach((card, index) => {
-           card.style.opacity = '0';
-           card.style.transform = 'translateY(30px)';
-           card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-           observer.observe(card);
-       });
+function calculatePrice() {
+    // Schritt 1: Projekt-Art
+    const projectType = document.querySelector('input[name="project-type"]:checked')?.value || 'complete';
+    
+    // Schritt 2: Fläche
+    const areaSize = parseFloat(document.getElementById('area-size').value) || 8;
+    const areaRange = document.querySelector('input[name="area-range"]:checked')?.value;
+    
+    // Schritt 3: Ausstattung
+    const equipment = document.querySelectorAll('input[name="equipment"]:checked').length;
+    
+    // Schritt 4: Aufwand
+    const effort = document.querySelector('input[name="effort"]:checked')?.value || 'medium';
+    
+    // Basis-Berechnung
+    let basePrice = 4000;
+    
+    // Projekt-Art Faktor
+    if (projectType === 'complete') {
+        basePrice += 3000;
+    } else {
+        basePrice += 1500;
+    }
+    
+    // Flächen-Berechnung
+    basePrice += areaSize * 250;
+    
+    // Ausstattungs-Berechnung
+    basePrice += equipment * 1200;
+    
+    // Aufwands-Faktor
+    const effortFactors = { low: 0.85, medium: 1, high: 1.35 };
+    basePrice *= effortFactors[effort];
+    
+    // Die drei Qualitätsstufen
+    const basicPrice = Math.round(basePrice * 0.75);      // Standard-Qualität
+    const comfortPrice = Math.round(basePrice);            // Premium-Qualität
+    const premiumPrice = Math.round(basePrice * 1.5);      // Luxus-Qualität
+    
+    // Preise in die Anzeige schreiben
+    document.getElementById('price-basic').textContent = basicPrice.toLocaleString('de-DE') + ' €';
+    document.getElementById('price-comfort').textContent = comfortPrice.toLocaleString('de-DE') + ' €';
+    document.getElementById('price-premium').textContent = premiumPrice.toLocaleString('de-DE') + ' €';
+    
+    // Ansicht umschalten
+    document.querySelector('.calculator-steps').style.display = 'none';
+    document.querySelector('.calculator-navigation').style.display = 'none';
+    document.querySelector('.progress-bar').style.display = 'none';
+    document.querySelector('.step-indicator').style.display = 'none';
+    document.getElementById('price-result').style.display = 'block';
+}
 
-       // Counter animation for stats
-       function animateCounter(element, start, end, duration) {
-           let current = start;
-           const increment = end > start ? 1 : -1;
-           const stepTime = Math.abs(Math.floor(duration / (end - start)));
-           
-           const timer = setInterval(() => {
-               current += increment;
-               element.textContent = current + (element.dataset.suffix || '');
-               
-               if (current === end) {
-                   clearInterval(timer);
-               }
-           }, stepTime);
-       }
-
-       // Animate stats when they come into view
-       const statsObserver = new IntersectionObserver((entries) => {
-           entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                   const numbers = entry.target.querySelectorAll('.stat-number');
-                   numbers.forEach(num => {
-                       const text = num.textContent;
-                       const value = parseInt(text.replace(/\D/g, ''));
-                       if (value && !num.dataset.animated) {
-                           num.dataset.animated = 'true';
-                           num.dataset.suffix = text.replace(/\d/g, '');
-                           animateCounter(num, 0, value, 2000);
-                       }
-                   });
-               }
-           });
-       }, { threshold: 0.5 });
-
-       document.querySelectorAll('.why-stats').forEach(grid => {
-           statsObserver.observe(grid);
-       });
-
-       // Mobile menu toggle (for future mobile menu implementation)
-       function toggleMobileMenu() {
-           const navMenu = document.querySelector('.nav-menu');
-           navMenu.classList.toggle('mobile-active');
-       }
-
-       // Add click-to-call tracking
-       document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-           link.addEventListener('click', function() {
-               // Here you could add analytics tracking
-               console.log('Phone call initiated:', this.href);
-           });
-       });
-
-       // Add smooth reveal animation for hero content
-       window.addEventListener('load', () => {
-           document.querySelector('.hero-content').style.opacity = '1';
-       });
-
-       // FAQ Accordion
-       document.querySelectorAll('.faq-question').forEach(question => {
-           question.addEventListener('click', function() {
-               const faqItem = this.parentElement;
-               const isActive = faqItem.classList.contains('active');
-               
-               // Close all FAQ items
-               document.querySelectorAll('.faq-item').forEach(item => {
-                   item.classList.remove('active');
-               });
-               
-               // Open clicked item if it wasn't active
-               if (!isActive) {
-                   faqItem.classList.add('active');
-               }
-           });
-       });
-
-       // Performance optimization: Lazy load images when implemented
-       if ('IntersectionObserver' in window) {
-           const imageObserver = new IntersectionObserver((entries, observer) => {
-               entries.forEach(entry => {
-                   if (entry.isIntersecting) {
-                       const img = entry.target;
-                       img.src = img.dataset.src;
-                       img.classList.remove('lazy');
-                       imageObserver.unobserve(img);
-                   }
-               });
-           });
-
-           document.querySelectorAll('img[data-src]').forEach(img => {
-               imageObserver.observe(img);
-           });
-       }
-
-       // Price Calculator Functions
-       let currentStep = 1;
-       const totalSteps = 5;
-
-       function nextCalcStep() {
-           if (currentStep < totalSteps) {
-               document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
-               document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
-               
-               currentStep++;
-               
-               document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
-               document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
-               
-               updateStepIndicator();
-               updateNavigationButtons();
-           } else {
-               calculatePrice();
-           }
-       }
-
-       function prevCalcStep() {
-           if (currentStep > 1) {
-               document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
-               document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
-               
-               currentStep--;
-               
-               document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
-               document.querySelector(`.progress-step[data-step="${currentStep+1}"]`).classList.remove('completed');
-               
-               updateStepIndicator();
-               updateNavigationButtons();
-           }
-       }
-
-       function updateStepIndicator() {
-           document.querySelector('.current-step').textContent = `Schritt ${currentStep}`;
-       }
-
-       function updateNavigationButtons() {
-           const backBtn = document.querySelector('.calc-btn-back');
-           const nextBtn = document.querySelector('.calc-btn-next');
-           
-           if (currentStep === 1) {
-               backBtn.style.display = 'none';
-           } else {
-               backBtn.style.display = 'block';
-           }
-           
-           if (currentStep === totalSteps) {
-               nextBtn.textContent = 'Preis berechnen';
-           } else {
-               nextBtn.textContent = 'Weiter';
-           }
-       }
-
-       function calculatePrice() {
-           const workTypes = document.querySelectorAll('input[name="work-type"]:checked').length;
-           const areaSize = parseFloat(document.getElementById('area-size').value) || 8;
-           const equipment = document.querySelectorAll('input[name="equipment"]:checked').length;
-           const quality = document.querySelector('input[name="quality"]:checked')?.value || 'standard';
-           const effort = document.querySelector('input[name="effort"]:checked')?.value || 'medium';
-           
-           let basePrice = 5000;
-           basePrice += workTypes * 2000;
-           basePrice += areaSize * 200;
-           basePrice += equipment * 800;
-           
-           const qualityFactors = { standard: 1, premium: 1.4, luxury: 2 };
-           basePrice *= qualityFactors[quality];
-           
-           const effortFactors = { low: 0.9, medium: 1, high: 1.3 };
-           basePrice *= effortFactors[effort];
-           
-           const basicPrice = Math.round(basePrice * 0.8);
-           const comfortPrice = Math.round(basePrice);
-           const premiumPrice = Math.round(basePrice * 1.4);
-           
-           document.getElementById('price-basic').textContent = basicPrice.toLocaleString('de-DE') + ' €';
-           document.getElementById('price-comfort').textContent = comfortPrice.toLocaleString('de-DE') + ' €';
-           document.getElementById('price-premium').textContent = premiumPrice.toLocaleString('de-DE') + ' €';
-           
-           document.querySelector('.calculator-steps').style.display = 'none';
-           document.querySelector('.calculator-navigation').style.display = 'none';
-           document.querySelector('.progress-bar').style.display = 'none';
-           document.querySelector('.step-indicator').style.display = 'none';
-           document.getElementById('price-result').style.display = 'block';
-       }
-
-       function resetCalculator() {
-           currentStep = 1;
-           
-           document.querySelectorAll('.calc-step input').forEach(input => {
-               input.checked = false;
-               if (input.type === 'number') input.value = '';
-           });
-           
-           document.querySelectorAll('.calc-step').forEach(step => step.classList.remove('active'));
-           document.querySelector('.calc-step[data-step="1"]').classList.add('active');
-           
-           document.querySelectorAll('.progress-step').forEach(step => {
-               step.classList.remove('active', 'completed');
-           });
-           document.querySelector('.progress-step[data-step="1"]').classList.add('active');
-           
-           document.querySelectorAll('.progress-line').forEach(line => line.classList.remove('completed'));
-           
-           document.querySelector('.calculator-steps').style.display = 'block';
-           document.querySelector('.calculator-navigation').style.display = 'flex';
-           document.querySelector('.progress-bar').style.display = 'flex';
-           document.querySelector('.step-indicator').style.display = 'block';
-           document.getElementById('price-result').style.display = 'none';
-           
-           updateStepIndicator();
-           updateNavigationButtons();
-       }
+function resetCalculator() {
+    currentStep = 1;
+    
+    // Alle Eingaben zurücksetzen
+    document.querySelectorAll('.calc-step input').forEach(input => {
+        input.checked = false;
+        if (input.type === 'number') input.value = '';
+    });
+    
+    // Schritte zurücksetzen
+    document.querySelectorAll('.calc-step').forEach(step => step.classList.remove('active'));
+    document.querySelector('.calc-step[data-step="1"]').classList.add('active');
+    
+    // Fortschrittsanzeige zurücksetzen
+    document.querySelectorAll('.progress-step').forEach(step => {
+        step.classList.remove('active', 'completed');
+    });
+    document.querySelector('.progress-step[data-step="1"]').classList.add('active');
+    
+    // Fortschrittslinien zurücksetzen
+    document.querySelectorAll('.progress-line').forEach(line => line.classList.remove('completed'));
+    
+    // Ansicht zurücksetzen
+    document.querySelector('.calculator-steps').style.display = 'block';
+    document.querySelector('.calculator-navigation').style.display = 'flex';
+    document.querySelector('.progress-bar').style.display = 'flex';
+    document.querySelector('.step-indicator').style.display = 'block';
+    document.getElementById('price-result').style.display = 'none';
+    
+    updateStepIndicator();
+    updateNavigationButtons();
+}
    </script>
 </body>
 </html>
