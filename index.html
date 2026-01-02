@@ -616,16 +616,88 @@
         }
 
         .calculator-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .calculator-card {
             background: white;
-            padding: 3rem;
+            padding: 3rem 4rem;
             border-radius: 20px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-tabs {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            margin-bottom: 3rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 6px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calculator-tab {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .tab-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .tab-icon-placeholder {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            /* Platzhalter für dein Icon - entferne diese Zeilen wenn du dein Icon eingefügt hast */
+            background: currentColor;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .calculator-tab:hover {
+            color: var(--text-dark);
+        }
+
+        .calculator-tab.active {
+            background: white;
+            color: var(--gradient-teal);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .calculator-content {
+            display: none;
+        }
+
+        .calculator-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         .calculator h2 {
@@ -1408,6 +1480,29 @@
                 height: 32px;
                 font-size: 0.9rem;
             }
+
+            .calculator-tabs {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 8px;
+            }
+
+            .calculator-tab {
+                font-size: 0.95rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .calculator-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .calculator h2 {
+                font-size: 1.8rem;
+            }
+
+            .calculator-subtitle {
+                font-size: 1rem;
+            }
         }
 
         /* Responsive Design */
@@ -1717,26 +1812,48 @@
    <section class="calculator" id="calculator">
     <div class="calculator-container">
         <div class="calculator-card">
-            <h2>Sanitär Preis-Kalkulator</h2>
-            <p class="calculator-subtitle">
-                Erhalten Sie in wenigen Schritten eine erste Preiseinschätzung für Ihr Sanitärprojekt
-            </p>
-            
-            <div class="progress-bar">
-                <div class="progress-step active" data-step="1">1</div>
-                <div class="progress-line"></div>
-                <div class="progress-step" data-step="2">2</div>
-                <div class="progress-line"></div>
-                <div class="progress-step" data-step="3">3</div>
-                <div class="progress-line"></div>
-                <div class="progress-step" data-step="4">4</div>
+            <div class="calculator-header">
+                <h2>Kostenrechner</h2>
+                <p class="calculator-subtitle">
+                    Wählen Sie einen Rechner und erhalten Sie eine erste Einschätzung
+                </p>
             </div>
 
-            <div class="step-indicator">
-                <span class="current-step">Schritt 1</span> von 4
+            <!-- Tab Navigation -->
+            <div class="calculator-tabs">
+                <button class="calculator-tab active" onclick="switchCalculator('price')">
+                    <!-- ICON PLATZHALTER: Hier dein Wassertropfen-Icon einfügen (z.B. <svg> oder <img>) -->
+                    <span class="tab-icon-placeholder"></span>
+                    Sanitär-Preisrechner
+                </button>
+                <button class="calculator-tab" onclick="switchCalculator('heating')">
+                    <!-- ICON PLATZHALTER: Hier dein Flammen-Icon einfügen (z.B. <svg> oder <img>) -->
+                    <span class="tab-icon-placeholder"></span>
+                    Heizkostenrechner
+                </button>
             </div>
 
-            <div class="calculator-steps">
+            <!-- Sanitär Preisrechner Content -->
+            <div id="price-calculator" class="calculator-content active">
+                <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem; font-size: 1.05rem;">
+                    Erhalten Sie in wenigen Schritten eine erste Preiseinschätzung für Ihr Sanitärprojekt
+                </p>
+                
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">1</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">4</div>
+                </div>
+
+                <div class="step-indicator">
+                    <span class="current-step">Schritt 1</span> von 4
+                </div>
+
+                <div class="calculator-steps">
                 <!-- Step 1: Projekt-Art -->
                 <div class="calc-step active" data-step="1">
                     <h3>Was ist geplant?</h3>
@@ -1925,27 +2042,23 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-   <section class="calculator" id="heating-calculator">
-       <div class="calculator-container">
-           <div class="calculator-card">
-               <h2>Heizkosten-Rechner</h2>
-               <p class="calculator-subtitle">
-                   Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
-               </p>
-               
-               <div class="input-grid">
-                   <div class="input-group">
-                       <label for="living-space">Wohnfläche (m²)</label>
-                       <input type="number" id="living-space" placeholder="z.B. 120" min="1">
-                   </div>
-                   
-                   <div class="input-group">
-                       <label for="heating-type">Aktuelle Heizungsart</label>
-                       <select id="heating-type">
-                           <option value="">Bitte wählen...</option>
+        <!-- Heizkostenrechner Content -->
+        <div id="heating-calculator" class="calculator-content">
+            <p style="text-align: center; color: var(--text-medium); margin-bottom: 2.5rem; font-size: 1.05rem;">
+                Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
+            </p>
+            
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="living-space">Wohnfläche (m²)</label>
+                    <input type="number" id="living-space" placeholder="z.B. 120" min="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="heating-type">Aktuelle Heizungsart</label>
+                    <select id="heating-type">
+                        <option value="">Bitte wählen...</option>
                            <option value="gas">Gasheizung (alt)</option>
                            <option value="gas-condensing">Gasbrennwert</option>
                            <option value="oil">Ölheizung</option>
@@ -1984,7 +2097,8 @@
                <div class="result" id="result"></div>
            </div>
        </div>
-   </section>
+   </div>
+</section>
 
    <section class="process" id="process">
        <div class="process-container">
@@ -2194,366 +2308,455 @@
    </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Header scroll effect
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
-
-// Service cards hover effect with scale
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Counter animation for stats
-function animateCounter(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = value + (element.dataset.suffix || '');
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Simple counter animation (alternative implementation)
-function animateValue(element, start, end, duration) {
-    const range = end - start;
-    const increment = end > start ? 1 : -1;
-    const stepTime = Math.abs(Math.floor(duration / range));
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        element.textContent = current + (element.dataset.suffix || '');
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
         
-        if (current === end) {
-            clearInterval(timer);
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
-    }, stepTime);
-}
-
-// Animate stats when they come into view
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const numbers = entry.target.querySelectorAll('.stat-number');
-            numbers.forEach(num => {
-                const text = num.textContent;
-                const value = parseInt(text.replace(/\D/g, ''));
-                if (value && !num.dataset.animated) {
-                    num.dataset.animated = 'true';
-                    num.dataset.suffix = text.replace(/\d/g, '');
-                    animateCounter(num, 0, value, 2000);
-                }
-            });
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.why-stats').forEach(grid => {
-    statsObserver.observe(grid);
-});
-
-// Mobile menu toggle (for future mobile menu implementation)
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('mobile-active');
-}
-
-// Add click-to-call tracking
-document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.addEventListener('click', function() {
-        // Here you could add analytics tracking
-        console.log('Phone call initiated:', this.href);
-    });
-});
-
-// Add smooth reveal animation for hero content
-window.addEventListener('load', () => {
-    document.querySelector('.hero-content').style.opacity = '1';
-});
-
-// FAQ Accordion
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function() {
-        const faqItem = this.parentElement;
-        const isActive = faqItem.classList.contains('active');
         
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-            faqItem.classList.add('active');
-        }
+        // Update scroll indicator
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollIndicator.style.width = scrollPercent + '%';
     });
-});
 
-// Performance optimization: Lazy load images when implemented
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
     });
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Price Calculator Functions
-let currentStep = 1;
-const totalSteps = 4; // Von 5 auf 4 Schritte reduziert
-
-function nextCalcStep() {
-    if (currentStep < totalSteps) {
-        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
-        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+    // Enhanced heating cost calculator
+    function calculateHeatingCosts() {
+        const livingSpace = parseFloat(document.getElementById('living-space').value);
+        const heatingType = document.getElementById('heating-type').value;
+        const insulation = document.getElementById('insulation').value;
+        const age = document.getElementById('age').value;
+        const resultDiv = document.getElementById('result');
         
-        // Fortschrittslinien markieren
-        const progressLines = document.querySelectorAll('.progress-line');
-        if (progressLines[currentStep - 1]) {
-            progressLines[currentStep - 1].classList.add('completed');
+        if (!livingSpace || !heatingType || !insulation || !age) {
+            resultDiv.classList.remove('show');
+            return;
         }
         
-        currentStep++;
+        // Base consumption per m² (kWh/year) based on insulation
+        const baseConsumption = {
+            poor: 160,
+            average: 120,
+            good: 80,
+            excellent: 40
+        };
         
-        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
-        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+        // Age efficiency factors
+        const ageFactors = {
+            new: 1.0,
+            medium: 1.1,
+            old: 1.25,
+            'very-old': 1.4
+        };
         
-        updateStepIndicator();
-        updateNavigationButtons();
-    } else {
-        calculatePrice();
+        // Energy prices (€ per kWh) - 2025 estimates
+        const energyPrices = {
+            gas: 0.12,
+            'gas-condensing': 0.11,
+            oil: 0.10,
+            'heat-pump': 0.28,
+            pellets: 0.08,
+            electric: 0.35,
+            district: 0.09
+        };
+        
+        // Modern heating efficiency comparison
+        const modernEfficiency = {
+            gas: 0.11,
+            'gas-condensing': 0.10,
+            oil: 0.09,
+            'heat-pump': 0.25,
+            pellets: 0.07,
+            electric: 0.30,
+            district: 0.08
+        };
+        
+        const consumption = livingSpace * baseConsumption[insulation] * ageFactors[age];
+        const currentCosts = consumption * energyPrices[heatingType];
+        const modernCosts = livingSpace * baseConsumption[insulation] * modernEfficiency[heatingType];
+        const annualSavings = currentCosts - modernCosts;
+        
+        // Heating type names in German
+        const heatingNames = {
+            gas: 'Gasheizung (alt)',
+            'gas-condensing': 'Gas-Brennwertkessel',
+            oil: 'Ölheizung',
+            'heat-pump': 'Wärmepumpe',
+            pellets: 'Pelletheizung',
+            electric: 'Elektroheizung',
+            district: 'Fernwärme'
+        };
+        
+        resultDiv.innerHTML = `
+            <h3>Ihre jährlichen Heizkosten</h3>
+            <div class="result-value">
+                ${Math.round(currentCosts).toLocaleString('de-DE')} €
+            </div>
+            <div class="result-details">
+                <strong>Ihre Anlage:</strong> ${heatingNames[heatingType]}<br>
+                <strong>Wohnfläche:</strong> ${livingSpace} m²<br>
+                <strong>Verbrauch:</strong> ca. ${Math.round(consumption).toLocaleString('de-DE')} kWh/Jahr
+            </div>
+            ${annualSavings > 100 ? `
+            <div class="savings-info">
+                <h4>💡 Einsparpotenzial erkannt!</h4>
+                <p>Mit einer modernen Heizungsanlage könnten Sie bis zu <strong>${Math.round(annualSavings)} € pro Jahr</strong> sparen!</p>
+                <p>Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Lassen Sie sich kostenlos beraten!</strong> Wir zeigen Ihnen, welche moderne Heizungstechnik für Ihr Zuhause optimal ist.
+                </p>
+            </div>
+            ` : ''}
+            <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.8;">
+                * Richtwerte basierend auf aktuellen Energiepreisen. Für eine genaue Berechnung und individuelle Beratung kontaktieren Sie uns!
+            </p>
+        `;
+        
+        resultDiv.classList.add('show');
     }
-}
+    
+    // Add event listeners to calculator inputs
+    document.getElementById('living-space').addEventListener('input', calculateHeatingCosts);
+    document.getElementById('heating-type').addEventListener('change', calculateHeatingCosts);
+    document.getElementById('insulation').addEventListener('change', calculateHeatingCosts);
+    document.getElementById('age').addEventListener('change', calculateHeatingCosts);
 
-function prevCalcStep() {
-    if (currentStep > 1) {
-        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
-        document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
-        
-        currentStep--;
-        
-        // Fortschrittslinie zurücksetzen
-        const progressLines = document.querySelectorAll('.progress-line');
-        if (progressLines[currentStep - 1]) {
-            progressLines[currentStep - 1].classList.remove('completed');
-        }
-        
-        document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
-        document.querySelector(`.progress-step[data-step="${currentStep+1}"]`).classList.remove('completed');
-        
-        updateStepIndicator();
-        updateNavigationButtons();
-    }
-}
-
-function updateStepIndicator() {
-    document.querySelector('.current-step').textContent = `Schritt ${currentStep}`;
-}
-
-function updateNavigationButtons() {
-    const backBtn = document.querySelector('.calc-btn-back');
-    const nextBtn = document.querySelector('.calc-btn-next');
-    
-    if (currentStep === 1) {
-        backBtn.style.display = 'none';
-    } else {
-        backBtn.style.display = 'block';
-    }
-    
-    if (currentStep === totalSteps) {
-        nextBtn.textContent = 'Preis berechnen';
-    } else {
-        nextBtn.textContent = 'Weiter';
-    }
-}
-
-function calculatePrice() {
-    // Schritt 1: Projekt-Art
-    const projectType = document.querySelector('input[name="project-type"]:checked')?.value || 'complete';
-    
-    // Schritt 2: Fläche
-    const areaSize = parseFloat(document.getElementById('area-size').value) || 8;
-    const areaRange = document.querySelector('input[name="area-range"]:checked')?.value;
-    
-    // Schritt 3: Ausstattung
-    const equipment = document.querySelectorAll('input[name="equipment"]:checked').length;
-    
-    // Schritt 4: Aufwand
-    const effort = document.querySelector('input[name="effort"]:checked')?.value || 'medium';
-    
-    // Basis-Preise aus PDF (BRUTTO = Netto-Preise)
-    // Basic (Bad BASIC): 6.846,95 €
-    // Komfort (Bad Premium): 13.223,70 €
-    // Premium (Bad Luxus): 19.555,60 €
-    
-    const basicBasePrice = 6846.95;
-    const comfortBasePrice = 13223.70;
-    const premiumBasePrice = 19555.60;
-    
-    // Faktor für Projekt-Art
-    let projectFactor = 1;
-    if (projectType === 'complete') {
-        projectFactor = 1.15; // Komplettrenovierung +15%
-    } else {
-        projectFactor = 1.0; // Nur Sanitär = Basispreis
-    }
-    
-    // Faktor für Fläche (pro qm über 8qm)
-    let areaFactor = 1;
-    if (areaSize > 8) {
-        areaFactor = 1 + ((areaSize - 8) * 0.03); // +3% pro zusätzlichem qm
-    } else if (areaSize < 8) {
-        areaFactor = 1 - ((8 - areaSize) * 0.02); // -2% pro fehlendem qm
-    }
-    
-    // Faktor für Ausstattung
-    let equipmentFactor = 1;
-    if (equipment >= 4) {
-        equipmentFactor = 1.12; // Alle Ausstattungen +12%
-    } else if (equipment >= 3) {
-        equipmentFactor = 1.08; // 3 Ausstattungen +8%
-    } else if (equipment >= 2) {
-        equipmentFactor = 1.05; // 2 Ausstattungen +5%
-    } else if (equipment >= 1) {
-        equipmentFactor = 1.02; // 1 Ausstattung +2%
-    }
-    
-    // Faktor für Aufwand
-    const effortFactors = { 
-        low: 0.88,      // Geringer Aufwand -12%
-        medium: 1,      // Mittlerer Aufwand = Basispreis
-        high: 1.30      // Hoher Aufwand +30%
+    // Animate cards on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
-    const effortFactor = effortFactors[effort];
-    
-    // Gesamtberechnung
-    const basicPrice = Math.round(basicBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
-    const comfortPrice = Math.round(comfortBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
-    const premiumPrice = Math.round(premiumBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
-    
-    // Preise in die Anzeige schreiben
-    document.getElementById('price-basic').textContent = basicPrice.toLocaleString('de-DE') + ' €';
-    document.getElementById('price-comfort').textContent = comfortPrice.toLocaleString('de-DE') + ' €';
-    document.getElementById('price-premium').textContent = premiumPrice.toLocaleString('de-DE') + ' €';
-    
-    // Ansicht umschalten
-    document.querySelector('.calculator-steps').style.display = 'none';
-    document.querySelector('.calculator-navigation').style.display = 'none';
-    document.querySelector('.progress-bar').style.display = 'none';
-    document.querySelector('.step-indicator').style.display = 'none';
-    document.getElementById('price-result').style.display = 'block';
-}
 
-function resetCalculator() {
-    currentStep = 1;
-    
-    // Alle Eingaben zurücksetzen
-    document.querySelectorAll('.calc-step input').forEach(input => {
-        input.checked = false;
-        if (input.type === 'number') input.value = '';
-    });
-    
-    // Schritte zurücksetzen
-    document.querySelectorAll('.calc-step').forEach(step => step.classList.remove('active'));
-    document.querySelector('.calc-step[data-step="1"]').classList.add('active');
-    
-    // Fortschrittsanzeige zurücksetzen
-    document.querySelectorAll('.progress-step').forEach(step => {
-        step.classList.remove('active', 'completed');
-    });
-    document.querySelector('.progress-step[data-step="1"]').classList.add('active');
-    
-    // Fortschrittslinien zurücksetzen
-    document.querySelectorAll('.progress-line').forEach(line => line.classList.remove('completed'));
-    
-    // Ansicht zurücksetzen
-    document.querySelector('.calculator-steps').style.display = 'block';
-    document.querySelector('.calculator-navigation').style.display = 'flex';
-    document.querySelector('.progress-bar').style.display = 'flex';
-    document.querySelector('.step-indicator').style.display = 'block';
-    document.getElementById('price-result').style.display = 'none';
-    
-    updateStepIndicator();
-    updateNavigationButtons();
-}
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
 
-// Initialize calculator on page load
-document.addEventListener('DOMContentLoaded', function() {
-    updateNavigationButtons();
-});
-</script>
+    // Observe service cards and other animated elements
+    document.querySelectorAll('.service-card, .feature-badge, .process-step').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Counter animation for stats
+    function animateCounter(element, start, end, duration) {
+        let current = start;
+        const increment = end > start ? 1 : -1;
+        const stepTime = Math.abs(Math.floor(duration / (end - start)));
+        
+        const timer = setInterval(() => {
+            current += increment;
+            element.textContent = current + (element.dataset.suffix || '');
+            
+            if (current === end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+
+    // Animate stats when they come into view
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const numbers = entry.target.querySelectorAll('.stat-number');
+                numbers.forEach(num => {
+                    const text = num.textContent;
+                    const value = parseInt(text.replace(/\D/g, ''));
+                    if (value && !num.dataset.animated) {
+                        num.dataset.animated = 'true';
+                        num.dataset.suffix = text.replace(/\d/g, '');
+                        animateCounter(num, 0, value, 2000);
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.why-stats').forEach(grid => {
+        statsObserver.observe(grid);
+    });
+
+    // Mobile menu toggle (for future mobile menu implementation)
+    function toggleMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('mobile-active');
+    }
+
+    // Add click-to-call tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', function() {
+            // Here you could add analytics tracking
+            console.log('Phone call initiated:', this.href);
+        });
+    });
+
+    // Add smooth reveal animation for hero content
+    window.addEventListener('load', () => {
+        document.querySelector('.hero-content').style.opacity = '1';
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+    // Performance optimization: Lazy load images when implemented
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // Price Calculator Functions
+    let currentStep = 1;
+    const totalSteps = 4; // Von 5 auf 4 Schritte reduziert
+
+    function nextCalcStep() {
+        if (currentStep < totalSteps) {
+            document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+            
+            // Fortschrittslinien markieren
+            const progressLines = document.querySelectorAll('.progress-line');
+            if (progressLines[currentStep - 1]) {
+                progressLines[currentStep - 1].classList.add('completed');
+            }
+            
+            currentStep++;
+            
+            document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+            
+            updateStepIndicator();
+            updateNavigationButtons();
+        } else {
+            calculatePrice();
+        }
+    }
+
+    function prevCalcStep() {
+        if (currentStep > 1) {
+            document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+            
+            currentStep--;
+            
+            // Fortschrittslinie zurücksetzen
+            const progressLines = document.querySelectorAll('.progress-line');
+            if (progressLines[currentStep - 1]) {
+                progressLines[currentStep - 1].classList.remove('completed');
+            }
+            
+            document.querySelector(`.calc-step[data-step="${currentStep}"]`).classList.add('active');
+            document.querySelector(`.progress-step[data-step="${currentStep+1}"]`).classList.remove('completed');
+            
+            updateStepIndicator();
+            updateNavigationButtons();
+        }
+    }
+
+    function updateStepIndicator() {
+        document.querySelector('.current-step').textContent = `Schritt ${currentStep}`;
+    }
+
+    function updateNavigationButtons() {
+        const backBtn = document.querySelector('.calc-btn-back');
+        const nextBtn = document.querySelector('.calc-btn-next');
+        
+        if (currentStep === 1) {
+            backBtn.style.display = 'none';
+        } else {
+            backBtn.style.display = 'block';
+        }
+        
+        if (currentStep === totalSteps) {
+            nextBtn.textContent = 'Preis berechnen';
+        } else {
+            nextBtn.textContent = 'Weiter';
+        }
+    }
+
+    function calculatePrice() {
+        // Schritt 1: Projekt-Art
+        const projectType = document.querySelector('input[name="project-type"]:checked')?.value || 'complete';
+        
+        // Schritt 2: Fläche
+        const areaSize = parseFloat(document.getElementById('area-size').value) || 8;
+        const areaRange = document.querySelector('input[name="area-range"]:checked')?.value;
+        
+        // Schritt 3: Ausstattung
+        const equipment = document.querySelectorAll('input[name="equipment"]:checked').length;
+        
+        // Schritt 4: Aufwand
+        const effort = document.querySelector('input[name="effort"]:checked')?.value || 'medium';
+        
+        // Basis-Preise aus PDF (BRUTTO = Netto-Preise)
+        // Basic (Bad BASIC): 6.846,95 €
+        // Komfort (Bad Premium): 13.223,70 €
+        // Premium (Bad Luxus): 19.555,60 €
+        
+        const basicBasePrice = 6846.95;
+        const comfortBasePrice = 13223.70;
+        const premiumBasePrice = 19555.60;
+        
+        // Faktor für Projekt-Art
+        let projectFactor = 1;
+        if (projectType === 'complete') {
+            projectFactor = 1.15; // Komplettrenovierung +15%
+        } else {
+            projectFactor = 1.0; // Nur Sanitär = Basispreis
+        }
+        
+        // Faktor für Fläche (pro qm über 8qm)
+        let areaFactor = 1;
+        if (areaSize > 8) {
+            areaFactor = 1 + ((areaSize - 8) * 0.03); // +3% pro zusätzlichem qm
+        } else if (areaSize < 8) {
+            areaFactor = 1 - ((8 - areaSize) * 0.02); // -2% pro fehlendem qm
+        }
+        
+        // Faktor für Ausstattung
+        let equipmentFactor = 1;
+        if (equipment >= 4) {
+            equipmentFactor = 1.12; // Alle Ausstattungen +12%
+        } else if (equipment >= 3) {
+            equipmentFactor = 1.08; // 3 Ausstattungen +8%
+        } else if (equipment >= 2) {
+            equipmentFactor = 1.05; // 2 Ausstattungen +5%
+        } else if (equipment >= 1) {
+            equipmentFactor = 1.02; // 1 Ausstattung +2%
+        }
+        
+        // Faktor für Aufwand
+        const effortFactors = { 
+            low: 0.88,      // Geringer Aufwand -12%
+            medium: 1,      // Mittlerer Aufwand = Basispreis
+            high: 1.30      // Hoher Aufwand +30%
+        };
+        const effortFactor = effortFactors[effort];
+        
+        // Gesamtberechnung
+        const basicPrice = Math.round(basicBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
+        const comfortPrice = Math.round(comfortBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
+        const premiumPrice = Math.round(premiumBasePrice * projectFactor * areaFactor * equipmentFactor * effortFactor);
+        
+        // Preise in die Anzeige schreiben
+        document.getElementById('price-basic').textContent = basicPrice.toLocaleString('de-DE') + ' €';
+        document.getElementById('price-comfort').textContent = comfortPrice.toLocaleString('de-DE') + ' €';
+        document.getElementById('price-premium').textContent = premiumPrice.toLocaleString('de-DE') + ' €';
+        
+        // Ansicht umschalten
+        document.querySelector('.calculator-steps').style.display = 'none';
+        document.querySelector('.calculator-navigation').style.display = 'none';
+        document.querySelector('.progress-bar').style.display = 'none';
+        document.querySelector('.step-indicator').style.display = 'none';
+        document.getElementById('price-result').style.display = 'block';
+    }
+
+    function resetCalculator() {
+        currentStep = 1;
+        
+        // Alle Eingaben zurücksetzen
+        document.querySelectorAll('.calc-step input').forEach(input => {
+            input.checked = false;
+            if (input.type === 'number') input.value = '';
+        });
+        
+        // Schritte zurücksetzen
+        document.querySelectorAll('.calc-step').forEach(step => step.classList.remove('active'));
+        document.querySelector('.calc-step[data-step="1"]').classList.add('active');
+        
+        // Fortschrittsanzeige zurücksetzen
+        document.querySelectorAll('.progress-step').forEach(step => {
+            step.classList.remove('active', 'completed');
+        });
+        document.querySelector('.progress-step[data-step="1"]').classList.add('active');
+        
+        // Fortschrittslinien zurücksetzen
+        document.querySelectorAll('.progress-line').forEach(line => line.classList.remove('completed'));
+        
+        // Ansicht zurücksetzen
+        document.querySelector('.calculator-steps').style.display = 'block';
+        document.querySelector('.calculator-nav        document.querySelector(".calculator-navigation").style.display = "flex";
+        document.querySelector(".progress-bar").style.display = "flex";
+        document.querySelector(".step-indicator").style.display = "block";
+        document.getElementById("price-result").style.display = "none";
+        
+        updateStepIndicator();
+        updateNavigationButtons();
+    }
+
+    // Switch between calculators
+    function switchCalculator(type) {
+        // Hide all calculator contents
+        document.querySelectorAll(".calculator-content").forEach(content => {
+            content.classList.remove("active");
+        });
+        
+        // Remove active class from all tabs
+        document.querySelectorAll(".calculator-tab").forEach(tab => {
+            tab.classList.remove("active");
+        });
+        
+        // Show selected calculator
+        if (type === "price") {
+            document.getElementById("price-calculator").classList.add("active");
+            document.querySelectorAll(".calculator-tab")[0].classList.add("active");
+        } else if (type === "heating") {
+            document.getElementById("heating-calculator").classList.add("active");
+            document.querySelectorAll(".calculator-tab")[1].classList.add("active");
+        }
+    }
+    </script>
 </body>
 </html>
