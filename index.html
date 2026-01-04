@@ -2736,8 +2736,8 @@
         updateNavigationButtons();
     }
 
-    // Switch between calculators
-    function switchCalculator(type) {
+    // Switch between calculators - im globalen Scope für onclick
+    window.switchCalculator = function(type) {
         // Hide all calculator contents
         document.querySelectorAll(".calculator-content").forEach(content => {
             content.classList.remove("active");
@@ -2756,7 +2756,7 @@
             document.getElementById("heating-calculator").classList.add("active");
             document.querySelectorAll(".calculator-tab")[1].classList.add("active");
         }
-    }
+    };
     </script>
 </body>
 </html>
