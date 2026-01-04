@@ -3,8 +3,8 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leo Therm Klimatechnik - Ihr Meisterbetrieb für Heizung, Sanitär, Solar, Klima & Lüftung</title>
-    <meta name="description" content="Leo Therm Klimatechnik - Meisterbetrieb für Heizung, Sanitär, Solar, Klima und Lüftungstechnik in Ludwigshafen. 24h Notdienst, Beratung, Installation und Wartung.">
+    <title>Leo Therm - Ihr Meisterbetrieb für Heizung, Sanitär, Solar, Klima & Lüftung</title>
+    <meta name="description" content="Leo Therm - Meisterbetrieb für Heizung, Sanitär, Solar, Klima und Lüftungstechnik in Bad Soden-Salmünster. Beratung, Installation und Wartung.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -45,9 +45,9 @@
 
         /* Header */
         .header {
-            background: transparent;
-            backdrop-filter: none;
-            box-shadow: none;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             padding: 1.5rem 0;
             position: fixed;
             width: 100%;
@@ -74,7 +74,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 600;
-            color: white;
+            color: var(--text-dark);
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -121,7 +121,7 @@
         }
 
         .nav-menu a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 400;
@@ -134,7 +134,7 @@
         }
 
         .nav-menu a:hover {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--primary-blue);
         }
 
         .header.scrolled .nav-menu a:hover {
@@ -545,21 +545,21 @@
         }
 
         .why-btn-primary {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--text-dark);
+            background: var(--brand-gradient);
+            color: white;
             padding: 15px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: none;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
         }
 
         .why-btn-primary:hover {
-            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
         }
 
         .why-btn-secondary {
@@ -1026,6 +1026,267 @@
             color: var(--text-medium);
             line-height: 1.6;
             font-size: 0.95rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--light-gray);
+            padding: 100px 0;
+        }
+
+        .contact-form-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-form-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-form-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .contact-form-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .form-grid {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gradient-teal);
+            box-shadow: 0 0 0 3px rgba(75, 168, 159, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 0.2rem;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--gradient-teal);
+        }
+
+        .checkbox-label a {
+            color: var(--gradient-teal);
+            text-decoration: underline;
+        }
+
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-submit-btn {
+            background: var(--brand-gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
+            font-family: inherit;
+        }
+
+        .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
+        }
+
+        .form-note {
+            color: var(--text-medium);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .contact-info-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .contact-info-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--brand-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .contact-info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .contact-info-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin: 0.25rem 0;
+        }
+
+        .contact-info-card a {
+            color: var(--gradient-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-hours {
+            font-size: 0.9rem;
+            margin-top: 0.5rem !important;
+            font-style: italic;
+        }
+
+        .contact-info-emergency {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #dc3545;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-info-emergency svg {
+            width: 24px;
+            height: 24px;
+            stroke: #dc3545;
+            flex-shrink: 0;
+        }
+
+        .contact-info-emergency strong {
+            color: #dc3545;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-emergency p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-info-emergency a {
+            color: #dc3545;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-info-emergency a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+            .contact-form-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                padding: 2rem;
+            }
+
+            .contact-form-header h2 {
+                font-size: 2rem;
+            }
         }
 
         /* Footer */
@@ -1616,7 +1877,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Leistungen</a></li>
                     <li><a href="#why-choose">Über Uns</a></li>
-                    <li><a href="tel:+4962112345678" class="contact-button">Kontakt</a></li>
+                    <li><a href="#contact" class="contact-button">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -1780,7 +2041,7 @@
                    </p>
                    <div class="why-buttons">
                        <a href="#contact" class="why-btn-primary">Jetzt Termin vereinbaren</a>
-                       <a href="tel:+4962112345678" class="why-btn-secondary">Anrufen</a>
+                       <a href="#contact" class="why-btn-secondary">Kontakt aufnehmen</a>
                    </div>
                </div>
                
@@ -2255,6 +2516,107 @@
        </div>
    </section>
 
+   <section class="contact-form" id="contact">
+       <div class="contact-form-container">
+           <div class="contact-form-header">
+               <h2>Kontaktieren Sie uns</h2>
+               <p class="contact-form-subtitle">
+                   Haben Sie Fragen oder möchten Sie ein unverbindliches Angebot erhalten? 
+                   Füllen Sie einfach das Formular aus und wir melden uns zeitnah bei Ihnen.
+               </p>
+           </div>
+
+           <div class="contact-form-content">
+               <form class="form-grid">
+                   <div class="form-row">
+                       <div class="form-group">
+                           <label for="contact-name">Vor- und Nachname *</label>
+                           <input type="text" id="contact-name" name="name" required placeholder="Max Mustermann">
+                       </div>
+                       <div class="form-group">
+                           <label for="contact-email">E-Mail-Adresse *</label>
+                           <input type="email" id="contact-email" name="email" required placeholder="max@beispiel.de">
+                       </div>
+                   </div>
+
+                   <div class="form-row">
+                       <div class="form-group">
+                           <label for="contact-phone">Telefonnummer</label>
+                           <input type="tel" id="contact-phone" name="phone" placeholder="+49 123 456789">
+                       </div>
+                       <div class="form-group">
+                           <label for="contact-subject">Betreff *</label>
+                           <select id="contact-subject" name="subject" required>
+                               <option value="">Bitte wählen...</option>
+                               <option value="angebot">Angebot anfordern</option>
+                               <option value="beratung">Beratungstermin</option>
+                               <option value="wartung">Wartung</option>
+                               <option value="sonstiges">Sonstiges</option>
+                           </select>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="contact-message">Ihre Nachricht *</label>
+                       <textarea id="contact-message" name="message" rows="6" required placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                   </div>
+
+                   <div class="form-group checkbox-group">
+                       <label class="checkbox-label">
+                           <input type="checkbox" name="privacy" required>
+                           <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere sie. *</span>
+                       </label>
+                   </div>
+
+                   <div class="form-actions">
+                       <button type="submit" class="form-submit-btn">
+                           Nachricht senden
+                       </button>
+                       <p class="form-note">* Pflichtfelder</p>
+                   </div>
+               </form>
+
+               <div class="contact-info-sidebar">
+                   <div class="contact-info-card">
+                       <div class="contact-info-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                           </svg>
+                       </div>
+                       <h4>Telefon</h4>
+                       <p><a href="tel:+4915155688230">+49 1515 5688230</a></p>
+                       <p class="contact-hours">Mo-Do: 7:00 - 17:00 Uhr<br>Fr: 7:00 - 14:00 Uhr</p>
+                   </div>
+
+                   <div class="contact-info-card">
+                       <div class="contact-info-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                               <polyline points="22,6 12,13 2,6"></polyline>
+                           </svg>
+                       </div>
+                       <h4>E-Mail</h4>
+                       <p><a href="mailto:info@leotherm.de">info@leotherm.de</a></p>
+                       <p class="contact-hours">Antwort innerhalb von 24h</p>
+                   </div>
+
+                   <div class="contact-info-card">
+                       <div class="contact-info-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                               <circle cx="12" cy="10" r="3"></circle>
+                           </svg>
+                       </div>
+                       <h4>Adresse</h4>
+                       <p>Leo Therm<br>
+                       Carl-Gladitz-Straße 10<br>
+                       63628 Bad Soden-Salmünster</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
    <footer class="footer">
        <div class="footer-content">
            <div class="footer-column">
@@ -2284,7 +2646,7 @@
                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                    </svg>
                    <div class="footer-contact-info">
-                       <strong><a href="tel:+4962112345678">+49 621 123 45678</a></strong>
+                       <strong><a href="tel:+4915155688230">+49 1515 5688230</a></strong>
                    </div>
                </div>
                
@@ -2294,16 +2656,16 @@
                        <circle cx="12" cy="10" r="3"></circle>
                    </svg>
                    <div class="footer-contact-info">
-                       <strong>Leo Therm Klimatechnik</strong>
-                       <p>Musterstraße 123, 67063 Ludwigshafen</p>
-                       <p><a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6dad3d99bc2ded3c4db98d2d3"><span class="__cf_email__" data-cfemail="4c25222a230c202923613824293e21622829">[email&#160;protected]</span></a></p>
+                       <strong>Leo Therm</strong>
+                       <p>Carl-Gladitz-Straße 10, 63628 Bad Soden-Salmünster</p>
+                       <p><a href="mailto:info@leotherm.de">info@leotherm.de</a></p>
                    </div>
                </div>
            </div>
        </div>
        
        <div class="footer-bottom">
-           <p>&copy; 2025 Leo Therm Klimatechnik. Alle Rechte vorbehalten.</p>
+           <p>&copy; 2025 Leo Therm. Alle Rechte vorbehalten.</p>
        </div>
    </footer>
 
