@@ -2544,6 +2544,16 @@
 
            <div class="contact-form-content">
 <form class="form-grid" id="contact-form" action="https://submit-form.com/rAw8bSvpg" method="POST">
+    <!-- Success Message (initially hidden) - MUSS GANZ OBEN SEIN -->
+    <div id="form-success-message" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #c3e6cb; grid-column: 1 / -1;">
+        ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns zeitnah bei Ihnen.
+    </div>
+
+    <!-- Error Message (initially hidden) - MUSS GANZ OBEN SEIN -->
+    <div id="form-error-message" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #f5c6cb; grid-column: 1 / -1;">
+        ✗ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es erneut.
+    </div>
+
     <div class="form-row">
         <div class="form-group">
             <label for="contact-name">Vor- und Nachname *</label>
@@ -2582,16 +2592,6 @@
             <input type="checkbox" name="privacy" required>
             <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere sie. *</span>
         </label>
-    </div>
-
-    <!-- Success Message (initially hidden) -->
-    <div id="form-success-message" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #c3e6cb;">
-        ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns zeitnah bei Ihnen.
-    </div>
-
-    <!-- Error Message (initially hidden) -->
-    <div id="form-error-message" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #f5c6cb;">
-        ✗ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es erneut.
     </div>
 
     <div class="form-actions">
