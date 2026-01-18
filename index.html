@@ -2786,7 +2786,7 @@
                        <span class="faq-icon"></span>
                    </button>
                    <div class="faq-answer">
-                       <p>In der Regel können wir Ihnen innerhalb von 1-2 Wochen einen Termin anbieten. In dringenden Fällen oder bei Notfällen sind wir auch kurzfristig für Sie da - unser 24-Stunden-Notdienst ist jederzeit erreichbar.</p>
+                       <p>In der Regel können wir Ihnen innerhalb von 1-2 Wochen einen Termin anbieten. In dringenden Fällen oder bei Notfällen sind wir auch kurzfristig für Sie da.</p>
                    </div>
                </div>
 
@@ -3184,9 +3184,9 @@ function calculatePrice() {
     const comfortEl = document.getElementById('price-comfort');
     const premiumEl = document.getElementById('price-premium');
     
-    if (basicEl) basicEl.textContent = basicPrice.toLocaleString('de-DE') + '€';
-    if (comfortEl) comfortEl.textContent = comfortPrice.toLocaleString('de-DE') + '€';
-    if (premiumEl) premiumEl.textContent = premiumPrice.toLocaleString('de-DE') + '€';
+    if (basicEl) basicEl.textContent = basicPrice.toLocaleString('de-DE') + ' €';
+    if (comfortEl) comfortEl.textContent = comfortPrice.toLocaleString('de-DE') + ' €';
+    if (premiumEl) premiumEl.textContent = premiumPrice.toLocaleString('de-DE') + ' €';
     
     const steps = document.querySelector('.calculator-steps');
     const navigation = document.querySelector('.calculator-navigation');
