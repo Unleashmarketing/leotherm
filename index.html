@@ -3276,7 +3276,12 @@ function calculateHeatingCosts() {
     const insulation = document.getElementById('insulation')?.value;
     const age = document.getElementById('age')?.value;
     
+    // Ergebnis ausblenden, wenn nicht alle Felder ausgefüllt sind
+    const resultDiv = document.getElementById('result');
+    if (!resultDiv) return;
+
     if (!livingSpace || !heatingType || !insulation || !age) {
+        resultDiv.classList.remove('show'); // Verstecken, wenn unvollständig
         return;
     }
     
@@ -3326,12 +3331,12 @@ function calculateHeatingCosts() {
     const heatPumpCosts = heatPumpConsumption * 0.30;
     const annualSavings = currentCosts - heatPumpCosts;
     
-    const resultDiv = document.getElementById('result');
-    if (!resultDiv) return;
-    
+    // WICHTIG: Hier machen wir das Ergebnis sichtbar!
+    resultDiv.classList.add('show');
+
     resultDiv.innerHTML = `
         <div style="background: white; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-            <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Ihre jÃ¤hrlichen Heizkosten</h3>
+            <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Ihre jährlichen Heizkosten</h3>
             <div style="display: grid; gap: 1.5rem;">
                 <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px;">
                     <div style="color: var(--text-medium); margin-bottom: 0.5rem;">Aktuelle Heizkosten</div>
@@ -3340,7 +3345,7 @@ function calculateHeatingCosts() {
                 </div>
                 ${annualSavings > 0 ? `
                 <div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px;">
-                    <div style="color: var(--text-medium); margin-bottom: 0.5rem;">MÃ¶gliche Ersparnis mit WÃ¤rmepumpe</div>
+                    <div style="color: var(--text-medium); margin-bottom: 0.5rem;">Mögliche Ersparnis mit Wärmepumpe</div>
                     <div style="font-size: 1.8rem; font-weight: 700; color: #2e7d32;">${Math.round(annualSavings).toLocaleString('de-DE')} €</div>
                     <p style="margin-top: 1rem; color: var(--text-medium); font-size: 0.95rem;">Das entspricht einer Ersparnis von <strong>${Math.round((annualSavings/currentCosts)*100)}%</strong> Ihrer aktuellen Heizkosten.</p>
                 </div>
