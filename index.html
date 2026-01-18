@@ -2544,16 +2544,6 @@
 
            <div class="contact-form-content">
 <form class="form-grid" id="contact-form" action="https://submit-form.com/rAw8bSvpg" method="POST">
-    <!-- Success Message (initially hidden) - MUSS GANZ OBEN SEIN -->
-    <div id="form-success-message" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #c3e6cb; grid-column: 1 / -1;">
-        ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns zeitnah bei Ihnen.
-    </div>
-
-    <!-- Error Message (initially hidden) - MUSS GANZ OBEN SEIN -->
-    <div id="form-error-message" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #f5c6cb; grid-column: 1 / -1;">
-        ✗ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es erneut.
-    </div>
-
     <div class="form-row">
         <div class="form-group">
             <label for="contact-name">Vor- und Nachname *</label>
@@ -2599,6 +2589,16 @@
             Nachricht senden
         </button>
         <p class="form-note">* Pflichtfelder</p>
+    </div>
+
+    <!-- Success Message (initially hidden) - UNTEN -->
+    <div id="form-success-message" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #c3e6cb; grid-column: 1 / -1;">
+        ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns zeitnah bei Ihnen.
+    </div>
+
+    <!-- Error Message (initially hidden) - UNTEN -->
+    <div id="form-error-message" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #f5c6cb; grid-column: 1 / -1;">
+        ✗ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es erneut.
     </div>
 </form>
 
@@ -3045,6 +3045,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (errorMessage) errorMessage.style.display = 'none';
             
             // Disable submit button and show loading state
+            const originalButtonText = submitButton.textContent;
             submitButton.disabled = true;
             submitButton.textContent = 'Wird gesendet...';
             
@@ -3072,6 +3073,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
+                console.error('Form submission error:', error);
                 // Show error message
                 if (errorMessage) {
                     errorMessage.style.display = 'block';
@@ -3080,7 +3082,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } finally {
                 // Re-enable submit button
                 submitButton.disabled = false;
-                submitButton.textContent = 'Nachricht senden';
+                submitButton.textContent = originalButtonText;
             }
         });
     }
