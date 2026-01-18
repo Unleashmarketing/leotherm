@@ -1856,6 +1856,337 @@
                 gap: 1.5rem;
             }
         }
+
+        /* Erweiterte Responsive Design Anpassungen */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expert-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .expert-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .expert-text .animated-word {
+        min-width: 300px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .why-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .stat-box .stat-number {
+        font-size: 3rem;
+    }
+
+    .why-buttons {
+        flex-direction: column;
+    }
+
+    .why-btn-primary,
+    .why-btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-cities {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Neue Media Query für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    /* Hero Anpassungen */
+    .hero {
+        padding: 150px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    /* Expert Section - WICHTIG! */
+    .expert-section {
+        padding: 60px 0;
+    }
+
+    .expert-container {
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    .expert-text h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+    }
+
+    .expert-text .animated-word {
+        min-width: 200px;
+        font-size: 1.8rem;
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .expert-content {
+        font-size: 1rem;
+    }
+
+    .expert-content p {
+        margin-bottom: 1rem;
+    }
+
+    /* Why Choose Section - WICHTIG! */
+    .why-choose {
+        padding: 60px 0;
+    }
+
+    .why-grid {
+        gap: 2rem;
+    }
+
+    .why-content h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .why-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .why-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-box .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-box .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .why-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .why-btn-primary,
+    .why-btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Container Padding */
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .services {
+        padding: 60px 0;
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .process {
+        padding: 60px 0;
+    }
+
+    /* Calculator */
+    .calculator {
+        padding: 60px 0;
+    }
+
+    .calculator-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .calculator h2 {
+        font-size: 1.8rem;
+    }
+
+    .calculator-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .calculator-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 8px;
+    }
+
+    .calculator-tab {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    /* FAQ */
+    .faq {
+        padding: 60px 0;
+    }
+
+    .faq-container {
+        padding: 0 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .faq-intro {
+        font-size: 1rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 60px 0;
+    }
+
+    .contact-form-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-form-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-content {
+        padding: 0 1.5rem;
+    }
+
+    /* Ausbildungs-Container in Why Choose */
+    .why-choose .container > div[style*="margin-top"] {
+        margin-top: 3rem !important;
+        padding: 2rem 1.5rem !important;
+    }
+
+    .why-choose .container > div h3 {
+        font-size: 1.6rem !important;
+    }
+
+    .why-choose .container > div p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Extra kleine Bildschirme */
+@media (max-width: 380px) {
+    .expert-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .expert-text .animated-word {
+        min-width: 180px;
+        font-size: 1.6rem;
+    }
+
+    .why-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .stat-box .stat-number {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
     </style>
 </head>
 <body>
