@@ -2543,7 +2543,10 @@
            </div>
 
            <div class="contact-form-content">
-<form class="form-grid" id="contact-form" action="https://submit-form.com/rAw8bSvpg" method="POST">
+<form class="form-grid" action="https://submit-form.com/rAw8bSvpg" method="POST">
+    <!-- Verstecktes Feld zur Identifikation -->
+    <input type="hidden" name="_formname" value="Leo Therm Kontaktformular">
+    
     <div class="form-row">
         <div class="form-group">
             <label for="contact-name">Vor- und Nachname *</label>
@@ -2564,10 +2567,10 @@
             <label for="contact-subject">Betreff *</label>
             <select id="contact-subject" name="subject" required>
                 <option value="">Bitte wählen...</option>
-                <option value="angebot">Angebot anfordern</option>
-                <option value="beratung">Beratungstermin</option>
-                <option value="wartung">Wartung</option>
-                <option value="sonstiges">Sonstiges</option>
+                <option value="Angebot anfordern">Angebot anfordern</option>
+                <option value="Beratungstermin">Beratungstermin</option>
+                <option value="Wartung">Wartung</option>
+                <option value="Sonstiges">Sonstiges</option>
             </select>
         </div>
     </div>
@@ -2579,7 +2582,7 @@
 
     <div class="form-group checkbox-group">
         <label class="checkbox-label">
-            <input type="checkbox" name="privacy" required>
+            <input type="checkbox" name="privacy" value="akzeptiert" required>
             <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere sie. *</span>
         </label>
     </div>
@@ -2589,16 +2592,6 @@
             Nachricht senden
         </button>
         <p class="form-note">* Pflichtfelder</p>
-    </div>
-
-    <!-- Success Message (initially hidden) - UNTEN -->
-    <div id="form-success-message" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #c3e6cb; grid-column: 1 / -1;">
-        ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns zeitnah bei Ihnen.
-    </div>
-
-    <!-- Error Message (initially hidden) - UNTEN -->
-    <div id="form-error-message" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #f5c6cb; grid-column: 1 / -1;">
-        ✗ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es erneut.
     </div>
 </form>
 
