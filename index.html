@@ -2203,6 +2203,83 @@
         font-size: 1.8rem;
     }
 }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .gallery-slider {
+            margin-top: 3rem;
+            position: relative;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            /* Maskiert die Ränder für einen weichen Übergang */
+            -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            /* Automatische Animation */
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .gallery-item {
+            width: 350px;
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Wichtig: Schneidet Bilder passend zu */
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover-Effekt: Bild zoomt, Slider stoppt */
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Muss ca. die Hälfte der Gesamtbreite sein (ein Satz Bilder) */
+                /* Bei 10 Bildern à 350px + 20px Gap = ca -3700px */
+                transform: translateX(-3700px); 
+            }
+        }
+
+        /* Mobile Anpassung */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 280px;
+                height: 220px;
+            }
+            
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-3000px); } /* Angepasster Wert für Mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -2787,6 +2864,39 @@
        </div>
    </section>
 
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Einen Einblick in unsere Arbeit</h2>
+            <p class="section-subtitle">Qualität, die man sieht – ausgewählte Projekte aus Bad, Heizung und Sanitär</p>
+        </div>
+
+        <div class="gallery-slider">
+            <div class="gallery-track">
+                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Projekt Referenz 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Projekt Referenz 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Projekt Referenz 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Projekt Referenz 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Projekt Referenz 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Projekt Referenz 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie50.jpeg" alt="Projekt Referenz 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie54.jpeg" alt="Projekt Referenz 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie4.jpeg" alt="Projekt Referenz 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie33.jpeg" alt="Projekt Referenz 10" loading="lazy"></div>
+
+                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Projekt Referenz 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Projekt Referenz 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Projekt Referenz 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Projekt Referenz 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Projekt Referenz 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Projekt Referenz 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie50.jpeg" alt="Projekt Referenz 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie54.jpeg" alt="Projekt Referenz 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie4.jpeg" alt="Projekt Referenz 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie33.jpeg" alt="Projekt Referenz 10" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+    
    <section class="faq" id="faq">
        <div class="faq-container">
            <h2 class="section-title">Häufig gestellte Fragen</h2>
