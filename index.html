@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head> 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Leo Therm Meisterbetrieb - Heizung, Sanitär, Solar, Klima & Lüftung</title>
-    <meta name="description" content="Leo Therm Meisterbetrieb für Heizung, Sanitär, Solar, Klima und Lüftungstechnik in Bad Soden-Salmünster. Ihr Experte für Badsanierung und Wärmepumpen.">
+    <title>Leo Therm: Heizung & Sanitär | Frankfurt & Rhein-Main</title>
+    <meta name="description" content="Ihr Meisterbetrieb für Heizung, Bad, Solar & Klima im Raum Frankfurt, Wiesbaden, Mainz, Darmstadt, Hanau & Aschaffenburg. Zuverlässige Haustechnik vom Profi.">
     
     <meta name="robots" content="index, follow">
     
     <link rel="canonical" href="https://www.leotherm.de/">
 
-    <meta property="og:title" content="Leo Therm Meisterbetrieb - Heizung & Sanitär">
-    <meta property="og:description" content="Ihr zuverlässiger Partner für Heizung, Sanitär, Solar & Klima in Bad Soden-Salmünster.">
+    <meta property="og:title" content="Leo Therm: Heizung & Sanitär | Frankfurt & Rhein-Main">
+    <meta property="og:description" content="Meisterbetrieb für Frankfurt, Wiesbaden, Mainz, Darmstadt, Hanau & Aschaffenburg. Badsanierung & Wärmepumpen.">
     <meta property="og:image" content="https://www.leotherm.de/images/leotherm_logo.png">
     <meta property="og:url" content="https://www.leotherm.de/">
     <meta property="og:type" content="website">
@@ -185,26 +185,6 @@
             box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
         }
 
-        .language-selector {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: white;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .header.scrolled .language-selector {
-            color: var(--text-dark);
-        }
-
-        .flag-icon {
-            width: 20px;
-            height: 15px;
-            background: linear-gradient(to bottom, #000 33%, #ff0000 33%, #ff0000 66%, #ffcc00 66%);
-            border-radius: 2px;
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
@@ -358,18 +338,9 @@
         .expert-text .word-list span:nth-child(5) { animation-delay: 12s; }
 
         @keyframes wordRotate {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            2%, 18% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            20%, 100% {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
+            0% { opacity: 0; transform: translateY(30px); }
+            2%, 18% { opacity: 1; transform: translateY(0); }
+            20%, 100% { opacity: 0; transform: translateY(-30px); }
         }
 
         .expert-content {
@@ -444,29 +415,12 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
-        .service-card:nth-child(1) .service-image {
-            background-image: url('images/Heizung.png');
-        }
-
-        .service-card:nth-child(2) .service-image {
-            background-image: url('images/Bad.jpg');
-        }
-
-        .service-card:nth-child(3) .service-image {
-            background-image: url('images/solar.jpg');
-        }
-
-        .service-card:nth-child(4) .service-image {
-            background-image: url('images/Klima.png');
-        }
-
-        .service-card:nth-child(5) .service-image {
-            background-image: url('images/Lueftung_2.png');
-        }
-
-        .service-card:nth-child(6) .service-image {
-            background-image: url('images/service.jpg');
-        }
+        .service-card:nth-child(1) .service-image { background-image: url('images/Heizung.png'); }
+        .service-card:nth-child(2) .service-image { background-image: url('images/Bad.jpg'); }
+        .service-card:nth-child(3) .service-image { background-image: url('images/solar.jpg'); }
+        .service-card:nth-child(4) .service-image { background-image: url('images/Klima.png'); }
+        .service-card:nth-child(5) .service-image { background-image: url('images/Lueftung_2.png'); }
+        .service-card:nth-child(6) .service-image { background-image: url('images/service.jpg'); }
 
         .service-card:hover {
             transform: translateY(-5px);
@@ -605,10 +559,6 @@
             font-weight: 400;
         }
 
-        .advantages {
-            display: none;
-        }
-
         /* Energy Calculator */
         .calculator {
             background: var(--white);
@@ -669,16 +619,6 @@
             width: 20px;
             height: 20px;
             fill: currentColor;
-        }
-
-        .tab-icon-placeholder {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            /* Platzhalter für dein Icon - entferne diese Zeilen wenn du dein Icon eingefügt hast */
-            background: currentColor;
-            border-radius: 50%;
-            opacity: 0.3;
         }
 
         .calculator-tab:hover {
@@ -788,37 +728,6 @@
             background-clip: text;
         }
 
-        .result-details {
-            font-size: 0.95rem;
-            color: var(--text-medium);
-            margin-top: 1rem;
-            line-height: 1.5;
-        }
-
-        .savings-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        .savings-info h4 {
-            background: var(--brand-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .savings-info p {
-            color: var(--text-medium);
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
         /* Process Section */
         .process {
             padding: 100px 0;
@@ -858,29 +767,12 @@
             position: relative;
         }
 
-        .process-step:nth-child(1) .process-image {
-            background-image: url('images/Beratung.jpg');
-        }
-
-        .process-step:nth-child(2) .process-image {
-            background-image: url('images/Angebot.jpg');
-        }
-
-        .process-step:nth-child(3) .process-image {
-            background-image: url('images/Termin.jpg');
-        }
-
-        .process-step:nth-child(4) .process-image {
-            background-image: url('images/Installation.png');
-        }
-
-        .process-step:nth-child(5) .process-image {
-            background-image: url('images/Inbetrieb.png');
-        }
-
-        .process-step:nth-child(6) .process-image {
-            background-image: url('images/Service_2.jpg');
-        }
+        .process-step:nth-child(1) .process-image { background-image: url('images/Beratung.jpg'); }
+        .process-step:nth-child(2) .process-image { background-image: url('images/Angebot.jpg'); }
+        .process-step:nth-child(3) .process-image { background-image: url('images/Termin.jpg'); }
+        .process-step:nth-child(4) .process-image { background-image: url('images/Installation.png'); }
+        .process-step:nth-child(5) .process-image { background-image: url('images/Inbetrieb.png'); }
+        .process-step:nth-child(6) .process-image { background-image: url('images/Service_2.jpg'); }
 
         .process-content {
             padding: 1.8rem 1.5rem;
@@ -911,6 +803,64 @@
             color: var(--text-medium);
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+
+        /* Gallery Section Styles */
+        .gallery-section {
+            padding: 100px 0;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .gallery-slider {
+            margin-top: 3rem;
+            position: relative;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            /* Maskiert die Ränder für einen weichen Übergang */
+            -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            /* Automatische Animation */
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .gallery-item {
+            width: 350px;
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover-Effekt: Bild zoomt, Slider stoppt */
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-3700px); }
         }
 
         /* FAQ Section */
@@ -1270,25 +1220,6 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 968px) {
-            .contact-form-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .form-grid {
-                padding: 2rem;
-            }
-
-            .contact-form-header h2 {
-                font-size: 2rem;
-            }
-        }
-
         /* Footer */
         .footer {
             background: #2c2c2c;
@@ -1403,14 +1334,8 @@
 
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Scroll indicator */
@@ -1425,845 +1350,143 @@
             transition: width 0.3s ease;
         }
 
-        /* Price Calculator Styles */
-        .progress-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 2rem 0;
-            padding: 0 2rem;
-        }
-
-        .progress-step {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--light-gray);
-            border: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--text-medium);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .progress-step.active {
-            background: var(--brand-gradient);
-            color: white;
-            box-shadow: 0 4px 12px rgba(123, 104, 184, 0.3);
-        }
-
-        .progress-step.completed {
-            background: var(--gradient-teal);
-            border-color: transparent;
-            color: white;
-        }
-
-        .progress-line {
-            flex: 1;
-            height: 2px;
-            background: var(--border-color);
-            margin: 0 -1px;
-            transition: all 0.3s ease;
-        }
-
-        .progress-line.completed {
-            background: var(--gradient-teal);
-        }
-
-        .step-indicator {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            color: var(--text-medium);
-        }
-
-        .step-indicator .current-step {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .calculator-steps {
-            min-height: 350px;
-        }
-
-        .calc-step {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .calc-step.active {
-            display: block;
-        }
-
-        .calc-step h3 {
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-            text-align: center;
-        }
-
-        .option-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .option-grid-single {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .option-card, .option-card-large {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .option-card input[type="checkbox"],
-        .option-card input[type="radio"],
-        .option-card-large input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .option-content {
-            padding: 1.5rem;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        .option-card:hover .option-content,
-        .option-card-large:hover .option-content {
-            border-color: var(--gradient-teal);
-            box-shadow: 0 4px 12px rgba(75, 168, 159, 0.15);
-        }
-
-        .option-card input:checked ~ .option-content,
-        .option-card-large input:checked ~ .option-content {
-            border-color: var(--gradient-teal);
-            background: rgba(75, 168, 159, 0.05);
-            box-shadow: 0 4px 12px rgba(75, 168, 159, 0.2);
-        }
-
-        .option-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .option-desc {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-        }
-
-        .calculator-navigation {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .calc-btn {
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-family: inherit;
-        }
-
-        .calc-btn-next {
-            background: var(--brand-gradient);
-            color: white;
-            margin-left: auto;
-            box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3);
-        }
-
-        .calc-btn-next:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4);
-        }
-
-        .calc-btn-back {
-            background: transparent;
-            color: var(--text-dark);
-            border: 1px solid var(--border-color);
-        }
-
-        .calc-btn-back:hover {
-            background: var(--light-gray);
-        }
-
-        .price-result {
-            animation: fadeIn 0.5s ease;
-        }
-
-        .result-intro {
-            text-align: center;
-            color: var(--text-medium);
-            margin-bottom: 2rem;
-        }
-
-        .price-packages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .price-package {
-            background: white;
-            border: 2px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .price-package:hover {
-            border-color: var(--gradient-teal);
-            box-shadow: 0 8px 24px rgba(75, 168, 159, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .price-package.featured {
-            border-color: var(--gradient-teal);
-            box-shadow: 0 8px 24px rgba(75, 168, 159, 0.2);
-        }
-
-        .package-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--brand-gradient);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .package-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .package-header h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .package-price {
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: var(--brand-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .package-features {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .package-features li {
-            padding: 0.6rem 0;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 1.8rem;
-        }
-
-        .package-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--gradient-teal);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .result-cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
+        /* Responsive Styles */
+        @media (max-width: 968px) {
+            .contact-form-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            .form-row { grid-template-columns: 1fr; }
+            .form-grid { padding: 2rem; }
+            .contact-form-header h2 { font-size: 2rem; }
         }
 
         @media (max-width: 768px) {
-            .price-packages {
-                grid-template-columns: 1fr;
-            }
-
-            .option-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .progress-bar {
-                padding: 0 0.5rem;
-            }
-
-            .progress-step {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9rem;
-            }
-
-            .calculator-tabs {
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 8px;
-            }
-
-            .calculator-tab {
-                font-size: 0.95rem;
-                padding: 0.875rem 1rem;
-            }
-
-            .calculator-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .calculator h2 {
-                font-size: 1.8rem;
-            }
-
-            .calculator-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .expert-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .expert-text h2 {
-                font-size: 2.5rem;
-            }
-
-            .input-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .why-stats {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-
-            .stat-box .stat-number {
-                font-size: 3rem;
-            }
-
-            .why-buttons {
-                flex-direction: column;
-            }
-
-            .why-btn-primary,
-            .why-btn-secondary {
-                width: 100%;
-                text-align: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-cities {
-                grid-template-columns: 1fr;
-            }
-
-            .advantages {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        /* Erweiterte Responsive Design Anpassungen */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero .tagline {
-        font-size: 1.2rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .expert-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .expert-text h2 {
-        font-size: 2.5rem;
-    }
-
-    .expert-text .animated-word {
-        min-width: 300px;
-    }
-
-    .input-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .why-stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .stat-box .stat-number {
-        font-size: 3rem;
-    }
-
-    .why-buttons {
-        flex-direction: column;
-    }
-
-    .why-btn-primary,
-    .why-btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cities {
-        grid-template-columns: 1fr;
-    }
-
-    .advantages {
-        grid-template-columns: 1fr;
-    }
-
-    .process-steps {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-}
-
-/* Neue Media Query für sehr kleine Bildschirme */
-@media (max-width: 480px) {
-    /* Hero Anpassungen */
-    .hero {
-        padding: 150px 0 80px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-
-    .hero .tagline {
-        font-size: 1rem;
-    }
-
-    .hero-content {
-        padding: 0 1.5rem;
-    }
-
-    /* Expert Section - WICHTIG! */
-    .expert-section {
-        padding: 60px 0;
-    }
-
-    .expert-container {
-        padding: 0 1.5rem;
-        gap: 2rem;
-    }
-
-    .expert-text h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 1.5rem;
-    }
-
-    .expert-text .animated-word {
-        min-width: 200px;
-        font-size: 1.8rem;
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .expert-content {
-        font-size: 1rem;
-    }
-
-    .expert-content p {
-        margin-bottom: 1rem;
-    }
-
-    /* Why Choose Section - WICHTIG! */
-    .why-choose {
-        padding: 60px 0;
-    }
-
-    .why-grid {
-        gap: 2rem;
-    }
-
-    .why-content h2 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-
-    .why-content p {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .why-stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .stat-box .stat-number {
-        font-size: 2.5rem;
-    }
-
-    .stat-box .stat-label {
-        font-size: 0.9rem;
-    }
-
-    .why-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .why-btn-primary,
-    .why-btn-secondary {
-        width: 100%;
-        text-align: center;
-        padding: 12px 20px;
-        font-size: 0.95rem;
-    }
-
-    /* Container Padding */
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    /* Section Titles */
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Services Grid */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .services {
-        padding: 60px 0;
-    }
-
-    /* Process Steps */
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .process {
-        padding: 60px 0;
-    }
-
-    /* Calculator */
-    .calculator {
-        padding: 60px 0;
-    }
-
-    .calculator-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .calculator h2 {
-        font-size: 1.8rem;
-    }
-
-    .calculator-subtitle {
-        font-size: 0.95rem;
-    }
-
-    .calculator-tabs {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 8px;
-    }
-
-    .calculator-tab {
-        font-size: 0.9rem;
-        padding: 0.75rem 1rem;
-    }
-
-    /* FAQ */
-    .faq {
-        padding: 60px 0;
-    }
-
-    .faq-container {
-        padding: 0 1.5rem;
-    }
-
-    .faq-question {
-        font-size: 1rem;
-        padding: 1.2rem 1.5rem;
-    }
-
-    .faq-intro {
-        font-size: 1rem;
-    }
-
-    /* Contact Form */
-    .contact-form {
-        padding: 60px 0;
-    }
-
-    .contact-form-header h2 {
-        font-size: 2rem;
-    }
-
-    .contact-form-subtitle {
-        font-size: 1rem;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 60px 0 30px;
-    }
-
-    .footer-content {
-        padding: 0 1.5rem;
-    }
-
-    /* Ausbildungs-Container in Why Choose */
-    .why-choose .container > div[style*="margin-top"] {
-        margin-top: 3rem !important;
-        padding: 2rem 1.5rem !important;
-    }
-
-    .why-choose .container > div h3 {
-        font-size: 1.6rem !important;
-    }
-
-    .why-choose .container > div p {
-        font-size: 1rem !important;
-    }
-}
-
-/* Extra kleine Bildschirme */
-@media (max-width: 380px) {
-    .expert-text h2 {
-        font-size: 1.6rem;
-    }
-
-    .expert-text .animated-word {
-        min-width: 180px;
-        font-size: 1.6rem;
-    }
-
-    .why-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .stat-box .stat-number {
-        font-size: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-}
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 100px 0;
-            background: var(--white);
-            overflow: hidden;
-        }
-
-        .gallery-slider {
-            margin-top: 3rem;
-            position: relative;
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-            /* Maskiert die Ränder für einen weichen Übergang */
-            -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
-        }
-
-        .gallery-track {
-            display: flex;
-            gap: 20px;
-            /* Automatische Animation */
-            animation: scroll 40s linear infinite;
-            width: max-content;
-        }
-
-        .gallery-item {
-            width: 350px;
-            height: 280px;
-            border-radius: 16px;
-            overflow: hidden;
-            flex-shrink: 0;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Wichtig: Schneidet Bilder passend zu */
-            transition: transform 0.5s ease;
-        }
-
-        /* Hover-Effekt: Bild zoomt, Slider stoppt */
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                /* Muss ca. die Hälfte der Gesamtbreite sein (ein Satz Bilder) */
-                /* Bei 10 Bildern à 350px + 20px Gap = ca -3700px */
-                transform: translateX(-3700px); 
-            }
-        }
-
-        /* Mobile Anpassung */
-        @media (max-width: 768px) {
-            .gallery-item {
-                width: 280px;
-                height: 220px;
-            }
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .expert-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .expert-text h2 { font-size: 2.5rem; }
+            .expert-text .animated-word { min-width: 300px; }
+            .input-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .why-stats { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .stat-box .stat-number { font-size: 3rem; }
+            .why-buttons { flex-direction: column; }
+            .why-btn-primary, .why-btn-secondary { width: 100%; text-align: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+            .footer-content { grid-template-columns: 1fr; gap: 3rem; }
             
+            /* Calculator Responsive */
+            .price-packages { grid-template-columns: 1fr; }
+            .option-grid { grid-template-columns: 1fr; }
+            .progress-bar { padding: 0 0.5rem; }
+            .progress-step { width: 32px; height: 32px; font-size: 0.9rem; }
+            .calculator-tabs { flex-direction: column; gap: 0.5rem; padding: 8px; }
+            .calculator-tab { font-size: 0.95rem; padding: 0.875rem 1rem; }
+            .calculator-card { padding: 2rem 1.5rem; }
+            .calculator h2 { font-size: 1.8rem; }
+            .calculator-subtitle { font-size: 1rem; }
+            
+            /* Gallery Responsive */
+            .gallery-item { width: 280px; height: 220px; }
             @keyframes scroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-3000px); } /* Angepasster Wert für Mobile */
+                100% { transform: translateX(-3000px); }
             }
         }
+
+        @media (max-width: 480px) {
+            .hero { padding: 150px 0 80px; }
+            .hero h1 { font-size: 2rem; line-height: 1.3; }
+            .hero .tagline { font-size: 1rem; }
+            .hero-content { padding: 0 1.5rem; }
+            .expert-section { padding: 60px 0; }
+            .expert-container { padding: 0 1.5rem; gap: 2rem; }
+            .expert-text h2 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1.5rem; }
+            .expert-text .animated-word { min-width: 200px; font-size: 1.8rem; display: block; margin-top: 0.5rem; }
+            .expert-content { font-size: 1rem; }
+            .expert-content p { margin-bottom: 1rem; }
+            .why-choose { padding: 60px 0; }
+            .why-grid { gap: 2rem; }
+            .why-content h2 { font-size: 2rem; line-height: 1.3; }
+            .why-content p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+            .why-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+            .stat-box .stat-number { font-size: 2.5rem; }
+            .stat-box .stat-label { font-size: 0.9rem; }
+            .why-buttons { flex-direction: column; gap: 1rem; }
+            .why-btn-primary, .why-btn-secondary { width: 100%; text-align: center; padding: 12px 20px; font-size: 0.95rem; }
+            .container { padding: 0 1.5rem; }
+            .section-title { font-size: 2rem; }
+            .section-subtitle { font-size: 1rem; margin-bottom: 2rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .services { padding: 60px 0; }
+            .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+            .process { padding: 60px 0; }
+            .calculator { padding: 60px 0; }
+            .calculator-card { padding: 2rem 1.5rem; }
+            .calculator h2 { font-size: 1.8rem; }
+            .calculator-subtitle { font-size: 0.95rem; }
+            .calculator-tabs { flex-direction: column; gap: 0.5rem; padding: 8px; }
+            .calculator-tab { font-size: 0.9rem; padding: 0.75rem 1rem; }
+            .faq { padding: 60px 0; }
+            .faq-container { padding: 0 1.5rem; }
+            .faq-question { font-size: 1rem; padding: 1.2rem 1.5rem; }
+            .faq-intro { font-size: 1rem; }
+            .contact-form { padding: 60px 0; }
+            .contact-form-header h2 { font-size: 2rem; }
+            .contact-form-subtitle { font-size: 1rem; }
+            .footer { padding: 60px 0 30px; }
+            .footer-content { padding: 0 1.5rem; }
+            .why-choose .container > div[style*="margin-top"] { margin-top: 3rem !important; padding: 2rem 1.5rem !important; }
+            .why-choose .container > div h3 { font-size: 1.6rem !important; }
+            .why-choose .container > div p { font-size: 1rem !important; }
+        }
+
+        /* Price Calculator Styles */
+        .progress-bar { display: flex; align-items: center; justify-content: space-between; margin: 2rem 0; padding: 0 2rem; }
+        .progress-step { width: 40px; height: 40px; border-radius: 50%; background: var(--light-gray); border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--text-medium); transition: all 0.3s ease; position: relative; z-index: 2; }
+        .progress-step.active { background: var(--brand-gradient); color: white; box-shadow: 0 4px 12px rgba(123, 104, 184, 0.3); }
+        .progress-step.completed { background: var(--gradient-teal); border-color: transparent; color: white; }
+        .progress-line { flex: 1; height: 2px; background: var(--border-color); margin: 0 -1px; transition: all 0.3s ease; }
+        .progress-line.completed { background: var(--gradient-teal); }
+        .step-indicator { text-align: center; margin-bottom: 2rem; font-size: 1rem; color: var(--text-medium); }
+        .step-indicator .current-step { font-weight: 600; color: var(--text-dark); }
+        .calculator-steps { min-height: 350px; }
+        .calc-step { display: none; animation: fadeIn 0.4s ease; }
+        .calc-step.active { display: block; }
+        .calc-step h3 { font-size: 1.6rem; margin-bottom: 2rem; color: var(--text-dark); text-align: center; }
+        .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .option-grid-single { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .option-card, .option-card-large { position: relative; cursor: pointer; }
+        .option-card input[type="checkbox"], .option-card input[type="radio"], .option-card-large input[type="radio"] { position: absolute; opacity: 0; cursor: pointer; }
+        .option-content { padding: 1.5rem; border: 2px solid var(--border-color); border-radius: 12px; background: white; transition: all 0.3s ease; }
+        .option-card:hover .option-content, .option-card-large:hover .option-content { border-color: var(--gradient-teal); box-shadow: 0 4px 12px rgba(75, 168, 159, 0.15); }
+        .option-card input:checked ~ .option-content, .option-card-large input:checked ~ .option-content { border-color: var(--gradient-teal); background: rgba(75, 168, 159, 0.05); box-shadow: 0 4px 12px rgba(75, 168, 159, 0.2); }
+        .option-title { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; }
+        .option-desc { font-size: 0.9rem; color: var(--text-medium); }
+        .calculator-navigation { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .calc-btn { padding: 14px 32px; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; border: none; font-family: inherit; }
+        .calc-btn-next { background: var(--brand-gradient); color: white; margin-left: auto; box-shadow: 0 4px 15px rgba(123, 104, 184, 0.3); }
+        .calc-btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(123, 104, 184, 0.4); }
+        .calc-btn-back { background: transparent; color: var(--text-dark); border: 1px solid var(--border-color); }
+        .calc-btn-back:hover { background: var(--light-gray); }
+        .price-result { animation: fadeIn 0.5s ease; }
+        .result-intro { text-align: center; color: var(--text-medium); margin-bottom: 2rem; }
+        .price-packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0; }
+        .price-package { background: white; border: 2px solid var(--border-color); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; position: relative; }
+        .price-package:hover { border-color: var(--gradient-teal); box-shadow: 0 8px 24px rgba(75, 168, 159, 0.15); transform: translateY(-5px); }
+        .price-package.featured { border-color: var(--gradient-teal); box-shadow: 0 8px 24px rgba(75, 168, 159, 0.2); }
+        .package-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brand-gradient); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+        .package-header { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .package-header h4 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-dark); }
+        .package-price { font-size: 2.2rem; font-weight: 700; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .package-features { list-style: none; padding: 0; margin: 0; }
+        .package-features li { padding: 0.6rem 0; color: var(--text-dark); font-size: 0.95rem; position: relative; padding-left: 1.8rem; }
+        .package-features li::before { content: '✓'; position: absolute; left: 0; color: var(--gradient-teal); font-weight: 700; font-size: 1.1rem; }
+        .result-cta { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
     </style>
 </head>
 <body>
@@ -2293,7 +1516,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Alles für die Wärme und Komfort in deinem Zuhause</h1>
-            <p class="tagline">Leo Therm Meisterbetrieb - Ihr zuverlässiger Partner für Heizung, Sanitär, Solar, Klima und Lüftung in Bad Soden-Salmünster und Umgebung.</p>
+            <p class="tagline">Leo Therm Meisterbetrieb - Ihr zuverlässiger Partner für Heizung, Sanitär, Solar, Klima und Lüftung.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="cta-button">Zur kostenlosen Beratung</a>
                 <a href="#why-choose" class="cta-button cta-button-secondary">Mehr über uns</a>
@@ -2317,7 +1540,7 @@
             <div class="expert-content">
                 <p>Als neu gegründeter <span class="highlight">Meisterbetrieb</span> verbinden wir frischen Enthusiasmus mit fundiertem Fachwissen. Unser Team bringt langjährige Branchenerfahrung mit und setzt konsequent auf modernste Technologien und nachhaltige Lösungen.</p>
                 
-                <p>Von der energieeffizienten Heizungsmodernisierung über professionelle Badsanierungen bis hin zu zukunftsweisenden Solarlösungen – wir begleiten Sie von der ersten Beratung bis zur finalen Inbetriebnahme. Dabei legen wir besonderen Wert auf transparente Kommunikation, termingerechte Umsetzung und erstklassige Handwerksqualität.</p>
+                <p>Von der energieeffizienten Heizungsmodernisierung über professionelle Badsanierungen bis hin zu zukunftsweisenden Solarlösungen – wir sind Ihr zuverlässiger Partner im Raum <span class="highlight">Frankfurt</span>, <span class="highlight">Wiesbaden</span>, <span class="highlight">Mainz</span>, <span class="highlight">Darmstadt</span>, <span class="highlight">Hanau</span> und <span class="highlight">Aschaffenburg</span> sowie natürlich in Bad Soden-Salmünster.</p>
             </div>
         </div>
     </section>
@@ -2448,6 +1671,13 @@
                    </p>
                    <div class="why-buttons">
                        <a href="#contact" class="why-btn-primary">Jetzt Termin vereinbaren</a>
+                       <a href="mailto:info@leotherm.de" class="why-btn-secondary">
+                           <svg style="width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                               <polyline points="22,6 12,13 2,6"></polyline>
+                           </svg>
+                           E-Mail senden
+                       </a>
                    </div>
                </div>
                
@@ -2474,7 +1704,6 @@
                </div>
            </div>
            
-           <!-- Ausbildungs-Container -->
            <div style="margin-top: 5rem; background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-dark); font-weight: 600;">Wir bilden aus!</h3>
                <p style="font-size: 1.1rem; color: var(--text-medium); max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">
@@ -2499,7 +1728,6 @@
                 </p>
             </div>
 
-            <!-- Tab Navigation -->
             <div class="calculator-tabs">
                 <button class="calculator-tab active" onclick="switchCalculator('price')">
                     <img src="images/Icon-Wrench.svg" alt="" class="tab-icon">
@@ -2511,7 +1739,6 @@
                 </button>
             </div>
 
-            <!-- Sanitär Preisrechner Content -->
             <div id="price-calculator" class="calculator-content active">
                 <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem; font-size: 1.05rem;">
                     Erhalten Sie in wenigen Schritten eine erste Preiseinschätzung für Ihr Sanitärprojekt
@@ -2532,7 +1759,6 @@
                 </div>
 
                 <div class="calculator-steps">
-                <!-- Step 1: Projekt-Art -->
                 <div class="calc-step active" data-step="1">
                     <h3>Was ist geplant?</h3>
                     <div class="option-grid-single">
@@ -2553,7 +1779,6 @@
                     </div>
                 </div>
 
-                <!-- Step 2: Fläche -->
                 <div class="calc-step" data-step="2">
                     <h3>Wie groß ist die Gesamtfläche?</h3>
                     <div class="input-group">
@@ -2585,7 +1810,6 @@
                     </div>
                 </div>
 
-                <!-- Step 3: Ausstattung -->
                 <div class="calc-step" data-step="3">
                     <h3>Welche Ausstattung wünschen Sie?</h3>
                     <div class="option-grid">
@@ -2627,7 +1851,6 @@
                     </div>
                 </div>
 
-                <!-- Step 4: Aufwand -->
                 <div class="calc-step" data-step="4">
                     <h3>Wie schätzen Sie den Aufwand ein?</h3>
                     <div class="option-grid-single">
@@ -2721,7 +1944,6 @@
             </div>
         </div>
 
-        <!-- Heizkostenrechner Content -->
         <div id="heating-calculator" class="calculator-content">
             <p style="text-align: center; color: var(--text-medium); margin-bottom: 2.5rem; font-size: 1.05rem;">
                 Berechnen Sie Ihre geschätzten jährlichen Heizkosten und entdecken Sie Ihr Einsparpotenzial
@@ -2849,23 +2071,23 @@
 
         <div class="gallery-slider">
             <div class="gallery-track">
-                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Projekt Referenz 1" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Projekt Referenz 2" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Projekt Referenz 3" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Projekt Referenz 4" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Projekt Referenz 5" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Projekt Referenz 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Moderne Badsanierung Frankfurt" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Heizungsinstallation Wiesbaden" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Sanitärarbeiten Mainz" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Wärmepumpe Darmstadt" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Badezimmer Hanau" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Heizung Aschaffenburg" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie50.jpeg" alt="Projekt Referenz 7" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie54.jpeg" alt="Projekt Referenz 8" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie4.jpeg" alt="Projekt Referenz 9" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie33.jpeg" alt="Projekt Referenz 10" loading="lazy"></div>
 
-                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Projekt Referenz 1" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Projekt Referenz 2" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Projekt Referenz 3" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Projekt Referenz 4" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Projekt Referenz 5" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Projekt Referenz 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie3.jpeg" alt="Moderne Badsanierung Frankfurt" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie8.jpeg" alt="Heizungsinstallation Wiesbaden" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie13.jpeg" alt="Sanitärarbeiten Mainz" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie21.jpeg" alt="Wärmepumpe Darmstadt" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie32.jpeg" alt="Badezimmer Hanau" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery/Gallerie43.jpeg" alt="Heizung Aschaffenburg" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie50.jpeg" alt="Projekt Referenz 7" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie54.jpeg" alt="Projekt Referenz 8" loading="lazy"></div>
                 <div class="gallery-item"><img src="images/gallery/Gallerie4.jpeg" alt="Projekt Referenz 9" loading="lazy"></div>
@@ -2873,7 +2095,7 @@
             </div>
         </div>
     </section>
-    
+
    <section class="faq" id="faq">
        <div class="faq-container">
            <h2 class="section-title">Häufig gestellte Fragen</h2>
@@ -2883,6 +2105,16 @@
            </p>
            
            <div class="faq-list">
+               <div class="faq-item">
+                   <button class="faq-question">
+                       In welchem Gebiet sind Sie tätig?
+                       <span class="faq-icon"></span>
+                   </button>
+                   <div class="faq-answer">
+                       <p>Unser Einsatzgebiet erstreckt sich über das gesamte Rhein-Main-Gebiet. Wir sind primär im Raum <strong>Frankfurt</strong>, <strong>Wiesbaden</strong>, <strong>Mainz</strong>, <strong>Darmstadt</strong>, <strong>Hanau</strong> und <strong>Aschaffenburg</strong> sowie natürlich rund um unseren Standort in Bad Soden-Salmünster für Sie im Einsatz.</p>
+                   </div>
+               </div>
+
                <div class="faq-item">
                    <button class="faq-question">
                        Wie schnell können Sie einen Termin für eine Heizungswartung anbieten?
@@ -2920,16 +2152,6 @@
                    </button>
                    <div class="faq-answer">
                        <p>Wir empfehlen eine jährliche Wartung Ihrer Heizungsanlage, idealerweise vor Beginn der Heizperiode im Herbst. Regelmäßige Wartung erhöht die Lebensdauer der Anlage, senkt den Energieverbrauch um bis zu 15% und verhindert kostspielige Reparaturen. Gerne bieten wir Ihnen einen Wartungsvertrag mit automatischer Terminerinnerung an.</p>
-                   </div>
-               </div>
-
-               <div class="faq-item">
-                   <button class="faq-question">
-                       Bieten Sie auch Badsanierungen an?
-                       <span class="faq-icon"></span>
-                   </button>
-                   <div class="faq-answer">
-                       <p>Ja, wir führen komplette Badsanierungen durch - von der Planung bis zur schlüsselfertigen Übergabe. Unser Leistungsspektrum umfasst Fliesenlegerarbeiten, Sanitärinstallationen, Elektroarbeiten und die Koordination aller Gewerke. Auch barrierefreie Badumbaute gehören zu unserem Angebot.</p>
                    </div>
                </div>
 
@@ -2977,60 +2199,58 @@
            </div>
 
            <div class="contact-form-content">
-<form class="form-grid" action="https://submit-form.com/rAw8bSvpg" method="POST">
-    <!-- Verstecktes Feld zur Identifikation -->
-    <input type="hidden" name="_formname" value="Leo Therm Kontaktformular">
-    
-    <!-- Redirect zur Danke-Seite -->
-    <input type="hidden" name="_redirect" value="http://leotherm.de/danke.html">
-    
-    <div class="form-row">
-        <div class="form-group">
-            <label for="contact-name">Vor- und Nachname *</label>
-            <input type="text" id="contact-name" name="name" required placeholder="Max Mustermann">
-        </div>
-        <div class="form-group">
-            <label for="contact-email">E-Mail-Adresse *</label>
-            <input type="email" id="contact-email" name="email" required placeholder="max@beispiel.de">
-        </div>
-    </div>
+            <form class="form-grid" action="https://submit-form.com/rAw8bSvpg" method="POST">
+                <input type="hidden" name="_formname" value="Leo Therm Kontaktformular">
+                
+                <input type="hidden" name="_redirect" value="http://leotherm.de/danke.html">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name">Vor- und Nachname *</label>
+                        <input type="text" id="contact-name" name="name" required placeholder="Max Mustermann">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">E-Mail-Adresse *</label>
+                        <input type="email" id="contact-email" name="email" required placeholder="max@beispiel.de">
+                    </div>
+                </div>
 
-    <div class="form-row">
-        <div class="form-group">
-            <label for="contact-phone">Telefonnummer</label>
-            <input type="tel" id="contact-phone" name="phone" placeholder="+49 123 456789">
-        </div>
-        <div class="form-group">
-            <label for="contact-subject">Betreff *</label>
-            <select id="contact-subject" name="subject" required>
-                <option value="">Bitte wählen...</option>
-                <option value="Angebot anfordern">Angebot anfordern</option>
-                <option value="Beratungstermin">Beratungstermin</option>
-                <option value="Wartung">Wartung</option>
-                <option value="Sonstiges">Sonstiges</option>
-            </select>
-        </div>
-    </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-phone">Telefonnummer</label>
+                        <input type="tel" id="contact-phone" name="phone" placeholder="+49 123 456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Betreff *</label>
+                        <select id="contact-subject" name="subject" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="Angebot anfordern">Angebot anfordern</option>
+                            <option value="Beratungstermin">Beratungstermin</option>
+                            <option value="Wartung">Wartung</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <label for="contact-message">Ihre Nachricht *</label>
-        <textarea id="contact-message" name="message" rows="6" required placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
-    </div>
+                <div class="form-group">
+                    <label for="contact-message">Ihre Nachricht *</label>
+                    <textarea id="contact-message" name="message" rows="6" required placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                </div>
 
-    <div class="form-group checkbox-group">
-        <label class="checkbox-label">
-            <input type="checkbox" name="privacy" value="akzeptiert" required>
-            <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere sie. *</span>
-        </label>
-    </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy" value="akzeptiert" required>
+                        <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere sie. *</span>
+                    </label>
+                </div>
 
-    <div class="form-actions">
-        <button type="submit" class="form-submit-btn">
-            Nachricht senden
-        </button>
-        <p class="form-note">* Pflichtfelder</p>
-    </div>
-</form>
+                <div class="form-actions">
+                    <button type="submit" class="form-submit-btn">
+                        Nachricht senden
+                    </button>
+                    <p class="form-note">* Pflichtfelder</p>
+                </div>
+            </form>
 
                <div class="contact-info-sidebar">
                    <div class="contact-info-card">
@@ -3114,6 +2334,9 @@
                        <strong>Leo Therm Meisterbetrieb</strong>
                        <p>Carl-Gladitz-Straße 10, 63628 Bad Soden-Salmünster</p>
                        <p><a href="mailto:info@leotherm.de">info@leotherm.de</a></p>
+                       <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">
+                           Ihr Partner für Frankfurt, Wiesbaden, Mainz, Darmstadt, Hanau, Aschaffenburg und Bad Soden-Salmünster.
+                       </p>
                    </div>
                </div>
            </div>
