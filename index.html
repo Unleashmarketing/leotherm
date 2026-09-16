@@ -324,24 +324,23 @@
             left: 0;
             width: 100%;
             opacity: 0;
-            transform: translateY(30px);
-            animation: wordRotate 15s infinite;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            will-change: opacity, transform;
             background: var(--brand-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .expert-text .word-list span:nth-child(1) { animation-delay: 0s; }
-        .expert-text .word-list span:nth-child(2) { animation-delay: 3s; }
-        .expert-text .word-list span:nth-child(3) { animation-delay: 6s; }
-        .expert-text .word-list span:nth-child(4) { animation-delay: 9s; }
-        .expert-text .word-list span:nth-child(5) { animation-delay: 12s; }
+        .expert-text .word-list span.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        @keyframes wordRotate {
-            0% { opacity: 0; transform: translateY(30px); }
-            2%, 18% { opacity: 1; transform: translateY(0); }
-            20%, 100% { opacity: 0; transform: translateY(-30px); }
+        .expert-text .word-list span.is-leaving {
+            opacity: 0;
+            transform: translateY(-20px);
         }
 
         .expert-content {
@@ -2750,6 +2749,41 @@ function calculateHeatingCosts() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     updateNavigationButtons();
+
+    // Word rotator (JS-driven for reliable Chrome rendering)
+    (function initWordRotator() {
+        const words = document.querySelectorAll('.expert-text .word-list span');
+        if (words.length === 0) return;
+
+        const HOLD_MS = 2400;      // how long a word stays fully visible
+        const TRANSITION_MS = 600; // matches CSS transition duration
+        let index = 0;
+
+        // Start with the first word visible
+        words[0].classList.add('is-active');
+
+        function next() {
+            const current = words[index];
+            const nextIndex = (index + 1) % words.length;
+            const upcoming = words[nextIndex];
+
+            // Current word slides up and fades out
+            current.classList.remove('is-active');
+            current.classList.add('is-leaving');
+
+            // After the exit transition, reset it so it's ready to enter again next cycle
+            setTimeout(() => {
+                current.classList.remove('is-leaving');
+            }, TRANSITION_MS);
+
+            // Next word fades in
+            upcoming.classList.add('is-active');
+
+            index = nextIndex;
+        }
+
+        setInterval(next, HOLD_MS + TRANSITION_MS);
+    })();
 });
 </script>
 </body>
