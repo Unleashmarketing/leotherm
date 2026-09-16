@@ -300,47 +300,35 @@
         .expert-text .animated-word {
             display: inline-block;
             position: relative;
-            background: var(--brand-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-weight: 600;
             min-width: 400px;
             height: 1.2em;
             vertical-align: top;
+            overflow: hidden;
         }
 
         .expert-text .word-list {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            display: block;
+            animation: rotate-the-words 15s infinite cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         .expert-text .word-list span {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-            will-change: opacity, transform;
+            display: block;
+            height: 1.2em;
+            line-height: 1.2em;
             background: var(--brand-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .expert-text .word-list span.is-active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .expert-text .word-list span.is-leaving {
-            opacity: 0;
-            transform: translateY(-20px);
+        @keyframes rotate-the-words {
+            0%,   16% { transform: translateY(0); }
+            20%,  36% { transform: translateY(-100%); }
+            40%,  56% { transform: translateY(-200%); }
+            60%,  76% { transform: translateY(-300%); }
+            80%,  96% { transform: translateY(-400%); }
+            100%      { transform: translateY(-500%); }
         }
 
         .expert-content {
@@ -1603,6 +1591,7 @@
                         <span>Solar</span>
                         <span>Klimatechnik</span>
                         <span>Lüftung</span>
+                        <span>Heizung</span>
                     </span>
                 </span></h2>
             </div>
@@ -2749,41 +2738,6 @@ function calculateHeatingCosts() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     updateNavigationButtons();
-
-    // Word rotator (JS-driven for reliable Chrome rendering)
-    (function initWordRotator() {
-        const words = document.querySelectorAll('.expert-text .word-list span');
-        if (words.length === 0) return;
-
-        const HOLD_MS = 2400;      // how long a word stays fully visible
-        const TRANSITION_MS = 600; // matches CSS transition duration
-        let index = 0;
-
-        // Start with the first word visible
-        words[0].classList.add('is-active');
-
-        function next() {
-            const current = words[index];
-            const nextIndex = (index + 1) % words.length;
-            const upcoming = words[nextIndex];
-
-            // Current word slides up and fades out
-            current.classList.remove('is-active');
-            current.classList.add('is-leaving');
-
-            // After the exit transition, reset it so it's ready to enter again next cycle
-            setTimeout(() => {
-                current.classList.remove('is-leaving');
-            }, TRANSITION_MS);
-
-            // Next word fades in
-            upcoming.classList.add('is-active');
-
-            index = nextIndex;
-        }
-
-        setInterval(next, HOLD_MS + TRANSITION_MS);
-    })();
 });
 </script>
 </body>
